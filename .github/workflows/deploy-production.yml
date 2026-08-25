@@ -110,19 +110,20 @@ jobs:
       - name: Pack site files
         run: |
           set -euo pipefail
-          tar -czf qubextrack-site.tgz \
-            --exclude='.git' \
-            --exclude='.github' \
-            --exclude='deploy' \
-            --exclude='scripts' \
-            --exclude='doc' \
-            --exclude='_snippets' \
-            --exclude='_*.py' \
-            --exclude='*.md' \
-            --exclude='.DS_Store' \
-            --exclude='sandbox-*' \
-            --exclude='qubextrack-site.tgz' \
+          # Write archive outside the tree so tar does not see its own output.
+          tar -C "$GITHUB_WORKSPACE" -czf /tmp/qubextrack-site.tgz \
+            --exclude='./.git' \
+            --exclude='./.github' \
+            --exclude='./deploy' \
+            --exclude='./scripts' \
+            --exclude='./doc' \
+            --exclude='./_snippets' \
+            --exclude='./_*.py' \
+            --exclude='./*.md' \
+            --exclude='./.DS_Store' \
+            --exclude='./sandbox-*' \
             .
+          cp -f /tmp/qubextrack-site.tgz "$GITHUB_WORKSPACE/qubextrack-site.tgz"
           ls -lh qubextrack-site.tgz
 
       - name: Upload archive
