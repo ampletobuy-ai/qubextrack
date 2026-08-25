@@ -979,6 +979,53 @@ body:has(section.trackpos-industry-hero) .navbar-brand .trackpos-logo-img {
   color: #e2626b;
 }
 
+.trackpos-module-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trackpos-module-card:hover {
+  transform: translateY(-0.2rem);
+}
+
+.trackpos-modules-strip {
+  border-top: 1px solid rgba(164, 174, 198, 0.2);
+}
+
+.trackpos-modules-strip__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trackpos-modules-strip__links a {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #022957;
+  text-decoration: none;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50rem;
+  background: #e6ebf3;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.trackpos-modules-strip__links a:hover {
+  background: #e61320;
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  .trackpos-modules-grid > [class*="lg:w-1/5"],
+  .trackpos-modules-grid > .lg\:w-1\/5 {
+    flex: 1 1 0;
+    max-width: 20%;
+  }
+}
+
 @media (min-width: 992px) {
   .industry-card__icon i {
     font-size: 3rem;
