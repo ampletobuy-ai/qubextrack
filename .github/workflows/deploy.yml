@@ -216,10 +216,12 @@ jobs:
               exit 1
             fi
             tar -xzf "$ARCHIVE" -C "${STAGE}"
-            rsync -a --delete \
-              --exclude='docker-compose.yml' \
-              --exclude='nginx.conf' \
-              "${STAGE}/" "${DEPLOY_PATH}/"
+            # Portable sync (no rsync required on VPS).
+            find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
+              ! -name 'docker-compose.yml' \
+              ! -name 'nginx.conf' \
+              -exec rm -rf {} +
+            cp -a "${STAGE}/." "${DEPLOY_PATH}/"
             rm -rf "${STAGE}" "$ARCHIVE"
 
             if [ -x /opt/marketing-site/scripts/deploy.sh ]; then
