@@ -1,0 +1,3432 @@
+/* QubexTrack brand colors (www.qubextrack.com) */
+:root {
+  --trackpos-primary: #e61320;
+  --trackpos-primary-hover: #c7101b;
+  --trackpos-primary-soft: #ffe5e7;
+  --trackpos-primary-soft-bg: rgba(230, 19, 32, 0.12);
+  --trackpos-secondary: #022957;
+  --trackpos-secondary-hover: #011c3d;
+  --trackpos-secondary-soft: #e6ebf3;
+  --trackpos-bg-light: #f7f8fa;
+}
+
+.navbar-brand .trackpos-logo-text {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--trackpos-secondary);
+  letter-spacing: -0.02em;
+}
+.navbar-brand .trackpos-logo-text span {
+  color: var(--trackpos-primary);
+}
+
+/* Logo sizing — wider QubexTrack wordmark */
+.navbar .navbar-brand.w-full {
+  width: auto !important;
+  flex: 0 0 auto;
+  max-width: min(70vw, 380px);
+  margin-right: 1rem;
+  padding-block: 0.55rem !important;
+}
+
+.navbar-brand a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.navbar-brand .trackpos-logo-img {
+  height: clamp(3.25rem, 8vw, 4.5rem);
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.trackpos-logo-img {
+  height: clamp(3.25rem, 8vw, 4.5rem);
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+footer .trackpos-footer-logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+footer .trackpos-logo-footer {
+  height: auto;
+  width: auto;
+  max-height: 4.25rem;
+  max-width: min(100%, 320px);
+  display: block;
+  object-fit: contain;
+}
+
+.offcanvas-header .trackpos-logo-offcanvas {
+  height: 3.4rem;
+  width: auto;
+  max-width: 280px;
+}
+
+/* How It Works — infographic (homepage) */
+.trackpos-how-it-works {
+  margin: 0 auto;
+  max-width: 72rem;
+}
+
+.trackpos-how-it-works__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.65rem;
+  box-shadow: 0 0.25rem 1.75rem rgba(30, 34, 40, 0.08);
+}
+
+@media (max-width: 767.98px) {
+  .trackpos-how-it-works-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-inline: -0.75rem;
+    padding-inline: 0.75rem;
+  }
+
+  .trackpos-how-it-works {
+    min-width: 36rem;
+  }
+}
+
+/* How It Works — step icons (filled tiles) */
+.trackpos-how-step {
+  align-items: flex-start;
+  gap: 0;
+}
+
+.trackpos-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: 1.25rem;
+  border-radius: 0.85rem;
+  box-shadow: 0 0.35rem 1.1rem rgba(30, 34, 40, 0.12);
+}
+
+.trackpos-step-icon i {
+  font-size: 1.65rem;
+  line-height: 1;
+  font-style: normal;
+  color: #fff;
+}
+
+.trackpos-step-icon i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+}
+
+.trackpos-step-icon--gold {
+  background: linear-gradient(145deg, #fab758 0%, #e5a84f 100%);
+}
+
+.trackpos-step-icon--navy {
+  background: linear-gradient(145deg, #022957 0%, #001a3d 100%);
+}
+
+.trackpos-step-icon--primary {
+  background: linear-gradient(145deg, #e61320 0%, #e03a45 100%);
+}
+
+@media (min-width: 992px) {
+  .trackpos-step-icon {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .trackpos-step-icon i {
+    font-size: 1.85rem;
+  }
+}
+
+/* Homepage hero — QubexTrack multi-device mockup, transparent PNG */
+.hero-trackpos-figure {
+  background: transparent !important;
+  margin: 0;
+}
+
+.hero-trackpos-img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  margin-inline: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent !important;
+}
+
+@media (min-width: 992px) {
+  .hero-trackpos-img {
+    max-width: min(100%, 680px);
+    margin-inline: 0 auto 0;
+  }
+}
+
+/* Industry workflow tabs — 4 industries */
+.trackpos-industry-tabs-section .tab-content {
+  min-height: 0;
+}
+
+.trackpos-industry-tabs-section .tab-content > .tab-pane:not(.active) {
+  display: none !important;
+}
+
+.industry-workflow-tabs {
+  gap: 0.5rem 0.75rem;
+}
+
+.industry-workflow-tabs .nav-item {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 576px) {
+  .industry-workflow-tabs .nav-item {
+    flex: 1 1 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .industry-workflow-tabs .nav-item {
+    flex: 1 1 calc(33.333% - 1rem);
+    max-width: calc(33.333% - 1rem);
+  }
+}
+
+.industry-workflow-tabs .nav-link h4 {
+  font-size: 0.95rem;
+}
+
+.industry-workflow-tabs .nav-link p {
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+/* Industry feature tabs — nav icons */
+.industry-tab-nav__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: 1.15rem;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.industry-tab-nav__icon i {
+  display: block;
+  font-size: 3rem;
+  line-height: 1;
+  font-style: normal;
+}
+
+@media (min-width: 992px) {
+  .industry-tab-nav__icon {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .industry-tab-nav__icon i,
+  .industry-tab-nav__icon i::before {
+    font-size: 3.35rem;
+  }
+}
+
+.industry-tab-nav__icon i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+}
+
+.industry-tab-nav__icon--gold i,
+.industry-tab-nav__icon--gold i::before {
+  color: #fab758;
+}
+
+.industry-tab-nav__icon--navy i,
+.industry-tab-nav__icon--navy i::before {
+  color: var(--trackpos-secondary);
+}
+
+.industry-tab-nav__icon--red i,
+.industry-tab-nav__icon--red i::before {
+  color: #e2626b;
+}
+
+/* Industry tabs — single product screenshot + lightbox */
+.industry-tab-lightbox {
+  display: block;
+  cursor: zoom-in;
+  text-decoration: none;
+  position: relative;
+}
+
+.industry-tab-lightbox::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(30, 34, 40, 0);
+  transition: background 0.2s ease;
+  pointer-events: none;
+}
+
+.industry-tab-lightbox:hover::after,
+.industry-tab-lightbox:focus-visible::after {
+  background: rgba(30, 34, 40, 0.06);
+}
+
+.industry-tab-lightbox:focus-visible {
+  outline: 2px solid var(--trackpos-primary);
+  outline-offset: 4px;
+  border-radius: 0.25rem;
+}
+
+.industry-tab-screenshot {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.industry-tab-lightbox:hover .industry-tab-screenshot {
+  transform: scale(1.01);
+}
+
+/* Industry landing pages — compact hero (header + hero share #f5f5ff) */
+section.trackpos-industry-hero > .container {
+  padding-top: 1.25rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 1200px) {
+  section.trackpos-industry-hero > .container {
+    padding-top: 2rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+body:has(section.trackpos-industry-hero) .navbar .navbar-brand.w-full {
+  padding-block: 0.45rem !important;
+}
+
+body:has(section.trackpos-industry-hero) .navbar-brand .trackpos-logo-img {
+  height: clamp(3.5rem, 7.5vw, 4.75rem);
+}
+
+/* Hero / landing — screenshot lightbox + thumbnail gallery */
+.trackpos-hero-lightbox {
+  display: block;
+  cursor: zoom-in;
+  text-decoration: none;
+  position: relative;
+}
+
+.trackpos-hero-lightbox::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(30, 34, 40, 0);
+  transition: background 0.2s ease;
+  pointer-events: none;
+}
+
+.trackpos-hero-lightbox:hover::after,
+.trackpos-hero-lightbox:focus-visible::after {
+  background: rgba(30, 34, 40, 0.06);
+}
+
+.trackpos-hero-lightbox:focus-visible {
+  outline: 2px solid var(--trackpos-primary);
+  outline-offset: 4px;
+  border-radius: 0.4rem;
+}
+
+.trackpos-hero-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.trackpos-hero-lightbox:hover .trackpos-hero-screenshot {
+  transform: scale(1.01);
+}
+
+.trackpos-hero-lightbox__hint {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 35, 89, 0.82);
+  border-radius: 0.35rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.trackpos-hero-lightbox:hover .trackpos-hero-lightbox__hint,
+.trackpos-hero-lightbox:focus-visible .trackpos-hero-lightbox__hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trackpos-hero-gallery__caption {
+  margin: 0.65rem 0 0;
+  font-size: 0.72rem;
+  color: #959ca9;
+  text-align: center;
+}
+
+.trackpos-hero-thumbs-wrap {
+  margin: 0.85rem 0 0;
+}
+
+.trackpos-hero-thumbs-rail {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.trackpos-hero-thumbs__viewport {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Edge fade — hints that more thumbnails exist */
+.trackpos-hero-thumbs-rail.can-scroll-left .trackpos-hero-thumbs__viewport::before,
+.trackpos-hero-thumbs-rail.can-scroll-right .trackpos-hero-thumbs__viewport::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.trackpos-hero-thumbs-rail.can-scroll-left .trackpos-hero-thumbs__viewport::before {
+  left: 0;
+  background: linear-gradient(90deg, #f5f5ff 25%, transparent);
+}
+
+.trackpos-hero-thumbs-rail.can-scroll-right .trackpos-hero-thumbs__viewport::after {
+  right: 0;
+  background: linear-gradient(270deg, #f5f5ff 25%, transparent);
+}
+
+.trackpos-hero-thumbs__nav {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  padding: 0;
+  border: 1px solid #e0e6ed;
+  border-radius: 50%;
+  background: #fff;
+  color: #343f52;
+  cursor: pointer;
+  box-shadow: 0 0.15rem 0.5rem rgba(30, 34, 40, 0.06);
+  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.trackpos-hero-thumbs__nav i {
+  font-size: 1.4rem;
+  line-height: 1;
+  font-style: normal;
+  color: inherit;
+}
+
+.trackpos-hero-thumbs__nav i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+}
+
+.trackpos-hero-thumbs__nav--prev i::before {
+  content: "\e92e";
+}
+
+.trackpos-hero-thumbs__nav--next i::before {
+  content: "\e930";
+}
+
+.trackpos-hero-thumbs__nav:hover:not(:disabled),
+.trackpos-hero-thumbs__nav:focus-visible:not(:disabled) {
+  border-color: var(--trackpos-primary);
+  color: var(--trackpos-primary);
+  box-shadow: 0 0.2rem 0.65rem rgba(255, 68, 80, 0.18);
+}
+
+.trackpos-hero-thumbs__nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.trackpos-hero-thumbs-rail:not(.is-scrollable) .trackpos-hero-thumbs__nav {
+  display: none;
+}
+
+.trackpos-hero-thumbs {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 0.65rem;
+  list-style: none;
+  padding: 0.15rem 0.25rem;
+  margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.trackpos-hero-thumbs::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.trackpos-hero-thumbs li {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.trackpos-hero-gallery__extra {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.trackpos-hero-thumbs__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  border: 2px solid #e0e6ed;
+  border-radius: 0.4rem;
+  background: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 6.5rem;
+  flex: 0 0 auto;
+}
+
+.trackpos-hero-thumbs__link:hover,
+.trackpos-hero-thumbs__link:focus-visible {
+  border-color: var(--trackpos-primary);
+  box-shadow: 0 0.15rem 0.75rem rgba(255, 68, 80, 0.15);
+}
+
+.trackpos-hero-thumbs__link.is-active {
+  border-color: var(--trackpos-primary);
+  box-shadow: 0 0.15rem 0.75rem rgba(255, 68, 80, 0.2);
+}
+
+.trackpos-hero-thumbs__link img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  display: block;
+}
+
+.trackpos-hero-thumbs__link span {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #60697b;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.trackpos-hero-thumbs__link.is-active span {
+  color: var(--trackpos-primary);
+}
+
+/* Jewellery POS tab — feature cards with real product photos */
+.jewellery-feature-stack {
+  position: relative;
+  min-height: 22rem;
+  max-width: 26rem;
+  margin-inline: auto;
+}
+
+.jewellery-card {
+  position: absolute;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.25rem 1.75rem rgba(30, 34, 40, 0.12);
+  background: #fff;
+}
+
+.jewellery-card--gold {
+  left: 0;
+  top: 0;
+  width: 52%;
+  z-index: 1;
+}
+
+.jewellery-card--barcode {
+  right: 0;
+  top: 0;
+  width: 48%;
+  z-index: 3;
+}
+
+.jewellery-card--gstr {
+  right: 8%;
+  bottom: 0;
+  width: 52%;
+  z-index: 2;
+}
+
+.jewellery-card__head {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 0.45rem 0.65rem;
+  line-height: 1.2;
+}
+
+.jewellery-card--gold .jewellery-card__head {
+  background: linear-gradient(135deg, #c9a227, #8b6914);
+}
+
+.jewellery-card--barcode .jewellery-card__head {
+  background: var(--trackpos-primary);
+}
+
+.jewellery-card--gstr .jewellery-card__head {
+  background: var(--trackpos-secondary);
+}
+
+.jewellery-card__tag {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: -0.15rem 0.65rem 0.35rem;
+  line-height: 1.2;
+}
+
+.jewellery-card__body--photo {
+  background: #faf6ee;
+  padding: 0;
+}
+
+.jewellery-card__img {
+  width: 100%;
+  height: 11rem;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.jewellery-card__caption {
+  font-size: 0.62rem;
+  color: #60697b;
+  padding: 0.4rem 0.55rem 0.5rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.jewellery-card--barcode .jewellery-card__barcode {
+  height: 2.75rem;
+  margin: 0.5rem 0.65rem 0.35rem;
+  background: repeating-linear-gradient(
+    90deg,
+    #1a1a2e 0,
+    #1a1a2e 2px,
+    #fff 2px,
+    #fff 4px
+  );
+  border: 1px solid #e0e0e0;
+  border-radius: 0.2rem;
+}
+
+.jewellery-card--barcode {
+  background: #fff;
+  padding-bottom: 0.25rem;
+}
+
+.jewellery-card__list {
+  list-style: none;
+  padding: 0.35rem 0.65rem 0.25rem;
+  margin: 0;
+  font-size: 0.62rem;
+  color: #343f52;
+}
+
+.jewellery-card__list li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.jewellery-card__list .dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.jewellery-card__list .dot--ok {
+  background: #45c4a0;
+}
+
+.jewellery-card__list .dot--muted {
+  background: #aab0bc;
+}
+
+.jewellery-card__export {
+  font-size: 0.58rem;
+  color: var(--trackpos-primary);
+  font-weight: 600;
+  padding: 0 0.65rem 0.5rem;
+  margin: 0;
+}
+
+@media (max-width: 575.98px) {
+  .jewellery-feature-stack {
+    min-height: 18rem;
+    max-width: 100%;
+  }
+
+  .jewellery-card__img {
+    height: 8.5rem;
+  }
+}
+
+.trackpos-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50rem;
+  background: var(--trackpos-primary-soft-bg);
+  color: var(--trackpos-primary);
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Unicons glyphs missing from purged style.css */
+.uil-whatsapp:before {
+  content: "\ed9a";
+}
+.uil-phone:before {
+  content: "\ec51";
+}
+.uil-diamond:before {
+  content: "\ea8a";
+}
+.uil-gold:before {
+  content: "\eb49";
+}
+.uil-restaurant:before {
+  content: "\ec87";
+}
+.uil-utensils-alt:before {
+  content: "\ed71";
+}
+.uil-bed:before {
+  content: "\e97a";
+}
+.uil-angle-left-b:before {
+  content: "\e92e";
+}
+.uil-angle-right-b:before {
+  content: "\e930";
+}
+.uil-calendar-alt:before {
+  content: "\e9ba";
+}
+.uil-user-check:before {
+  content: "\ed65";
+}
+.uil-chart-line:before {
+  content: "\e9d3";
+}
+.uil-receipt:before {
+  content: "\ec80";
+}
+.uil-store:before {
+  content: "\ed04";
+}
+.uil-medical-square:before {
+  content: "\ebf1";
+}
+.uil-shopping-cart:before {
+  content: "\ecbd";
+}
+.uil-truck:before {
+  content: "\ed52";
+}
+.uil-package:before {
+  content: "\ec36";
+}
+.uil-file-alt:before {
+  content: "\eaec";
+}
+.uil-money-bill:before {
+  content: "\ec10";
+}
+.uil-exchange:before {
+  content: "\eacf";
+}
+.uil-th:before {
+  content: "\ed31";
+}
+.uil-clipboard-notes:before {
+  content: "\e9e6";
+}
+.uil-credit-card:before {
+  content: "\ea74";
+}
+.uil-file-check-alt:before {
+  content: "\eaf0";
+}
+.uil-print:before {
+  content: "\ec72";
+}
+.uil-cloud:before {
+  content: "\ea19";
+}
+.uil-shield-check:before {
+  content: "\ecb2";
+}
+.uil-file-search-alt:before {
+  content: "\eb12";
+}
+.uil-lock-access:before {
+  content: "\ec11";
+}
+.uil-users-alt:before {
+  content: "\ed70";
+}
+.uil-cloud-upload:before {
+  content: "\ea16";
+}
+.uil-cloud-check:before {
+  content: "\e9f3";
+}
+.uil-database:before {
+  content: "\ea81";
+}
+.uil-check:before {
+  content: "\e9dd";
+}
+.uil-times:before {
+  content: "\ed3b";
+}
+.uil-minus:before {
+  content: "\ec0b";
+}
+.uil-rocket:before {
+  content: "\ec8c";
+}
+.uil-chart-growth:before {
+  content: "\e9d4";
+}
+.uil-chart-bar:before {
+  content: "\e9d0";
+}
+.uil-arrow-right:before {
+  content: "\e94c";
+}
+.uil-headphones-alt:before {
+  content: "\eb5f";
+}
+
+/* Integrations row — large icons, no background box */
+#integrations .integration-item__icon,
+#integrations .integration-item__icon.btn,
+#integrations .integration-item__icon.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0;
+  min-height: 0;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  pointer-events: none;
+}
+
+#integrations .integration-item__icon i,
+#integrations .integration-item__icon i::before {
+  display: block;
+  font-size: 3.25rem;
+  line-height: 1;
+  font-style: normal;
+  width: auto;
+  height: auto;
+}
+
+#integrations .integration-item__icon i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+}
+
+#integrations .integration-item__icon--whatsapp i,
+#integrations .integration-item__icon--whatsapp i::before {
+  color: #25d366;
+}
+
+#integrations .integration-item__icon--primary i,
+#integrations .integration-item__icon--primary i::before {
+  color: var(--trackpos-primary);
+}
+
+#integrations .integration-item__icon--navy i,
+#integrations .integration-item__icon--navy i::before {
+  color: var(--trackpos-secondary);
+}
+
+#integrations .integration-item__icon--gold i,
+#integrations .integration-item__icon--gold i::before {
+  color: #c9a227;
+}
+
+@media (min-width: 992px) {
+  #integrations .integration-item__icon i,
+  #integrations .integration-item__icon i::before {
+    font-size: 4rem;
+  }
+}
+
+/* Industry solutions grid — large icons, no background box */
+.industry-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: auto;
+  height: auto;
+  padding: 0;
+  pointer-events: none;
+}
+
+.industry-card__icon i {
+  display: block;
+  font-size: 2.75rem;
+  line-height: 1;
+  font-style: normal;
+}
+
+.industry-card__icon i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+}
+
+.industry-card__icon--primary i {
+  color: var(--trackpos-primary);
+}
+
+.industry-card__icon--navy i {
+  color: var(--trackpos-secondary);
+}
+
+.industry-card__icon--gold i {
+  color: #c9a227;
+}
+
+.industry-card__icon--red i {
+  color: #e2626b;
+}
+
+@media (min-width: 992px) {
+  .industry-card__icon i {
+    font-size: 3rem;
+  }
+}
+
+.trackpos-float-whatsapp,
+.trackpos-float-call {
+  position: fixed;
+  right: 1.5rem;
+  z-index: 1000;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.trackpos-float-whatsapp {
+  bottom: 5.75rem;
+  background: #25d366;
+  font-size: 1.5rem;
+}
+
+.trackpos-float-whatsapp:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.trackpos-float-call {
+  bottom: 2rem;
+  background: var(--trackpos-primary);
+  font-size: 1.35rem;
+  box-shadow: 0 0.25rem 1rem rgba(255, 68, 80, 0.25);
+}
+
+.trackpos-float-call:hover {
+  color: #fff;
+  background: var(--trackpos-primary-hover);
+  transform: translateY(-3px);
+}
+
+.trackpos-float-whatsapp i,
+.trackpos-float-call i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Scroll-to-top sits below WhatsApp, above call — avoid overlap */
+.progress-wrap {
+  bottom: 8.75rem !important;
+  right: 1.5rem !important;
+}
+
+.industry-card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.2s ease;
+}
+
+.stats-counter .counter {
+  color: var(--trackpos-primary);
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--trackpos-primary) !important;
+  border-color: var(--trackpos-primary) !important;
+  color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--trackpos-primary-hover) !important;
+  border-color: var(--trackpos-primary-hover) !important;
+}
+
+.btn-green,
+.btn-green:hover,
+.btn-green:focus,
+.btn-green:active {
+  background-color: var(--trackpos-secondary) !important;
+  border-color: var(--trackpos-secondary) !important;
+  color: #fff !important;
+}
+.btn-green:hover,
+.btn-green:focus {
+  background-color: var(--trackpos-secondary-hover) !important;
+  border-color: var(--trackpos-secondary-hover) !important;
+}
+
+.btn-outline-primary {
+  color: var(--trackpos-primary) !important;
+  border-color: var(--trackpos-primary) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--trackpos-primary) !important;
+  border-color: var(--trackpos-primary) !important;
+  color: #fff !important;
+}
+
+.btn-soft-primary {
+  background-color: var(--trackpos-primary-soft) !important;
+  color: var(--trackpos-primary) !important;
+}
+.btn-soft-green {
+  background-color: var(--trackpos-secondary-soft) !important;
+  color: var(--trackpos-secondary) !important;
+}
+
+.hover\:!\text-\[\#e61320\]:hover,
+a.hover\:!\text-\[\#e61320\]:hover {
+  color: var(--trackpos-primary) !important;
+}
+
+.progress-wrap.after\:!\text-\[\#e61320\]::after {
+  color: var(--trackpos-primary) !important;
+}
+.progress-wrap .stroke-\[\#e61320\] {
+  stroke: var(--trackpos-primary) !important;
+}
+
+.pricing-switchers .switcher-button {
+  background-color: var(--trackpos-primary) !important;
+}
+
+/* Industry-specific pricing */
+.trackpos-pricing-industries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.trackpos-pricing-industry-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #60697b;
+  background: #fff;
+  border: 1px solid rgba(30, 34, 40, 0.1);
+  border-radius: 50rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.trackpos-pricing-industry-btn i {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.trackpos-pricing-industry-btn:hover {
+  border-color: rgba(255, 68, 80, 0.35);
+  color: var(--trackpos-primary);
+}
+
+.trackpos-pricing-industry-btn.is-active {
+  color: #fff;
+  background: var(--trackpos-primary);
+  border-color: var(--trackpos-primary);
+  box-shadow: 0 0.25rem 0.75rem rgba(255, 68, 80, 0.25);
+}
+
+.trackpos-pricing-industry-btn.is-active:hover {
+  color: #fff;
+}
+
+.trackpos-pricing-disclaimer {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.55;
+}
+
+.trackpos-pricing-industry-label {
+  font-size: 0.9rem;
+  color: #60697b;
+  margin-bottom: 1.25rem;
+}
+
+#pricing,
+#security-compliance,
+#features,
+#integrations {
+  scroll-margin-top: 6rem;
+}
+
+.trackpos-module-badge,
+.trackpos-pricing-plan-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--trackpos-primary);
+  background: #ffe5e7;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.trackpos-module-badge--navy {
+  color: var(--trackpos-secondary);
+  background: #e8eef8;
+}
+
+.trackpos-pricing-industry-tag {
+  display: block;
+  font-size: 0.8rem;
+  color: #60697b;
+  margin-bottom: 0.5rem;
+}
+
+/* Homepage — modern pricing cards */
+.trackpos-home-pricing-grid {
+  align-items: stretch;
+}
+
+.trackpos-home-pricing-card {
+  position: relative;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.5rem 2rem rgba(0, 35, 89, 0.08);
+  border: 1px solid rgba(0, 35, 89, 0.08);
+  background: #ffffff;
+}
+
+.trackpos-home-pricing-card__accent {
+  display: none;
+  height: 0.35rem;
+  background: linear-gradient(90deg, #c9956a 0%, #e8b88a 35%, #d4a574 65%, #b8845a 100%);
+}
+
+.trackpos-home-pricing-card__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 2.25rem;
+}
+
+.trackpos-home-pricing-card__badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #022957;
+  background: rgba(0, 35, 89, 0.1);
+  margin-bottom: 0.25rem;
+}
+
+.trackpos-home-pricing-card__title {
+  margin: 0.65rem 0 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #022957;
+}
+
+.trackpos-home-pricing-card__subtitle {
+  margin: 0.4rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #60697b;
+}
+
+.trackpos-home-pricing-card__price {
+  margin: 1.35rem 0 1.5rem;
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid rgba(0, 35, 89, 0.08);
+  position: relative;
+  min-height: 2.75rem;
+}
+
+.trackpos-home-pricing-card__price .price-hidden,
+.trackpos-home-pricing-card__price .price-hide {
+  display: none !important;
+}
+
+.trackpos-home-pricing-card__price .price-show {
+  display: flex;
+}
+
+.trackpos-home-pricing-card__price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.4rem;
+}
+
+.trackpos-home-pricing-card__currency {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #022957;
+}
+
+.trackpos-home-pricing-card__amount {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #022957;
+}
+
+.trackpos-home-pricing-card__period {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #60697b;
+}
+
+.trackpos-home-pricing-card__save {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 0.1rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: #022957;
+  background: rgba(0, 35, 89, 0.1);
+  border-radius: 999px;
+}
+
+.trackpos-home-pricing-card__price-row.price-show .trackpos-home-pricing-card__save,
+.trackpos-home-pricing-card__price-row:not(.price-hide) .trackpos-home-pricing-card__save {
+  display: inline-flex;
+}
+
+.trackpos-home-pricing-card__features-wrap {
+  flex: 1 1 auto;
+  margin-bottom: 1.75rem;
+}
+
+.trackpos-home-pricing-card__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.trackpos-home-pricing-card__features > li {
+  position: relative;
+  padding-left: 1.65rem;
+  margin-top: 0.55rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: #343f52;
+}
+
+.trackpos-home-pricing-card__features > li:first-child {
+  margin-top: 0;
+}
+
+.trackpos-home-pricing-card__features > li.is-included::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0.12rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 700;
+  border-radius: 50%;
+  background: rgba(255, 68, 80, 0.12);
+  color: #e61320;
+}
+
+.trackpos-home-pricing-card__features > li.is-excluded {
+  color: #949cac;
+}
+
+.trackpos-home-pricing-card__features > li.is-excluded::before {
+  content: "\2715";
+  position: absolute;
+  left: 0;
+  top: 0.12rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.58rem;
+  font-weight: 700;
+  border-radius: 50%;
+  background: rgba(226, 98, 107, 0.12);
+  color: #e2626b;
+}
+
+.trackpos-home-pricing-card__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.trackpos-home-pricing-card__btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.trackpos-home-pricing-card__btn--starter {
+  color: #ffffff;
+  background: #e61320;
+  box-shadow: 0 0.35rem 1rem rgba(255, 68, 80, 0.3);
+}
+
+.trackpos-home-pricing-card__btn--starter:hover {
+  color: #ffffff;
+  background: #e63d48;
+  box-shadow: 0 0.5rem 1.25rem rgba(255, 68, 80, 0.4);
+}
+
+.trackpos-home-pricing-card__btn--pro {
+  color: #ffffff;
+  background: linear-gradient(90deg, #e61320 0%, #ff6b6b 50%, #e61320 100%);
+  background-size: 200% 100%;
+  box-shadow: 0 0.35rem 1.25rem rgba(255, 68, 80, 0.4);
+}
+
+.trackpos-home-pricing-card__btn--pro::after {
+  content: "✦";
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.trackpos-home-pricing-card__btn--pro:hover {
+  color: #ffffff;
+  background-position: 100% 0;
+  box-shadow: 0 0.5rem 1.5rem rgba(255, 68, 80, 0.5);
+}
+
+/* Jewellery industry — premium card themes */
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--starter {
+  background: linear-gradient(165deg, #eef4fb 0%, #f8fbff 45%, #ffffff 100%);
+  border-color: rgba(0, 35, 89, 0.1);
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro {
+  background: linear-gradient(165deg, #1a2d4a 0%, #0f2340 55%, #0a1a33 100%);
+  border-color: rgba(212, 165, 116, 0.25);
+  box-shadow: 0 0.75rem 2.5rem rgba(15, 35, 64, 0.3);
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__accent {
+  display: block;
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__body {
+  padding-top: 1.65rem;
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__badge {
+  background: #ffffff;
+  color: #b8845a;
+  box-shadow: 0 0.15rem 0.5rem rgba(15, 35, 64, 0.2);
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__title {
+  color: #e8b88a;
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__subtitle {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__price {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__currency,
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__amount {
+  color: #e8b88a;
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__period {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__save {
+  color: #b8845a;
+  background: rgba(232, 184, 138, 0.18);
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__features > li {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.trackpos-pricing[data-industry="jewellery"] .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__features > li.is-included::before {
+  background: rgba(232, 184, 138, 0.18);
+  color: #e8b88a;
+}
+
+/* Other industries — highlighted pro card */
+.trackpos-pricing:not([data-industry="jewellery"]) .trackpos-home-pricing-card--pro {
+  border-color: rgba(255, 68, 80, 0.22);
+  box-shadow: 0 0.65rem 2rem rgba(255, 68, 80, 0.1);
+}
+
+.trackpos-pricing:not([data-industry="jewellery"]) .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__save {
+  color: #e61320;
+  background: rgba(255, 68, 80, 0.12);
+}
+
+.trackpos-pricing:not([data-industry="jewellery"]) .trackpos-home-pricing-card--pro .trackpos-home-pricing-card__badge {
+  color: #e61320;
+  background: rgba(255, 68, 80, 0.12);
+}
+
+.trackpos-pricing:not([data-industry="jewellery"]) .trackpos-home-pricing-card-col--pro::before {
+  content: "Most popular";
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  transform: translateY(-50%);
+  z-index: 2;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background: #e61320;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+
+.trackpos-pricing:not([data-industry="jewellery"]) .trackpos-home-pricing-card-col--pro {
+  position: relative;
+}
+
+.trackpos-pricing-save-badge {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #022957;
+  background: rgba(0, 35, 89, 0.1);
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.trackpos-pricing .popular .trackpos-pricing-save-badge {
+  color: #b8845a;
+  background: rgba(255, 68, 80, 0.1);
+}
+
+.trackpos-pricing .pricing.card.popular {
+  border: 2px solid var(--trackpos-primary);
+}
+
+.trackpos-pricing .popular::before {
+  content: 'Most popular';
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: var(--trackpos-primary);
+  padding: 0.25rem 0.65rem;
+  border-radius: 50rem;
+}
+
+.trackpos-pricing .popular {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .trackpos-home-pricing-card__body {
+    min-height: 32rem;
+  }
+
+  .trackpos-pricing .pricing.card .card-body {
+    min-height: 28rem;
+  }
+}
+
+.accordion-wrapper button.before\:!\text-\[\#e61320\]::before,
+.accordion-wrapper button.hover\:!\text-\[\#e61320\]:hover {
+  color: var(--trackpos-primary) !important;
+}
+
+.wrapper.\!bg-\[\#f5f5ff\],
+.bg-soft-primary.\!bg-\[\#f5f5ff\] {
+  background-color: var(--trackpos-bg-light) !important;
+}
+
+#integrations + section [class*="mt-[-22"] {
+  margin-top: 0 !important;
+}
+
+/* Office / branch address lists */
+.trackpos-offices p {
+  margin-bottom: 0.85rem;
+}
+.trackpos-offices p:last-child {
+  margin-bottom: 0;
+}
+.trackpos-offices strong {
+  color: #343f52;
+  font-weight: 600;
+}
+address.trackpos-offices-footer {
+  font-style: normal;
+  line-height: 1.65;
+  font-size: 0.85rem;
+}
+address.trackpos-offices-footer strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Customer review cards — company logo avatars */
+.trackpos-review-logo {
+  width: 5rem !important;
+  height: 5rem !important;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #fff;
+  padding: 0.4rem;
+  flex-shrink: 0;
+  box-shadow: 0 0.15rem 0.5rem rgba(30, 34, 40, 0.08);
+}
+
+@media (min-width: 992px) {
+  .trackpos-review-logo {
+    width: 5.5rem !important;
+    height: 5.5rem !important;
+    padding: 0.45rem;
+  }
+}
+
+/* About page — team member avatars (Tailwind w/h utilities are not in style.css) */
+.trackpos-team-photo {
+  display: block;
+  width: 18rem !important;
+  height: 18rem !important;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+}
+
+.swiper-container .card .trackpos-team-photo {
+  box-sizing: border-box;
+}
+
+/* Data security & compliance sections */
+.trackpos-security-section .trackpos-security-card__icon i,
+.trackpos-security-section .trackpos-security-list li > i,
+.trackpos-security-pricing-note .trackpos-security-card__icon i {
+  font-family: "Unicons", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trackpos-security-section .trackpos-security-card__icon i::before,
+.trackpos-security-section .trackpos-security-list li > i::before,
+.trackpos-security-pricing-note .trackpos-security-card__icon i::before {
+  font-family: "Unicons", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  speak: never;
+  display: block;
+}
+
+.trackpos-security-card__icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #fff5f6 0%, #ffe5e7 100%);
+  color: #e61320;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0.35rem 1rem rgba(255, 68, 80, 0.12);
+}
+
+.trackpos-security-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.trackpos-security-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.65rem;
+  font-size: 0.9rem;
+  color: #60697b;
+  background: #fff;
+  border: 1px solid rgba(8, 60, 130, 0.06);
+  box-shadow: 0 0.15rem 0.5rem rgba(30, 34, 40, 0.04);
+}
+
+.trackpos-security-list li > i {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(145deg, #fff5f6 0%, #ffe5e7 100%);
+  color: #e61320;
+  font-size: 1rem;
+  margin-top: 0.05rem;
+}
+
+/* Modern comparison table */
+.trackpos-security-compare {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(8, 60, 130, 0.08);
+  box-shadow: 0 0.5rem 2rem rgba(30, 34, 40, 0.08);
+}
+
+.trackpos-security-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.875rem;
+  min-width: 40rem;
+  width: 100%;
+}
+
+.trackpos-security-table thead th {
+  padding: 1rem 1.15rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #022957;
+  border-bottom: none;
+}
+
+.trackpos-security-table thead th:first-child {
+  text-align: left;
+  background: #001a3d;
+  min-width: 11rem;
+}
+
+.trackpos-security-table thead th.trackpos-compare-col--us {
+  background: linear-gradient(180deg, #e61320 0%, #e63a45 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.trackpos-security-table tbody td {
+  padding: 0.9rem 1.15rem;
+  border-bottom: 1px solid rgba(8, 60, 130, 0.06);
+  text-align: center;
+  vertical-align: middle;
+  color: #60697b;
+}
+
+.trackpos-security-table tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #343f52;
+  background: #fafbff;
+}
+
+.trackpos-security-table tbody td.trackpos-compare-col--us {
+  background: rgba(255, 68, 80, 0.04);
+}
+
+.trackpos-security-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.trackpos-security-table tbody tr:hover td {
+  background: rgba(245, 245, 255, 0.85);
+}
+
+.trackpos-security-table tbody tr:hover td.trackpos-compare-col--us {
+  background: rgba(255, 68, 80, 0.08);
+}
+
+.trackpos-compare-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 5.5rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.trackpos-compare-pill i {
+  font-family: "Unicons", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.trackpos-compare-pill i::before {
+  font-family: "Unicons", sans-serif;
+  display: block;
+}
+
+.trackpos-compare-pill--yes {
+  background: #e8f8ef;
+  color: #1a7f4b;
+}
+
+.trackpos-compare-pill--yes i::before {
+  content: "\e9dd";
+}
+
+.trackpos-compare-pill--no {
+  background: #fdecec;
+  color: #c0392b;
+}
+
+.trackpos-compare-pill--no i::before {
+  content: "\ed3b";
+}
+
+.trackpos-compare-pill--partial {
+  background: #fff6e6;
+  color: #b36b00;
+}
+
+.trackpos-compare-pill--partial i::before {
+  content: "\ec0b";
+}
+
+.trackpos-compare-pill--strong {
+  background: linear-gradient(135deg, #ffe5e7 0%, #fff0f1 100%);
+  color: #e61320;
+  border: 1px solid rgba(255, 68, 80, 0.2);
+}
+
+.trackpos-compare-pill--strong i::before {
+  content: "\e9dd";
+}
+
+.trackpos-security-pricing-note .trackpos-security-card__icon {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767.98px) {
+  .trackpos-security-compare {
+    border-radius: 0.75rem;
+  }
+
+  .trackpos-security-table thead th,
+  .trackpos-security-table tbody td {
+    padding: 0.7rem 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  .trackpos-compare-pill {
+    min-width: 0;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .trackpos-compare-pill span.pill-label {
+    display: none;
+  }
+}
+
+/* Jewellery page — Starter/Professional pricing cards */
+.trackpos-jewellery-pricing-grid {
+  align-items: stretch;
+}
+
+.trackpos-jewellery-pricing-card {
+  position: relative;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.5rem 2rem rgba(0, 35, 89, 0.1);
+}
+
+/* Starter — light blue gradient */
+.trackpos-jewellery-pricing-card--starter {
+  background: linear-gradient(165deg, #eef4fb 0%, #f8fbff 45%, #ffffff 100%);
+  border: 1px solid rgba(0, 35, 89, 0.1);
+}
+
+/* Professional — deep navy (no black) */
+.trackpos-jewellery-pricing-card--pro {
+  background: linear-gradient(165deg, #1a2d4a 0%, #0f2340 55%, #0a1a33 100%);
+  border: 1px solid rgba(212, 165, 116, 0.25);
+  box-shadow: 0 0.75rem 2.5rem rgba(15, 35, 64, 0.35), 0 0 0 1px rgba(212, 165, 116, 0.08);
+}
+
+.trackpos-jewellery-pricing-card__accent {
+  height: 0.35rem;
+  background: linear-gradient(90deg, #c9956a 0%, #e8b88a 35%, #d4a574 65%, #b8845a 100%);
+}
+
+.trackpos-jewellery-pricing-card__body {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 2.25rem;
+}
+
+.trackpos-jewellery-pricing-card--pro .trackpos-jewellery-pricing-card__body {
+  padding-top: 1.75rem;
+}
+
+/* Badges */
+.trackpos-jewellery-plan-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.trackpos-jewellery-plan-badge--starter {
+  background: rgba(0, 35, 89, 0.1);
+  color: #022957;
+}
+
+.trackpos-jewellery-plan-badge--pro {
+  background: #ffffff;
+  color: #b8845a;
+  box-shadow: 0 0.15rem 0.5rem rgba(15, 35, 64, 0.2);
+}
+
+/* Typography */
+.trackpos-jewellery-pricing-card__title {
+  margin: 0.75rem 0 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.trackpos-jewellery-pricing-card--starter .trackpos-jewellery-pricing-card__title {
+  color: #022957;
+}
+
+.trackpos-jewellery-pricing-card--pro .trackpos-jewellery-pricing-card__title {
+  color: #e8b88a;
+}
+
+.trackpos-jewellery-pricing-card__subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.trackpos-jewellery-pricing-card--starter .trackpos-jewellery-pricing-card__subtitle {
+  color: #4a5568;
+}
+
+.trackpos-jewellery-pricing-card--pro .trackpos-jewellery-pricing-card__subtitle {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Pricing */
+.trackpos-jewellery-pricing-card__price {
+  margin: 1.5rem 0 1.25rem;
+}
+
+.trackpos-jewellery-pricing-card__price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.trackpos-jewellery-pricing-card__price-row > span:not(.trackpos-jewellery-pricing-card__price-save) {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.trackpos-jewellery-pricing-card__price-save {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 0;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  border-radius: 999px;
+}
+
+.trackpos-jewellery-pricing-card--starter .trackpos-jewellery-pricing-card__price-save {
+  color: #022957;
+  background: rgba(0, 35, 89, 0.1);
+}
+
+.trackpos-jewellery-pricing-card--pro .trackpos-jewellery-pricing-card__price-save {
+  color: #b8845a;
+  background: rgba(232, 184, 138, 0.18);
+}
+
+.trackpos-jewellery-pricing-card--starter .trackpos-jewellery-pricing-card__price-row {
+  color: #022957;
+}
+
+.trackpos-jewellery-pricing-card--pro .trackpos-jewellery-pricing-card__price-row {
+  color: #e8b88a;
+}
+
+.trackpos-jewellery-pricing-card__price-or {
+  margin: 0.35rem 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.trackpos-jewellery-pricing-card--starter .trackpos-jewellery-pricing-card__price-or {
+  color: #7a8499;
+}
+
+.trackpos-jewellery-pricing-card--pro .trackpos-jewellery-pricing-card__price-or {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Features */
+.trackpos-jewellery-pricing-card__features {
+  flex: 1 1 auto;
+  margin-bottom: 1.75rem;
+}
+
+.trackpos-jewellery-pricing-card__features-title {
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.trackpos-jewellery-pricing-card--starter .trackpos-jewellery-pricing-card__features-title {
+  color: #022957;
+}
+
+.trackpos-jewellery-pricing-card--pro .trackpos-jewellery-pricing-card__features-title {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.trackpos-jewellery-pricing-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  column-count: 1;
+}
+
+.trackpos-jewellery-pricing-list > li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-top: 0.45rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  break-inside: avoid;
+}
+
+.trackpos-jewellery-pricing-list > li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+/* ---------- QubexTrack modal (competitor comparison, etc.) ---------- */
+html.trackpos-modal-open {
+  overflow: hidden;
+}
+
+.trackpos-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: none;
+}
+
+.trackpos-modal.is-open {
+  display: block;
+}
+
+.trackpos-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.trackpos-modal__dialog {
+  position: relative;
+  margin: 4vh auto;
+  width: min(980px, calc(100vw - 2rem));
+  max-height: 92vh;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.trackpos-modal--wide .trackpos-modal__dialog {
+  width: min(1200px, calc(100vw - 1.5rem));
+}
+
+.trackpos-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid rgba(30, 34, 40, 0.08);
+  background: #f7f8fb;
+}
+
+.trackpos-modal__title {
+  margin: 0;
+  font-family: var(--tp-font-heading, inherit);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #022957;
+}
+
+.trackpos-modal__close {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.15rem 0.4rem;
+  color: #60697b;
+  cursor: pointer;
+}
+
+.trackpos-modal__close:hover {
+  color: #022957;
+}
+
+.trackpos-modal__body {
+  padding: 1rem 1.25rem 1.25rem;
+  max-height: calc(92vh - 3.5rem);
+  overflow: auto;
+}
+
+.trackpos-modal__loading,
+.trackpos-modal__error {
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
+  color: #60697b;
+  font-size: 0.9rem;
+}
+
+.trackpos-modal__error {
+  color: #c0392b;
+}
+
+/* Competitor comparison content inside modal */
+.trackpos-compare-content {
+  color: #343f52;
+}
+
+.trackpos-compare-h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #022957;
+}
+
+.trackpos-compare-h3 {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #022957;
+}
+
+.trackpos-compare-h4 {
+  margin: 1.25rem 0 0.65rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #343f52;
+}
+
+.trackpos-compare-p {
+  margin: 0 0 0.85rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #60697b;
+}
+
+.trackpos-compare-note {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid #e61320;
+  background: #fff8f8;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.trackpos-compare-note p {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: #60697b;
+}
+
+.trackpos-compare-divider {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid rgba(8, 60, 130, 0.1);
+}
+
+.trackpos-compare-list {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #60697b;
+}
+
+.trackpos-compare-list li + li {
+  margin-top: 0.35rem;
+}
+
+.trackpos-compare-code {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  background: #f5f5ff;
+  border-radius: 0.5rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #343f52;
+  white-space: pre-wrap;
+}
+
+.trackpos-compare-wrap {
+  margin: 0 0 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.trackpos-compare-wrap .trackpos-security-table {
+  min-width: 52rem;
+  font-size: 0.82rem;
+}
+
+.trackpos-compare-wrap .trackpos-security-table thead th {
+  font-size: 0.68rem;
+  padding: 0.75rem 0.65rem;
+  white-space: nowrap;
+}
+
+.trackpos-compare-wrap .trackpos-security-table tbody td {
+  padding: 0.65rem 0.65rem;
+  font-size: 0.82rem;
+}
+
+.trackpos-compare-wrap .trackpos-security-table tbody td.trackpos-compare-feature {
+  min-width: 10rem;
+  max-width: 14rem;
+}
+
+.trackpos-compare-wrap .trackpos-compare-pill {
+  min-width: 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.78rem;
+}
+
+.trackpos-compare-stars {
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Inline comparison link (homepage industry tabs) */
+.trackpos-compare-inline-link {
+  font-weight: 600;
+  color: #e61320;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 68, 80, 0.35);
+  text-underline-offset: 0.15em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.trackpos-compare-inline-link:hover,
+.trackpos-compare-inline-link:focus-visible {
+  color: #e63946;
+  text-decoration-color: #e61320;
+}
+
+/* Homepage / industry — comparison CTA card */
+.trackpos-compare-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 36rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(135deg, #ffffff 0%, #fff8f8 48%, #f5f5ff 100%);
+  border: 1px solid rgba(255, 68, 80, 0.18);
+  box-shadow: 0 0.35rem 1.25rem rgba(255, 68, 80, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.trackpos-compare-cta:hover,
+.trackpos-compare-cta:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(255, 68, 80, 0.35);
+  box-shadow: 0 0.65rem 1.75rem rgba(255, 68, 80, 0.14);
+  color: inherit;
+  text-decoration: none;
+}
+
+.trackpos-compare-cta:focus-visible {
+  outline: 2px solid rgba(255, 68, 80, 0.45);
+  outline-offset: 2px;
+}
+
+.trackpos-compare-cta__glow {
+  position: absolute;
+  top: -2.5rem;
+  right: -1rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 68, 80, 0.14) 0%, rgba(255, 68, 80, 0) 70%);
+  pointer-events: none;
+}
+
+.trackpos-compare-cta__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.85rem;
+  background: linear-gradient(145deg, #e61320 0%, #e63946 100%);
+  color: #fff;
+  box-shadow: 0 0.35rem 0.9rem rgba(255, 68, 80, 0.28);
+}
+
+.trackpos-compare-cta__icon i {
+  font-size: 1.35rem;
+  line-height: 1;
+  font-style: normal;
+  color: #fff;
+}
+
+.trackpos-compare-cta__icon i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+  display: block;
+}
+
+.trackpos-compare-cta__action i {
+  font-style: normal;
+}
+
+.trackpos-compare-cta__action i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+  display: block;
+}
+
+.trackpos-compare-cta__content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.trackpos-compare-cta__eyebrow {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e61320;
+}
+
+.trackpos-compare-cta__title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #022957;
+}
+
+.trackpos-compare-cta__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.trackpos-compare-cta__tags span {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #60697b;
+  background: rgba(0, 35, 89, 0.06);
+}
+
+.trackpos-compare-cta__action {
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #e61320;
+  white-space: nowrap;
+}
+
+.trackpos-compare-cta__action i {
+  font-size: 1rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.trackpos-compare-cta:hover .trackpos-compare-cta__action i {
+  transform: translateX(3px);
+}
+
+@media (min-width: 768px) {
+  .trackpos-compare-cta__action {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .trackpos-compare-cta {
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  .trackpos-compare-cta__action {
+    display: inline-flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+.trackpos-modal__pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #2f3a4a;
+}
+
+.trackpos-jewellery-pricing-card--starter .trackpos-jewellery-pricing-list > li {
+  color: #343f52;
+}
+
+.trackpos-jewellery-pricing-card--starter .trackpos-jewellery-pricing-list > li::before {
+  background: rgba(0, 35, 89, 0.08);
+  color: #022957;
+}
+
+.trackpos-jewellery-pricing-card--pro .trackpos-jewellery-pricing-list > li {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.trackpos-jewellery-pricing-card--pro .trackpos-jewellery-pricing-list > li::before {
+  background: rgba(232, 184, 138, 0.15);
+  color: #e8b88a;
+}
+
+@media (min-width: 992px) {
+  .trackpos-jewellery-pricing-list {
+    column-count: 2;
+    column-gap: 1.25rem;
+  }
+}
+
+/* CTA buttons */
+.trackpos-jewellery-pricing-card__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.trackpos-jewellery-pricing-card__btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.trackpos-jewellery-pricing-card__btn--starter {
+  color: #ffffff;
+  background: #e61320;
+  box-shadow: 0 0.35rem 1rem rgba(255, 68, 80, 0.35);
+}
+
+.trackpos-jewellery-pricing-card__btn--starter:hover {
+  color: #ffffff;
+  background: #e63d48;
+  box-shadow: 0 0.5rem 1.25rem rgba(255, 68, 80, 0.45);
+}
+
+.trackpos-jewellery-pricing-card__btn--pro {
+  color: #ffffff;
+  background: linear-gradient(90deg, #e61320 0%, #ff6b6b 50%, #e61320 100%);
+  background-size: 200% 100%;
+  box-shadow: 0 0.35rem 1.25rem rgba(255, 68, 80, 0.45);
+}
+
+.trackpos-jewellery-pricing-card__btn--pro::after {
+  content: "✦";
+  font-size: 0.95rem;
+  line-height: 1;
+  opacity: 0.95;
+}
+
+.trackpos-jewellery-pricing-card__btn--pro:hover {
+  color: #ffffff;
+  background-position: 100% 0;
+  box-shadow: 0 0.5rem 1.5rem rgba(255, 68, 80, 0.55);
+}
+
+/* Contact page — mobile layout (prevent horizontal clip / 100vw overflow) */
+.trackpos-contact-page {
+  overflow-x: clip;
+}
+
+@media (max-width: 991.98px) {
+  .trackpos-contact-upper.upper-end::before {
+    border-right-width: 100% !important;
+    right: 0;
+    left: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .trackpos-contact-upper.upper-end::before {
+    display: none;
+  }
+
+  .trackpos-contact-card-col {
+    margin-top: -5rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .trackpos-contact-card .map iframe {
+    min-height: 12rem;
+  }
+
+  .trackpos-contact-form-section {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .trackpos-contact-form-section > div {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  .contact-form .form-control,
+  .contact-form .form-select {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-form .messages .alert {
+    word-break: break-word;
+  }
+
+  .trackpos-recaptcha-v3-note {
+    font-size: 0.75rem;
+    padding: 0 0.25rem;
+  }
+
+  .contact-form .btn-send {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .grecaptcha-badge {
+    transform: scale(0.85);
+    transform-origin: right bottom;
+  }
+}
+
+/* Contact form — required markers & validation */
+.trackpos-required-asterisk {
+  color: #e61320;
+  font-weight: 700;
+}
+
+.contact-form.was-validated .form-control:invalid,
+.contact-form.was-validated .form-select:invalid {
+  border-color: #e61320 !important;
+}
+
+.contact-form.was-validated .form-floating .form-control:invalid ~ label,
+.contact-form.was-validated .trackpos-select-label {
+  color: #959ca9;
+}
+
+.contact-form.was-validated .invalid-feedback {
+  display: block;
+  color: #e61320;
+}
+
+.contact-form .btn-send[aria-busy="true"] {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+.trackpos-select-label {
+  font-family: Manrope, sans-serif;
+}
+
+/* Contact form — honeypot (hidden from users, traps bots) */
+.trackpos-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.trackpos-recaptcha-v3-note {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #aab0bc;
+  line-height: 1.55;
+}
+
+.trackpos-recaptcha-v3-note a {
+  color: #60697b;
+  text-decoration: underline;
+}
+
+.trackpos-recaptcha-v3-note a:hover {
+  color: #e61320;
+}
+
+.grecaptcha-badge {
+  z-index: 999;
+}
+
+.trackpos-recaptcha-wrap--v3 #trackpos-recaptcha {
+  display: none !important;
+}
+
+#trackpos-recaptcha-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+#trackpos-recaptcha {
+  display: inline-block;
+}
+
+/* About page — large client logo beside testimonial slider */
+.trackpos-review-feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 28.4375rem;
+  aspect-ratio: 455 / 620;
+  margin-inline: auto;
+  padding: 2.5rem 2rem;
+  background: #fff;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.25rem 1.75rem rgba(30, 34, 40, 0.07);
+}
+
+.trackpos-review-feature__img {
+  width: 100%;
+  max-width: 20rem;
+  max-height: 100%;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+}
+
+.trackpos-review-feature__img.is-updating {
+  opacity: 0.35;
+}
+
+/* Jewellery page — presentation-style capability slides */
+.jewellery-deck {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .jewellery-deck {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+    align-items: stretch;
+  }
+}
+
+.jewellery-slide {
+  position: relative;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0.35rem 2rem rgba(30, 34, 40, 0.1);
+  border: 1px solid rgba(30, 34, 40, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.jewellery-slide__chrome {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1rem;
+  background: linear-gradient(180deg, #f8f9fc 0%, #eef1f6 100%);
+  border-bottom: 1px solid rgba(30, 34, 40, 0.06);
+}
+
+.jewellery-slide__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #dde2ea;
+}
+
+.jewellery-slide__dot--close {
+  background: #ff6b6b;
+}
+
+.jewellery-slide__dot--min {
+  background: #fcc032;
+}
+
+.jewellery-slide__dot--max {
+  background: #45c4a0;
+}
+
+.jewellery-slide__titlebar {
+  flex: 1;
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #aab0bc;
+  margin: 0;
+}
+
+.jewellery-slide__head {
+  padding: 1.35rem 1.35rem 0.75rem;
+}
+
+.jewellery-slide__head--now {
+  background: linear-gradient(135deg, rgba(255, 68, 80, 0.08) 0%, rgba(255, 255, 255, 0) 55%);
+}
+
+.jewellery-slide__head--next {
+  background: linear-gradient(135deg, rgba(0, 35, 89, 0.07) 0%, rgba(255, 255, 255, 0) 55%);
+}
+
+.jewellery-slide__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 50rem;
+  margin-bottom: 0.65rem;
+}
+
+.jewellery-slide__badge--now {
+  color: var(--trackpos-primary);
+  background: var(--trackpos-primary-soft);
+}
+
+.jewellery-slide__badge--next {
+  color: var(--trackpos-secondary);
+  background: var(--trackpos-secondary-soft);
+}
+
+.jewellery-slide__head h3 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
+}
+
+.jewellery-slide__head p {
+  font-size: 0.8rem;
+  color: #60697b;
+  margin-bottom: 0;
+}
+
+.jewellery-slide__body {
+  padding: 0 1.15rem 1.35rem;
+  flex: 1;
+}
+
+.jewellery-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+}
+
+@media (min-width: 576px) {
+  .jewellery-feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.jewellery-feature-tile {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.7rem 0.75rem;
+  border-radius: 0.55rem;
+  background: #f8f9fc;
+  border: 1px solid rgba(30, 34, 40, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jewellery-feature-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.35rem 1rem rgba(30, 34, 40, 0.08);
+}
+
+.jewellery-feature-tile__icon {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.jewellery-feature-tile__icon i,
+.jewellery-feature-tile__icon i::before,
+.jewellery-slide__badge i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+  font-style: normal;
+}
+
+.jewellery-feature-tile__icon--gold {
+  background: linear-gradient(145deg, #fff8ee 0%, #fdecd0 100%);
+  color: #c9a227;
+}
+
+.jewellery-feature-tile__icon--primary {
+  background: linear-gradient(145deg, #ffe5e7 0%, #ffd4d8 100%);
+  color: var(--trackpos-primary);
+}
+
+.jewellery-feature-tile__icon--navy {
+  background: linear-gradient(145deg, #e6ebf3 0%, #d4dceb 100%);
+  color: var(--trackpos-secondary);
+}
+
+.jewellery-feature-tile__text {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #343f52;
+  font-weight: 500;
+  margin: 0;
+}
+
+.jewellery-roadmap {
+  position: relative;
+  padding-left: 0.25rem;
+}
+
+.jewellery-roadmap__step {
+  display: flex;
+  gap: 0.85rem;
+  position: relative;
+  padding-bottom: 1.1rem;
+}
+
+.jewellery-roadmap__step:last-child {
+  padding-bottom: 0;
+}
+
+.jewellery-roadmap__step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 1.05rem;
+  top: 2.35rem;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--trackpos-secondary) 0%, rgba(0, 35, 89, 0.15) 100%);
+  border-radius: 2px;
+}
+
+.jewellery-roadmap__num {
+  flex-shrink: 0;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(145deg, var(--trackpos-secondary) 0%, #001a42 100%);
+  box-shadow: 0 0.2rem 0.65rem rgba(0, 35, 89, 0.25);
+  z-index: 1;
+}
+
+.jewellery-roadmap__content h5 {
+  font-size: 0.85rem;
+  margin-bottom: 0.15rem;
+  color: #343f52;
+}
+
+.jewellery-roadmap__content p {
+  font-size: 0.75rem;
+  color: #60697b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Industry pages — journey-map workflow (serpentine path) */
+.trackpos-flows {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.trackpos-flow {
+  --flow-accent: #e61320;
+  --flow-accent-2: #022957;
+  --flow-glow: rgba(255, 68, 80, 0.14);
+  --flow-line: rgba(255, 68, 80, 0.35);
+  position: relative;
+  border-radius: 1.15rem;
+  padding: 1.5rem 1.15rem 1.65rem;
+  background:
+    radial-gradient(ellipse 90% 70% at 100% 0%, var(--flow-glow) 0%, transparent 55%),
+    linear-gradient(165deg, #fff 0%, #f8f9fd 100%);
+  border: 1px solid rgba(30, 34, 40, 0.07);
+  box-shadow: 0 0.5rem 2.25rem rgba(30, 34, 40, 0.07);
+  overflow: hidden;
+}
+
+.trackpos-flow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--flow-accent) 0%, var(--flow-accent-2) 100%);
+}
+
+.trackpos-flow--navy {
+  --flow-accent: #022957;
+  --flow-accent-2: #e61320;
+  --flow-glow: rgba(0, 35, 89, 0.12);
+  --flow-line: rgba(0, 35, 89, 0.35);
+}
+
+@media (min-width: 768px) {
+  .trackpos-flow {
+    padding: 1.85rem 1.65rem 2rem;
+  }
+}
+
+.trackpos-flow__intro {
+  position: relative;
+  z-index: 1;
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
+}
+
+.trackpos-flow__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--flow-accent);
+  background: color-mix(in srgb, var(--flow-accent) 12%, transparent);
+  padding: 0.3rem 0.7rem;
+  border-radius: 50rem;
+  margin-bottom: 0.7rem;
+}
+
+.trackpos-flow__intro h3 {
+  font-size: 1.4rem;
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+
+.trackpos-flow__intro p {
+  font-size: 0.9rem;
+  color: #60697b;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.trackpos-flow__path {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: vertical pipeline with arrow chips */
+.trackpos-flow__stop {
+  position: relative;
+  padding-bottom: 0.85rem;
+}
+
+.trackpos-flow__stop:last-child {
+  padding-bottom: 0;
+}
+
+.trackpos-flow__stop:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 0.85rem;
+  margin: 0.35rem auto 0;
+  background: linear-gradient(180deg, var(--flow-line) 0%, transparent 100%);
+}
+
+.trackpos-flow__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: 1rem 1rem 0.95rem 0.85rem;
+  background: #fff;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(30, 34, 40, 0.07);
+  box-shadow: 0 0.35rem 1.25rem rgba(30, 34, 40, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.trackpos-flow__card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--flow-accent) 25%, transparent);
+  box-shadow: 0 0.65rem 1.75rem rgba(30, 34, 40, 0.1);
+}
+
+.trackpos-flow__index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(145deg, var(--flow-accent) 0%, color-mix(in srgb, var(--flow-accent) 75%, #000) 100%);
+  box-shadow: 0 0.35rem 0.9rem color-mix(in srgb, var(--flow-accent) 35%, transparent);
+}
+
+.trackpos-flow__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--flow-accent) 10%, #fff);
+  color: var(--flow-accent);
+  margin-bottom: 0.1rem;
+}
+
+.trackpos-flow__icon i {
+  font-size: 1.05rem;
+  line-height: 1;
+  font-style: normal;
+}
+
+.trackpos-flow__icon i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+}
+
+.trackpos-flow__title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #343f52;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.trackpos-flow__desc {
+  font-size: 0.78rem;
+  color: #60697b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.trackpos-flow__card::before {
+  content: attr(data-step);
+  position: absolute;
+  top: 0.15rem;
+  right: 0.55rem;
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--flow-accent);
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Serpentine bend (hidden on mobile list) */
+.trackpos-flow__bend {
+  display: none;
+  list-style: none;
+}
+
+/* Desktop serpentine: 3 → bend → 3 */
+@media (min-width: 992px) {
+  .trackpos-flow__path {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+    gap: 1.15rem 1.35rem;
+    align-items: stretch;
+  }
+
+  .trackpos-flow__stop {
+    padding-bottom: 0;
+  }
+
+  .trackpos-flow__stop::after {
+    display: none !important;
+  }
+
+  .trackpos-flow__stop:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .trackpos-flow__stop:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .trackpos-flow__stop:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .trackpos-flow__bend {
+    display: block;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    position: relative;
+    height: 2.75rem;
+    margin: 0.15rem 0;
+  }
+
+  .trackpos-flow__bend::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 12%;
+    width: 76%;
+    height: 100%;
+    border: 2px dashed var(--flow-line);
+    border-top: none;
+    border-radius: 0 0 1.25rem 1.25rem;
+    opacity: 0.85;
+  }
+
+  .trackpos-flow__bend::after {
+    content: "↓";
+    position: absolute;
+    left: 50%;
+    bottom: -0.15rem;
+    transform: translateX(-50%);
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--flow-accent);
+    background: #fff;
+    border: 2px solid color-mix(in srgb, var(--flow-accent) 30%, transparent);
+    border-radius: 50%;
+    box-shadow: 0 0.25rem 0.75rem rgba(30, 34, 40, 0.08);
+  }
+
+  .trackpos-flow__stop:nth-child(5) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+
+  .trackpos-flow__stop:nth-child(6) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .trackpos-flow__stop:nth-child(7) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  /* Arrow chips between top-row cards */
+  .trackpos-flow__stop:nth-child(1)::before,
+  .trackpos-flow__stop:nth-child(2)::before {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: -1.05rem;
+    transform: translateY(-50%);
+    z-index: 2;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--flow-accent);
+    text-shadow: 0 0 8px #fff;
+  }
+
+  .trackpos-flow__stop:nth-child(6)::before,
+  .trackpos-flow__stop:nth-child(7)::before {
+    content: "←";
+    position: absolute;
+    top: 50%;
+    left: -1.05rem;
+    transform: translateY(-50%);
+    z-index: 2;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--flow-accent);
+    text-shadow: 0 0 8px #fff;
+  }
+
+  .trackpos-flow__card {
+    align-items: center;
+    text-align: center;
+    padding: 1.15rem 0.85rem 1rem;
+    min-height: 9.5rem;
+  }
+
+  .trackpos-flow__index {
+    margin: 0 auto 0.35rem;
+  }
+
+  .trackpos-flow__icon {
+    margin: 0 auto 0.15rem;
+  }
+
+  .trackpos-flow__card::before {
+    font-size: 3.25rem;
+    top: 0.35rem;
+    right: 0.65rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .trackpos-flow__intro h3 {
+    font-size: 1.5rem;
+  }
+
+  .trackpos-flow__card {
+    min-height: 10rem;
+  }
+}
+
+/* ---------- Module sign-in chooser ---------- */
+.trackpos-modal--signin .trackpos-signin-dialog {
+  width: min(440px, calc(100vw - 2rem));
+}
+
+.trackpos-signin-lead {
+  margin: 0 0 1rem;
+  color: #60697b;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.trackpos-signin-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.trackpos-signin-option {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(30, 34, 40, 0.1);
+  border-radius: 0.65rem;
+  background: #fff;
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+
+.trackpos-signin-option:hover {
+  border-color: rgba(255, 68, 80, 0.45);
+  background: #fff8f8;
+  transform: translateY(-1px);
+  color: inherit;
+}
+
+.trackpos-signin-option__icon {
+  flex: 0 0 2.4rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: #ffe5e7;
+  color: #e61320;
+  font-size: 1.15rem;
+}
+
+.trackpos-signin-option__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.trackpos-signin-option__label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #022957;
+  line-height: 1.25;
+}
+
+.trackpos-signin-option__blurb {
+  font-size: 0.78rem;
+  color: #60697b;
+  line-height: 1.35;
+}
+
+.trackpos-signin-option__arrow {
+  flex: 0 0 auto;
+  color: #aab0bc;
+  font-size: 1.1rem;
+}
+
+.trackpos-signin-option:hover .trackpos-signin-option__arrow {
+  color: #e61320;
+}
+
+.btn-signin-outline {
+  color: #022957 !important;
+  background: transparent !important;
+  border-color: #022957 !important;
+}
+
+.btn-signin-outline:hover,
+.btn-signin-outline:focus,
+.btn-signin-outline:active {
+  color: #fff !important;
+  background: #022957 !important;
+  border-color: #022957 !important;
+}

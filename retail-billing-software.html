@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Retail POS &amp; billing — barcode counter sales, inventory with batch/serial tracking, purchases, cash &amp; bank, and GSTR-1 / GSTR-3B reports on QubexTrack.">
+  <meta name="keywords" content="QubexTrack, retail POS India, barcode billing, GST billing, inventory software, purchase billing, GSTR-1">
+  <link rel="canonical" href="https://www.qubextrack.com/retail-billing-software.html">
+  <title>Retail POS, Inventory &amp; GST Billing India | QubexTrack</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/img/favicon-48.png">
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="./assets/fonts/unicons/unicons.css">
+  <link rel="stylesheet" href="./assets/css/plugins.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./assets/css/trackpos.css">
+  <link rel="stylesheet" href="./assets/css/fonts/dm.css">
+</head>
+<body class="font-Manrope text-[0.8rem] !leading-[1.7] font-medium">
+  <div class="grow shrink-0">
+        <header class="relative wrapper !bg-[#f5f5ff]">
+      <nav class="navbar navbar-expand-lg classic transparent navbar-light">
+        <div class="container xl:!flex-row lg:!flex-row !flex-nowrap items-center">
+          <div class="navbar-brand w-full">
+            <a href="./index.html" aria-label="QubexTrack home">
+              <img class="trackpos-logo-img" src="./assets/img/qubextrack-logo.png?v=20260822" alt="QubexTrack">
+            </a>
+          </div>
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+            <div class="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between flex-row p-6">
+              <a href="./index.html"><img class="trackpos-logo-offcanvas" src="./assets/img/qubextrack-logo-footer.png?v=20260822" alt="QubexTrack"></a>
+              <button type="button" class="btn-close btn-close-white !mr-[-0.75rem] m-0 p-0 leading-none !text-[#343f52] transition-all duration-[0.2s] ease-in-out border-0 motion-reduce:transition-none before:text-[1.05rem] before:text-white before:content-['\ed3b'] before:w-[1.8rem] before:h-[1.8rem] before:leading-[1.8rem] before:shadow-none before:transition-[background] before:duration-[0.2s] before:ease-in-out before:!flex before:justify-center before:items-center before:m-0 before:p-0 before:rounded-[100%] hover:no-underline bg-inherit before:bg-[rgba(255,255,255,.08)] before:font-Unicons hover:before:bg-[rgba(0,0,0,.11)]  " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body xl:!ml-auto lg:!ml-auto flex  flex-col !h-full">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Industries</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="./jewellery-pos-software.html">Jewellery POS</a></li>
+                    <li><a class="dropdown-item" href="./restaurant-pos-software.html">Restaurant POS</a></li>
+                    <li><a class="dropdown-item" href="./hotel-management-software.html">Hotel Software</a></li>
+                    <li><a class="dropdown-item" href="./retail-billing-software.html">Retail Billing</a></li>
+</ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="./index.html#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="./index.html#integrations">Integrations</a></li>
+                <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-trackpos-modal-open="#modal-module-signin">Login</a></li>
+
+              </ul>
+              <!-- /.navbar-nav -->
+              <div class="offcanvas-footer xl:!hidden lg:!hidden">
+                <div>
+                  <a href="mailto:support@qubextrack.com" class="link-inverse">support@qubextrack.com</a>
+                  <br> +91-9348457123 <br>
+                  <nav class="nav social social-white !mt-4">
+                  <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://x.com/qubextrack" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="uil uil-twitter before:content-['\ed59'] !text-white text-[1rem]"></i></a>
+                  <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.facebook.com/qubextrack/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="uil uil-facebook-f before:content-['\eae2'] !text-white text-[1rem]"></i></a>
+                  <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.linkedin.com/company/qubextrack/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="uil uil-linkedin before:content-['\ebd1'] !text-white text-[1rem]"></i></a>
+                  <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.instagram.com/qubextrack/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="uil uil-instagram before:content-['\eb9c'] !text-white text-[1rem]"></i></a>
+                  <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.youtube.com/@qubextrack" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="uil uil-youtube before:content-['\edb5'] !text-white text-[1rem]"></i></a>
+                  </nav>
+                  <!-- /.social -->
+                </div>
+              </div>
+              <!-- /.offcanvas-footer -->
+            </div>
+            <!-- /.offcanvas-body -->
+          </div>
+          <!-- /.navbar-collapse -->
+          <div class="navbar-other lg:!ml-4 xl:!ml-4">
+            <ul class="navbar-nav !flex-row !items-center !ml-auto">
+              <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle before:content-['\eb99'] !text-[1.1rem]"></i></a></li>
+              <li class="nav-item hidden xl:flex lg:flex md:flex !flex-row !items-center !gap-2 !flex-nowrap">
+                                <a href="#" class="btn btn-sm btn-green !text-white !bg-[#022957] border-[#022957] hover:text-white hover:bg-[#022957] hover:!border-[#022957] active:text-white active:bg-[#022957] active:border-[#022957] disabled:text-white disabled:bg-[#022957] disabled:border-[#022957] !rounded-[50rem] !whitespace-nowrap" data-trackpos-modal-open="#modal-module-signin">Free Trial</a>
+                <a href="tel:+919348457123" class="btn btn-sm btn-primary !text-white !bg-[#e61320] border-[#e61320] hover:text-white hover:bg-[#e61320] hover:!border-[#e61320] active:text-white active:bg-[#e61320] active:border-[#e61320] disabled:text-white disabled:bg-[#e61320] disabled:border-[#e61320] !rounded-[50rem] !whitespace-nowrap">Call Us</a>
+              </li>
+              <li class="nav-item xl:!hidden lg:!hidden">
+                <button class="hamburger offcanvas-nav-btn"><span></span></button>
+              </li>
+            </ul>
+            <!-- /.navbar-nav -->
+          </div>
+          <!-- /.navbar-other -->
+        </div>
+        <!-- /.container -->
+      </nav>
+      <!-- /.navbar -->
+      <div class="offcanvas offcanvas-end text-inverse !text-[#cacaca] opacity-100" id="offcanvas-info" data-bs-scroll="true">
+        <div class="offcanvas-header flex flex-row items-center justify-between p-[1.5rem]">
+          <a href="./index.html"><img class="trackpos-logo-offcanvas" src="./assets/img/qubextrack-logo-footer.png?v=20260822" alt="QubexTrack"></a>
+          <button type="button" class="btn-close btn-close-white !mr-[-0.5rem] m-0 p-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body !pb-[1.5rem]">
+          <div class="widget !mb-8">
+            <p>QubexTrack is industry-specific POS & business management software for jewellery, restaurant, hotel and retail businesses in India.</p>
+          </div>
+          <!-- /.widget -->
+          <div class="widget !mb-8">
+            <h4 class="widget-title !text-white !mb-[0.75rem] !text-[.95rem] !leading-[1.45]">Contact Info</h4>
+            <a class="!text-[#cacaca] hover:!text-[#e61320]" href="mailto:support@qubextrack.com">support@qubextrack.com</a><br> +91-9348457123
+          </div>
+          <!-- /.widget -->
+          <div class="widget !mb-8">
+            <h4 class="widget-title !text-white !mb-[0.75rem] !text-[.95rem] !leading-[1.45]">Learn More</h4>
+            <ul class="list-unstyled !pl-0">
+              <li><a class="!text-[#cacaca] hover:!text-[#e61320]" href="./about.html">Our Story</a></li>
+              <li class="!mt-[.35rem]"><a class="!text-[#cacaca] hover:!text-[#e61320]" href="./terms.html">Terms of Use</a></li>
+              <li class="!mt-[.35rem]"><a class="!text-[#cacaca] hover:!text-[#e61320]" href="./terms.html#data-security">Privacy Policy</a></li>
+              <li class="!mt-[.35rem]"><a class="!text-[#cacaca] hover:!text-[#e61320]" href="./contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+          <div class="widget">
+            <h4 class="widget-title !text-white !mb-[0.75rem] !text-[.95rem] !leading-[1.45]">Follow Us</h4>
+            <nav class="nav social social-white">
+              <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://x.com/qubextrack" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="uil uil-twitter before:content-['\ed59'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.facebook.com/qubextrack/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="uil uil-facebook-f before:content-['\eae2'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.linkedin.com/company/qubextrack/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="uil uil-linkedin before:content-['\ebd1'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.instagram.com/qubextrack/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="uil uil-instagram before:content-['\eb9c'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.youtube.com/@qubextrack" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="uil uil-youtube before:content-['\edb5'] !text-white text-[1rem]"></i></a>
+              </nav>
+            <!-- /.social -->
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /.offcanvas-body -->
+      </div>
+      <!-- /.offcanvas -->
+    </header>
+    <!-- /header -->
+    <section class="wrapper !bg-[#f5f5ff] trackpos-industry-hero">
+      <div class="container">
+        <div class="flex flex-wrap mx-[-15px] items-center">
+          <div class="lg:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full">
+            <h1 class="xl:!text-[2.4rem] !text-[calc(1.375rem_+_1.5vw)] !font-DMSerif !leading-[1.15] !mb-4">Retail POS, Inventory &amp; GST Billing</h1>
+            <p class="lead !mb-4">Web-based POS and business management for kirana, garment, electronics, and general retail — from counter sale to purchase, stock, and compliance.</p>
+            <p class="!mb-6 !text-[#60697b]">Run barcode POS, full sales invoices, multi-warehouse stock (regular, batch, or serial), supplier purchases, party payments, cash &amp; bank, and India GST reports — with role-based menus per your team.</p>
+            <a href="./contact.html" class="btn btn-lg btn-primary !text-white !bg-[#e61320] border-[#e61320] !rounded !mr-2">Book Free Demo</a>
+            <a href="https://wa.me/919348457123" target="_blank" rel="noopener" class="btn btn-lg btn-outline-primary !rounded">WhatsApp</a>
+          </div>
+          <div class="lg:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-8 lg:!mt-0">
+            <figure class="trackpos-hero-gallery !mb-0">
+              <a href="./assets/img/photos/retail-pos-screenshot.png" class="trackpos-hero-lightbox" data-glightbox="gallery: retail-product; title: Retail POS; description: Customer profile, sales history, party balance and GST-ready billing" aria-label="View product screenshots — retail POS (1 of 3)">
+                <img class="trackpos-hero-screenshot rounded-[.4rem] !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] w-full" src="./assets/img/photos/retail-pos-screenshot.png" width="1024" height="496" alt="QubexTrack retail POS — customer profile, sales history and GST billing">
+                <span class="trackpos-hero-lightbox__hint" aria-hidden="true"><i class="uil uil-expand-arrows-alt before:content-['\eb9f']"></i> Click to enlarge</span>
+              </a>
+              <a href="./assets/img/photos/hotel-profit-loss-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: retail-product; title: Profit &amp; loss; description: Revenue, COGS, operating expenses, and net profit with margin charts" tabindex="-1" aria-hidden="true">Profit and loss screenshot</a>
+              <a href="./assets/img/photos/hotel-gstr1-report-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: retail-product; title: Bill wise GSTR-1; description: GST report with taxable base, tax breakup, and export for filing" tabindex="-1" aria-hidden="true">GSTR-1 report screenshot</a>
+              <figcaption class="trackpos-hero-gallery__caption">Product screenshots — click the image or a thumbnail to view full size</figcaption>
+              <div class="trackpos-hero-thumbs-wrap">
+              <div class="trackpos-hero-thumbs-rail">
+                <button type="button" class="trackpos-hero-thumbs__nav trackpos-hero-thumbs__nav--prev" aria-label="Scroll thumbnails left" disabled>
+                  <i class="uil uil-angle-left-b" aria-hidden="true"></i>
+                </button>
+                <div class="trackpos-hero-thumbs__viewport">
+              <ul class="trackpos-hero-thumbs" aria-label="Screenshot thumbnails">
+                <li>
+                  <button type="button" class="trackpos-hero-thumbs__link is-active" data-trackpos-gallery-index="0" aria-label="View retail POS screenshot">
+                    <img src="./assets/img/photos/retail-pos-screenshot.png" width="160" height="77" alt="" loading="lazy">
+                    <span>POS</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="1" aria-label="View profit and loss screenshot">
+                    <img src="./assets/img/photos/hotel-profit-loss-screenshot.png" width="160" height="77" alt="" loading="lazy">
+                    <span>P&amp;L</span>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="2" aria-label="View GSTR-1 report screenshot">
+                    <img src="./assets/img/photos/hotel-gstr1-report-screenshot.png" width="160" height="77" alt="" loading="lazy">
+                    <span>GSTR-1</span>
+                  </button>
+                </li>
+              </ul>
+                </div>
+                <button type="button" class="trackpos-hero-thumbs__nav trackpos-hero-thumbs__nav--next" aria-label="Scroll thumbnails right">
+                  <i class="uil uil-angle-right-b" aria-hidden="true"></i>
+                </button>
+              </div>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrapper !bg-[#ffffff]">
+      <div class="container py-14 xl:!py-18">
+        <div class="flex flex-wrap mx-[-15px] !mb-10">
+          <div class="lg:w-8/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mx-auto !text-center">
+            <h2 class="!text-[.75rem] uppercase !text-[#aab0bc] !mb-3">Built For</h2>
+            <h3 class="xl:!text-[1.8rem] !font-DMSerif !mb-3">Every role in your store</h3>
+            <p class="lead !mb-0">Menus and actions follow your permissions — sales, purchase, inventory, and accounts teams see only what they need.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap mx-[-15px] !mt-[-20px] justify-center">
+          <div class="md:w-6/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[20px] !text-center">
+            <div class="industry-card__icon industry-card__icon--primary !mb-3"><i class="uil uil-shopping-cart"></i></div>
+            <p class="!mb-0 font-semibold !text-[#343f52]">Sales / Counter</p>
+            <p class="!text-[0.8rem] !text-[#60697b]">POS, invoices &amp; payment in</p>
+          </div>
+          <div class="md:w-6/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[20px] !text-center">
+            <div class="industry-card__icon industry-card__icon--gold !mb-3"><i class="uil uil-truck"></i></div>
+            <p class="!mb-0 font-semibold !text-[#343f52]">Purchase Staff</p>
+            <p class="!text-[0.8rem] !text-[#60697b]">Bills, orders &amp; payment out</p>
+          </div>
+          <div class="md:w-6/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[20px] !text-center">
+            <div class="industry-card__icon industry-card__icon--navy !mb-3"><i class="uil uil-package"></i></div>
+            <p class="!mb-0 font-semibold !text-[#343f52]">Store Manager</p>
+            <p class="!text-[0.8rem] !text-[#60697b]">Stock, transfers &amp; reorder alerts</p>
+          </div>
+          <div class="md:w-6/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[20px] !text-center">
+            <div class="industry-card__icon industry-card__icon--navy !mb-3"><i class="uil uil-chart-line"></i></div>
+            <p class="!mb-0 font-semibold !text-[#343f52]">Accounts</p>
+            <p class="!text-[0.8rem] !text-[#60697b]">Cash, bank, GST &amp; P&amp;L reports</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrapper !bg-[#f5f5ff]">
+      <div class="container py-16 xl:!py-20">
+        <div class="flex flex-wrap mx-[-15px] !mb-10">
+          <div class="w-full flex-[0_0_auto] !px-[15px] max-w-full flex justify-center">
+            <a href="#" class="trackpos-compare-cta" data-trackpos-modal-open="#retail-competitor-comparison" aria-label="Open full retail POS feature comparison">
+              <span class="trackpos-compare-cta__glow" aria-hidden="true"></span>
+              <span class="trackpos-compare-cta__icon" aria-hidden="true"><i class="uil uil-chart-bar"></i></span>
+              <span class="trackpos-compare-cta__content">
+                <span class="trackpos-compare-cta__eyebrow">Feature-wise comparison</span>
+                <span class="trackpos-compare-cta__title">Why QubexTrack beats typical retail billing apps</span>
+              </span>
+              <span class="trackpos-compare-cta__action">
+                <span>View full comparison</span>
+                <i class="uil uil-arrow-right" aria-hidden="true"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-wrap mx-[-15px] items-end !mb-10">
+          <div class="lg:w-9/12 w-full flex-[0_0_auto] !px-[15px] max-w-full">
+            <h2 class="!text-[.75rem] uppercase !text-[#aab0bc] !mb-3">Platform modules</h2>
+            <h3 class="xl:!text-[1.8rem] !font-DMSerif !mb-2">Sell, stock, buy &amp; report in one system</h3>
+            <p class="lead !mb-0">Based on QubexTrack retail workflows — optional modules (CRM, appointments, combo packs, sales commission) can be enabled per company.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap mx-[-15px] !mt-[-30px]">
+          <div class="md:w-6/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]">
+            <div class="card h-full !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !border-0">
+              <div class="card-body p-6">
+                <span class="trackpos-module-badge !mb-2">Sales</span>
+                <h4 class="!mb-3">POS &amp; counter billing</h4>
+                <ul class="pl-0 list-none !mb-0">
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>POS when enabled — search or barcode scan, discounts, tax, payment</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Same invoice engine as full sales; stock deducts on complete</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Walk-in or registered customer; print receipt</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Header POS shortcut when you have invoice-create permission</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-6/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]">
+            <div class="card h-full !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !border-0">
+              <div class="card-body p-6">
+                <span class="trackpos-module-badge !mb-2">Sales</span>
+                <h4 class="!mb-3">Invoices, orders &amp; returns</h4>
+                <ul class="pl-0 list-none !mb-0">
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Sales invoice — customer, warehouse, line items, tax, round-off</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Quotation → invoice; sale order → convert to sale</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Sale return — stock back in; payment in for receipts</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Print, PDF, email &amp; SMS after save (when configured)</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-6/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]">
+            <div class="card h-full !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !border-0">
+              <div class="card-body p-6">
+                <span class="trackpos-module-badge !mb-2">Sales</span>
+                <h4 class="!mb-3">Contacts &amp; credit</h4>
+                <ul class="pl-0 list-none !mb-0">
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Customers &amp; suppliers — GSTIN, addresses, credit limit</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Party due balance, history &amp; payment allocation</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Payment receipts — print or PDF</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#ffe5e7] !text-[#e61320] rounded-[100%] top-[0.15rem]"></i><span>Bulk import contacts via Utilities</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-6/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]">
+            <div class="card h-full !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !border-0">
+              <div class="card-body p-6">
+                <span class="trackpos-module-badge trackpos-module-badge--navy !mb-2">Inventory</span>
+                <h4 class="!mb-3">Items &amp; tracking</h4>
+                <ul class="pl-0 list-none !mb-0">
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Products &amp; services; categories, brands, HSN/SAC</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Regular, batch (mfg/expiry), or serial / IMEI tracking</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Opening stock, item transactions &amp; reorder alerts</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Import items &amp; generate barcode labels</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-6/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]">
+            <div class="card h-full !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !border-0">
+              <div class="card-body p-6">
+                <span class="trackpos-module-badge trackpos-module-badge--navy !mb-2">Inventory</span>
+                <h4 class="!mb-3">Warehouse &amp; transfers</h4>
+                <ul class="pl-0 list-none !mb-0">
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Multiple warehouses; default warehouse per transaction</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Stock transfer from → to with batch/serial lines</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>User-wise warehouse restrictions when configured</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Stock, transfer &amp; expired-item reports</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-6/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]">
+            <div class="card h-full !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !border-0">
+              <div class="card-body p-6">
+                <span class="trackpos-module-badge trackpos-module-badge--navy !mb-2">Purchase</span>
+                <h4 class="!mb-3">Supplier purchases</h4>
+                <ul class="pl-0 list-none !mb-0">
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Purchase bills — stock in; cash or credit to supplier</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Purchase order → convert to bill on receipt</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Purchase return &amp; payment out</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Allocate payments to open purchase bills</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-6/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]">
+            <div class="card h-full !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !border-0">
+              <div class="card-body p-6">
+                <span class="trackpos-module-badge trackpos-module-badge--navy !mb-2">Finance</span>
+                <h4 class="!mb-3">Cash, bank &amp; expenses</h4>
+                <ul class="pl-0 list-none !mb-0">
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Cash in hand, cheques &amp; bank account movements</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Expense &amp; income lists with categories</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Payment types — cash, UPI, card, bank (Settings)</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Cash flow &amp; bank statement reports</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-6/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]">
+            <div class="card h-full !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !border-0">
+              <div class="card-body p-6">
+                <span class="trackpos-module-badge trackpos-module-badge--navy !mb-2">Reports</span>
+                <h4 class="!mb-3">GST &amp; business reports</h4>
+                <ul class="pl-0 list-none !mb-0">
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>GSTR-1 &amp; GSTR-2; profit and loss</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Sale / purchase summaries; due payments</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Item sale/purchase; batch &amp; serial transaction reports</span></li>
+                  <li class="relative !pl-6 !mt-2"><i class="uil uil-check absolute left-0 w-4 h-4 text-[0.8rem] flex items-center justify-center bg-[#e8eef8] !text-[#022957] rounded-[100%] top-[0.15rem]"></i><span>Dashboard charts, stock alerts &amp; date filters</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrapper !bg-[#ffffff]">
+      <div class="container py-16 xl:!py-20">
+        <div class="flex flex-wrap mx-[-15px] !mb-10">
+          <div class="lg:w-10/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mx-auto !text-center">
+            <h2 class="!text-[.75rem] uppercase !text-[#aab0bc] !mb-3">How teams work</h2>
+            <h3 class="xl:!text-[1.8rem] !font-DMSerif !mb-2">Recommended retail workflows</h3>
+            <p class="lead !mb-0">Setup once, then run the standard sell and buy loops from the QubexTrack user manual.</p>
+          </div>
+        </div>
+        <div class="trackpos-flows">
+          <article class="trackpos-flow" aria-label="Retail sell workflow">
+            <header class="trackpos-flow__intro">
+              <span class="trackpos-flow__tag"><i class="uil uil-shopping-cart"></i> Sell</span>
+              <h3 class="!font-DMSerif">Sales workflow</h3>
+              <p>From quote or order to invoice, payment, and stock deduction.</p>
+            </header>
+            <ol class="trackpos-flow__path">
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="01">
+                  <span class="trackpos-flow__index">1</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-file-alt"></i></span>
+                  <h4 class="trackpos-flow__title">Quote / order</h4>
+                  <p class="trackpos-flow__desc">Optional quotation or sale order for the customer.</p>
+                </div>
+              </li>
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="02">
+                  <span class="trackpos-flow__index">2</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-shopping-cart"></i></span>
+                  <h4 class="trackpos-flow__title">Invoice / POS</h4>
+                  <p class="trackpos-flow__desc">Counter POS or full invoice — scan, tax, pay.</p>
+                </div>
+              </li>
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="03">
+                  <span class="trackpos-flow__index">3</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-money-bill"></i></span>
+                  <h4 class="trackpos-flow__title">Payment in</h4>
+                  <p class="trackpos-flow__desc">Collect balance; allocate to invoices.</p>
+                </div>
+              </li>
+              <li class="trackpos-flow__bend" aria-hidden="true"></li>
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="04">
+                  <span class="trackpos-flow__index">4</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-print"></i></span>
+                  <h4 class="trackpos-flow__title">Receipt</h4>
+                  <p class="trackpos-flow__desc">Print, PDF, or notify customer.</p>
+                </div>
+              </li>
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="05">
+                  <span class="trackpos-flow__index">5</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-exchange"></i></span>
+                  <h4 class="trackpos-flow__title">Return</h4>
+                  <p class="trackpos-flow__desc">Sale return restores stock if needed.</p>
+                </div>
+              </li>
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="06">
+                  <span class="trackpos-flow__index">6</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-chart-bar"></i></span>
+                  <h4 class="trackpos-flow__title">Reports</h4>
+                  <p class="trackpos-flow__desc">Sales, dues &amp; GST from Reports menu.</p>
+                </div>
+              </li>
+            </ol>
+          </article>
+          <article class="trackpos-flow trackpos-flow--navy" aria-label="Retail buy workflow">
+            <header class="trackpos-flow__intro">
+              <span class="trackpos-flow__tag"><i class="uil uil-truck"></i> Buy</span>
+              <h3 class="!font-DMSerif">Purchase workflow</h3>
+              <p>Restock from suppliers and keep warehouse quantities accurate.</p>
+            </header>
+            <ol class="trackpos-flow__path">
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="01">
+                  <span class="trackpos-flow__index">1</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-clipboard-notes"></i></span>
+                  <h4 class="trackpos-flow__title">PO</h4>
+                  <p class="trackpos-flow__desc">Purchase order to supplier (optional).</p>
+                </div>
+              </li>
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="02">
+                  <span class="trackpos-flow__index">2</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-receipt"></i></span>
+                  <h4 class="trackpos-flow__title">Bill</h4>
+                  <p class="trackpos-flow__desc">Purchase bill — stock increases.</p>
+                </div>
+              </li>
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="03">
+                  <span class="trackpos-flow__index">3</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-package"></i></span>
+                  <h4 class="trackpos-flow__title">Transfer</h4>
+                  <p class="trackpos-flow__desc">Move stock between warehouses if needed.</p>
+                </div>
+              </li>
+              <li class="trackpos-flow__bend" aria-hidden="true"></li>
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="04">
+                  <span class="trackpos-flow__index">4</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-credit-card"></i></span>
+                  <h4 class="trackpos-flow__title">Pay supplier</h4>
+                  <p class="trackpos-flow__desc">Payment out against open bills.</p>
+                </div>
+              </li>
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="05">
+                  <span class="trackpos-flow__index">5</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-exchange"></i></span>
+                  <h4 class="trackpos-flow__title">Return</h4>
+                  <p class="trackpos-flow__desc">Purchase return adjusts stock &amp; due.</p>
+                </div>
+              </li>
+              <li class="trackpos-flow__stop">
+                <div class="trackpos-flow__card" data-step="06">
+                  <span class="trackpos-flow__index">6</span>
+                  <span class="trackpos-flow__icon"><i class="uil uil-th"></i></span>
+                  <h4 class="trackpos-flow__title">Stock check</h4>
+                  <p class="trackpos-flow__desc">Reorder &amp; stock reports on dashboard.</p>
+                </div>
+              </li>
+            </ol>
+          </article>
+        </div>
+                <section class="wrapper !bg-[#f5f5ff] trackpos-security-section trackpos-security-section--compact" id="security-compliance">
+          <div class="container py-[3rem] xl:!py-20 lg:!py-20 md:!py-20">
+            <div class="flex flex-wrap mx-[-15px] items-center !mb-8">
+              <div class="lg:w-5/12 w-full flex-[0_0_auto] !px-[15px] max-w-full">
+                <h2 class="!text-[.75rem] uppercase !text-[#aab0bc] !mb-3">Data security &amp; compliance</h2>
+                <h3 class="xl:!text-[1.8rem] !font-DMSerif !mb-3">Enterprise-grade controls on every plan</h3>
+                <p class="lead !mb-4 !text-[#60697b]">Unlike many local desktop POS products, QubexTrack is a cloud SaaS platform with tenant isolation, audit logs, role permissions, and GST-ready compliance — shared across jewellery, restaurant, hotel &amp; retail modules.</p>
+                <a href="./terms.html#data-security" class="btn btn-sm btn-soft-primary !text-[#e61320] !bg-[#ffe5e7] !rounded-[50rem]">Security &amp; privacy details</a>
+              </div>
+              <div class="lg:w-7/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-8 lg:!mt-0">
+                <ul class="trackpos-security-list pl-0 list-none !mb-0">
+                  <li><i class="uil uil-database before:content-['\ea81']" aria-hidden="true"></i><span><strong>Multi-tenant isolation</strong> — separate business data, branch-level visibility</span></li>
+                  <li><i class="uil uil-file-search-alt before:content-['\eb12']" aria-hidden="true"></i><span><strong>Audit trails</strong> — discounts, stock, voids, reprints &amp; transfers logged</span></li>
+                  <li><i class="uil uil-lock-access before:content-['\ec11']" aria-hidden="true"></i><span><strong>Role-based access</strong> — approval workflows for sensitive operations</span></li>
+                  <li><i class="uil uil-cloud-check before:content-['\e9f3']" aria-hidden="true"></i><span><strong>Secure cloud access</strong> — TLS, backup, controlled support &amp; subscription enforcement</span></li>
+                  <li><i class="uil uil-file-check-alt before:content-['\eaf0']" aria-hidden="true"></i><span><strong>GST compliance</strong> — invoices, GSTR reports &amp; exportable accounts data</span></li>
+                  <li><i class="uil uil-rocket before:content-['\ec8c']" aria-hidden="true"></i><span><strong>Scalable architecture</strong> — API-ready design for integrations &amp; growth</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /security-compliance -->
+        <section id="pricing" class="wrapper !bg-[#ffffff] trackpos-jewellery-pricing">
+          <div class="container py-[4.5rem] xl:!py-24 lg:!py-24 md:!py-24">
+            <div class="flex flex-wrap mx-[-15px] !mb-10">
+              <div class="lg:w-10/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mx-auto !text-center">
+                <h2 class="!text-[.75rem] uppercase !text-[#aab0bc] !mb-3 !tracking-[0.02rem] !leading-[1.35]">Retail plans</h2>
+                <h3 class="xl:!text-[2rem] !text-[calc(1.325rem_+_0.9vw)] !leading-[1.2] !font-DMSerif !font-normal !tracking-normal [word-spacing:normal!important] !mb-4">Choose a plan for your store size</h3>
+                <p class="lead !mb-0 !text-[#60697b]">GST-ready retail POS + inventory + accounts — desktop web and mobile staff app on one subscription. Starter stays lean; Business unlocks orders, warehouses, batch/serial &amp; finance reports. All prices exclude GST.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap mx-[-15px] justify-center trackpos-jewellery-pricing-grid">
+              <div class="md:w-6/12 lg:w-5/12 xl:w-5/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]">
+                <div class="trackpos-jewellery-pricing-card trackpos-jewellery-pricing-card--starter">
+                  <div class="trackpos-jewellery-pricing-card__body">
+                    <span class="trackpos-jewellery-plan-badge trackpos-jewellery-plan-badge--starter">Starter</span>
+                    <h4 class="trackpos-jewellery-pricing-card__title">Starter Plan</h4>
+                    <p class="trackpos-jewellery-pricing-card__subtitle">Start billing &amp; stock in a day — on desktop or phone.</p>
+
+                    <div class="trackpos-jewellery-pricing-card__price">
+                      <div class="trackpos-jewellery-pricing-card__price-row">₹449 <span>/ month</span></div>
+                      <div class="trackpos-jewellery-pricing-card__price-or">OR</div>
+                      <div class="trackpos-jewellery-pricing-card__price-row">₹4,499 <span>/ year</span> <span class="trackpos-jewellery-pricing-card__price-save">Save 17%</span></div>
+                    </div>
+
+                    <div class="trackpos-jewellery-pricing-card__features">
+                      <h5 class="trackpos-jewellery-pricing-card__features-title">Features included</h5>
+                      <ul class="trackpos-jewellery-pricing-list">
+                        <li><strong>Desktop web POS</strong> + <strong>mobile staff app</strong></li>
+                        <li>POS &amp; sales invoice</li>
+                        <li>Quotation &amp; sale return</li>
+                        <li>Purchase bill &amp; purchase return</li>
+                        <li>Customers &amp; suppliers; payment in / out</li>
+                        <li>Items, categories, brands &amp; regular stock</li>
+                        <li>GSTR-1 &amp; GSTR-2</li>
+                        <li>Print / PDF; import items &amp; contacts</li>
+                        <li>Barcode generation &amp; labels</li>
+                        <li>Role-based access — <strong>2 users</strong></li>
+                        <li>Single store &amp; <strong>1 warehouse</strong></li>
+                        <li>~2,500 invoices / year (fair use)</li>
+                        <li>Email support (standard SLA)</li>
+                      </ul>
+                    </div>
+
+                    <a href="#" class="trackpos-jewellery-pricing-card__btn trackpos-jewellery-pricing-card__btn--starter" data-trackpos-modal-open="#modal-module-signin">Start 14-day Business Trial</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="md:w-6/12 lg:w-5/12 xl:w-5/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px] popular">
+                <div class="trackpos-jewellery-pricing-card trackpos-jewellery-pricing-card--pro">
+                  <div class="trackpos-jewellery-pricing-card__accent"></div>
+                  <div class="trackpos-jewellery-pricing-card__body">
+                    <span class="trackpos-jewellery-plan-badge trackpos-jewellery-plan-badge--pro">Business</span>
+                    <h4 class="trackpos-jewellery-pricing-card__title">Business Plan</h4>
+                    <p class="trackpos-jewellery-pricing-card__subtitle">Orders, warehouses, batch/serial &amp; full finance — desktop POS + mobile staff app.</p>
+
+                    <div class="trackpos-jewellery-pricing-card__price">
+                      <div class="trackpos-jewellery-pricing-card__price-row">₹899 <span>/ month</span></div>
+                      <div class="trackpos-jewellery-pricing-card__price-or">OR</div>
+                      <div class="trackpos-jewellery-pricing-card__price-row">₹8,999 <span>/ year</span> <span class="trackpos-jewellery-pricing-card__price-save">Save 17%</span></div>
+                    </div>
+
+                    <div class="trackpos-jewellery-pricing-card__features">
+                      <h5 class="trackpos-jewellery-pricing-card__features-title">Everything in Starter PLUS</h5>
+                      <ul class="trackpos-jewellery-pricing-list">
+                        <li>Sale order &amp; purchase order</li>
+                        <li>Expense &amp; income; cash, cheque &amp; bank registers</li>
+                        <li>P&amp;L, cash flow &amp; bank statement reports</li>
+                        <li>Multi-warehouse &amp; stock transfer (up to <strong>3</strong>)</li>
+                        <li>Batch &amp; serial / IMEI tracking</li>
+                        <li>Appointments, commission, ComboPack &amp; carrier modules</li>
+                        <li>SMS &amp; email templates; API tokens</li>
+                        <li><strong>8 users</strong></li>
+                        <li>Priority email + onboarding</li>
+                      </ul>
+                    </div>
+
+                    <a href="./contact.html" class="trackpos-jewellery-pricing-card__btn trackpos-jewellery-pricing-card__btn--pro">
+                      <span>Choose Business</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+                <div class="flex flex-wrap mx-[-15px] !mt-12">
+              <div class="w-full flex-[0_0_auto] !px-[15px] max-w-full">
+                <h4 class="!text-[1.25rem] !font-DMSerif !mb-4">Recommended add-ons</h4>
+                <div class="trackpos-security-compare overflow-x-auto">
+                  <table class="trackpos-security-table w-full">
+                    <thead>
+                      <tr>
+                        <th scope="col">Add-on</th>
+                        <th scope="col">Suggested price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Extra user</td><td>₹999 / user / year</td></tr>
+                      <tr><td>Extra warehouse</td><td>₹1,499 / warehouse / year</td></tr>
+                      <tr><td>Second store (separate company)</td><td>₹3,999 / year</td></tr>
+                      <tr><td>CRM module</td><td>₹2,999 / year</td></tr>
+                      <tr><td>Appointments module</td><td>₹1,999 / year</td></tr>
+                      <tr><td>Sales commission module</td><td>₹1,999 / year</td></tr>
+                      <tr><td>Invoice overage pack (Starter)</td><td>₹999 / year (+1,000 invoices)</td></tr>
+                      <tr><td>Setup &amp; data migration</td><td>₹5,000 – ₹12,000 (one-time)</td></tr>
+                      <tr><td>On-site training visit</td><td>₹3,999 / visit</td></tr>
+                      <tr><td>Annual priority phone support</td><td>₹2,499 / year</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="!text-center !text-[0.8rem] !text-[#aab0bc] !mt-4 !mb-0">Add-ons depend on your setup and integration requirements. Prefer Starter → Business upgrade over stacking many Starter add-ons.</p>
+                <p class="!text-center !text-[0.85rem] !text-[#60697b] !mt-4 !mb-0">All plan prices exclude GST. <strong>Desktop web POS + mobile staff app</strong> included on every plan — one subscription, two surfaces.</p>
+                <p class="trackpos-pricing-disclaimer !text-center !text-[0.8rem] !text-[#aab0bc] !mt-2 !mb-0">Listed plan prices may be revised year on year when required, with prior notice to existing customers before any change takes effect.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Competitor comparison modal (retail) -->
+        <template id="retail-competitor-comparison-template">
+<div class="trackpos-compare-content">
+<h4 class="trackpos-compare-h4">Sales &amp; billing</h4>
+<div class="trackpos-security-compare trackpos-compare-wrap"><table class="trackpos-security-table trackpos-compare-table"><thead><tr><th scope="col" class="">Feature</th><th scope="col" class="trackpos-compare-col--us">QubexTrack</th><th scope="col" class="">Entry billing app</th><th scope="col" class="">Desktop ERP</th><th scope="col" class="">Chain retail POS</th><th scope="col" class="">Budget mobile billing</th></tr></thead><tbody><tr><td class="trackpos-compare-feature">POS / fast checkout</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td></tr><tr><td class="trackpos-compare-feature">GST tax invoice</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td></tr><tr><td class="trackpos-compare-feature">Quotation</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Sale order (order before invoice)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Sale return / credit note</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Multiple payment types on one bill</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td></tr><tr><td class="trackpos-compare-feature">Party credit limit on sale</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Sold-items history on invoice</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Convert quotation → invoice</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Convert sale order → invoice</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr></tbody></table></div>
+<h4 class="trackpos-compare-h4">Purchase &amp; supplier management</h4>
+<div class="trackpos-security-compare trackpos-compare-wrap"><table class="trackpos-security-table trackpos-compare-table"><thead><tr><th scope="col" class="">Feature</th><th scope="col" class="trackpos-compare-col--us">QubexTrack</th><th scope="col" class="">Entry billing app</th><th scope="col" class="">Desktop ERP</th><th scope="col" class="">Chain retail POS</th><th scope="col" class="">Budget mobile billing</th></tr></thead><tbody><tr><td class="trackpos-compare-feature">Purchase bill</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Purchase order</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">❌ / ⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Purchase return</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Supplier ledger &amp; payment out</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Purchase payment reports</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr></tbody></table></div>
+<p class="trackpos-compare-p trackpos-compare-win"><strong>Why QubexTrack wins:</strong> Full <strong>purchase cycle</strong> (bill, PO, return, payment out) matches desktop ERP and chain retail POS—not typical for lightweight billing apps.</p>
+<hr class="trackpos-compare-divider">
+<h4 class="trackpos-compare-h4">Inventory &amp; warehouse</h4>
+<div class="trackpos-security-compare trackpos-compare-wrap"><table class="trackpos-security-table trackpos-compare-table"><thead><tr><th scope="col" class="">Feature</th><th scope="col" class="trackpos-compare-col--us">QubexTrack</th><th scope="col" class="">Entry billing app</th><th scope="col" class="">Desktop ERP</th><th scope="col" class="">Chain retail POS</th><th scope="col" class="">Budget mobile billing</th></tr></thead><tbody><tr><td class="trackpos-compare-feature">Product &amp; service items</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td></tr><tr><td class="trackpos-compare-feature">Categories &amp; brands</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Batch tracking</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Serial / IMEI tracking</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Multi-warehouse</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">❌ / ⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Stock transfer between locations</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Stock reports (general / batch / serial)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Reorder &amp; low-stock alerts</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Expired item report</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Barcode generation</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Bulk item import</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr></tbody></table></div>
+<p class="trackpos-compare-p trackpos-compare-win"><strong>Why QubexTrack wins:</strong> <strong>Multi-warehouse + stock transfer + batch/serial</strong> in one product—without typical desktop ERP per-user fees or chain POS vertical upsells.</p>
+<hr class="trackpos-compare-divider">
+<h4 class="trackpos-compare-h4">Contacts &amp; payments</h4>
+<div class="trackpos-security-compare trackpos-compare-wrap"><table class="trackpos-security-table trackpos-compare-table"><thead><tr><th scope="col" class="">Feature</th><th scope="col" class="trackpos-compare-col--us">QubexTrack</th><th scope="col" class="">Entry billing app</th><th scope="col" class="">Desktop ERP</th><th scope="col" class="">Chain retail POS</th><th scope="col" class="">Budget mobile billing</th></tr></thead><tbody><tr><td class="trackpos-compare-feature">Customers &amp; suppliers (unified contacts)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Party payment allocation to invoices</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Payment in / payment out screens</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Cash in hand register</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Cheque tracking</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Bank account transactions</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Customer / supplier due reports</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr></tbody></table></div>
+<p class="trackpos-compare-p trackpos-compare-win"><strong>Why QubexTrack wins:</strong> <strong>Cash + cheque + bank</strong> and explicit <strong>payment in/out</strong> workflows—closer to ERP than “billing only.”</p>
+<hr class="trackpos-compare-divider">
+<h4 class="trackpos-compare-h4">Accounting &amp; GST (India)</h4>
+<div class="trackpos-security-compare trackpos-compare-wrap"><table class="trackpos-security-table trackpos-compare-table"><thead><tr><th scope="col" class="">Feature</th><th scope="col" class="trackpos-compare-col--us">QubexTrack</th><th scope="col" class="">Entry billing app</th><th scope="col" class="">Desktop ERP</th><th scope="col" class="">Chain retail POS</th><th scope="col" class="">Budget mobile billing</th></tr></thead><tbody><tr><td class="trackpos-compare-feature">Multiple tax rates (GST)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td></tr><tr><td class="trackpos-compare-feature">GSTR-1 (outward) report</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">✅ (tiered)</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">GSTR-2 / inward summary report</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Expense module with categories</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Income module</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Profit &amp; loss report</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Cash flow report</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">❌ / ⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Bank statement report</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">❌ / ⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr></tbody></table></div>
+<p class="trackpos-compare-p trackpos-compare-win"><strong>Why QubexTrack wins:</strong> <strong>GSTR-1 + GSTR-2 + P&amp;amp;L + cash flow</strong> in one stack—many entry POS tools stop at invoicing and basic GST.</p>
+<hr class="trackpos-compare-divider">
+<h4 class="trackpos-compare-h4">Operations &amp; reporting</h4>
+<div class="trackpos-security-compare trackpos-compare-wrap"><table class="trackpos-security-table trackpos-compare-table"><thead><tr><th scope="col" class="">Feature</th><th scope="col" class="trackpos-compare-col--us">QubexTrack</th><th scope="col" class="">Entry billing app</th><th scope="col" class="">Desktop ERP</th><th scope="col" class="">Chain retail POS</th><th scope="col" class="">Budget mobile billing</th></tr></thead><tbody><tr><td class="trackpos-compare-feature">Sale / purchase summary reports</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Item-wise sale &amp; purchase reports</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Sale &amp; purchase payment reports</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Item transaction audit (batch/serial/general)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Stock transfer reports</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Dashboard with sale vs purchase</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Role-based permissions (granular)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Login history (audit)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class="">⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr></tbody></table></div>
+<p class="trackpos-compare-p trackpos-compare-win"><strong>Why QubexTrack wins:</strong> <strong>Granular roles</strong> + broad <strong>transaction-level reports</strong> for owners who need control without exporting to accounting software for every question.</p>
+<hr class="trackpos-compare-divider">
+<h4 class="trackpos-compare-h4">Communication &amp; integrations</h4>
+<div class="trackpos-security-compare trackpos-compare-wrap"><table class="trackpos-security-table trackpos-compare-table"><thead><tr><th scope="col" class="">Feature</th><th scope="col" class="trackpos-compare-col--us">QubexTrack</th><th scope="col" class="">Entry billing app</th><th scope="col" class="">Desktop ERP</th><th scope="col" class="">Chain retail POS</th><th scope="col" class="">Budget mobile billing</th></tr></thead><tbody><tr><td class="trackpos-compare-feature">SMS (Twilio / Vonage config)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class="">⚠️</td><td class="">⚠️</td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Email templates</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class="">⚠️</td><td class="">⚠️</td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">WhatsApp templates</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">✅ (common)</td><td class="">⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td></tr><tr><td class="trackpos-compare-feature">API tokens for integrations</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class="">⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Bulk contact import</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td></tr><tr><td class="trackpos-compare-feature">Native Android / iOS app</td><td class="trackpos-compare-col--us">❌ (responsive web)</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️ Desktop</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td></tr><tr><td class="trackpos-compare-feature">E-invoice / e-way (live IRP)</td><td class="trackpos-compare-col--us">⚠️</td><td class="">✅ (higher tiers)</td><td class="">⚠️</td><td class="">✅ (tiered)</td><td class="">⚠️</td></tr></tbody></table></div>
+<p class="trackpos-compare-p trackpos-compare-win"><strong>Why QubexTrack wins:</strong> <strong>API tokens</strong> + template-based messaging for custom integrations. <strong>Honest gap:</strong> Entry billing and budget mobile segments often lead on <strong>native mobile apps</strong> and <strong>e-invoice</strong> on higher tiers.</p>
+<hr class="trackpos-compare-divider">
+<h4 class="trackpos-compare-h4">Optional modules (QubexTrack)</h4>
+<div class="trackpos-security-compare trackpos-compare-wrap"><table class="trackpos-security-table trackpos-compare-table"><thead><tr><th scope="col" class="">Module</th><th scope="col" class="trackpos-compare-col--us">QubexTrack</th><th scope="col" class="">Entry billing app</th><th scope="col" class="">Desktop ERP</th><th scope="col" class="">Chain retail POS</th><th scope="col" class="">Budget mobile billing</th></tr></thead><tbody><tr><td class="trackpos-compare-feature">Appointments → invoice</td><td class="trackpos-compare-col--us">✅ (toggle)</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Sales commission plans</td><td class="trackpos-compare-col--us">✅ (toggle)</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class="">⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Combo / bundle packs</td><td class="trackpos-compare-col--us">✅ (toggle)</td><td class="">⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Carrier / shipping</td><td class="trackpos-compare-col--us">✅ (toggle)</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class="">⚠️</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">CRM (orders, jobs, schedule)</td><td class="trackpos-compare-col--us">✅ (toggle)</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Multi-language UI (EN / HI / AR)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class="">⚠️</td><td class="">⚠️</td><td class="">⚠️</td></tr></tbody></table></div>
+<p class="trackpos-compare-p trackpos-compare-win"><strong>Why QubexTrack wins:</strong> Optional <strong>appointments, commission, CRM</strong> without buying a separate product—useful for service+retail hybrid shops.</p>
+<hr class="trackpos-compare-divider">
+<h4 class="trackpos-compare-h4">Commercial &amp; ownership</h4>
+<div class="trackpos-security-compare trackpos-compare-wrap"><table class="trackpos-security-table trackpos-compare-table"><thead><tr><th scope="col" class="">Factor</th><th scope="col" class="trackpos-compare-col--us">QubexTrack</th><th scope="col" class="">Entry billing app</th><th scope="col" class="">Desktop ERP</th><th scope="col" class="">Chain retail POS</th><th scope="col" class="">Budget mobile billing</th></tr></thead><tbody><tr><td class="trackpos-compare-feature">Transparent SMB pricing (see <a href="./PRICING_PLANS.md">PRICING_PLANS.md</a>)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️ + add-on fees</td><td class="">⚠️ Quote/tiered</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td></tr><tr><td class="trackpos-compare-feature">Self-hosted option (your server)</td><td class="trackpos-compare-col--us"><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Per-user fees on entry plan</td><td class="trackpos-compare-col--us">❌ (plan caps)</td><td class="">⚠️</td><td class="">✅ (often high)</td><td class="">⚠️</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">Bill/month caps on cheapest tier</td><td class="trackpos-compare-col--us">⚠️ Fair use</td><td class="">⚠️ Common</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--no">❌</span></td></tr><tr><td class="trackpos-compare-feature">3-year bundle discount</td><td class="trackpos-compare-col--us">✅ Suggested</td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td><td class=""><span class="trackpos-compare-pill trackpos-compare-pill--yes">✅</span></td></tr></tbody></table></div>
+<hr class="trackpos-compare-divider">
+</div>
+        </template>
+        <div class="trackpos-modal trackpos-modal--wide" id="retail-competitor-comparison" aria-hidden="true" data-trackpos-modal-template="retail-competitor-comparison-template">
+          <div class="trackpos-modal__overlay" aria-hidden="true"></div>
+          <div class="trackpos-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="retail-competitor-comparison-title">
+            <div class="trackpos-modal__header">
+              <h4 class="trackpos-modal__title" id="retail-competitor-comparison-title">Full feature comparison</h4>
+              <button type="button" class="trackpos-modal__close" aria-label="Close" data-trackpos-modal-close>&times;</button>
+            </div>
+            <div class="trackpos-modal__body" data-trackpos-modal-content></div>
+          </div>
+        </div>
+        <!-- /competitor comparison modal -->
+
+
+
+        <div class="flex flex-wrap mx-[-15px] !mt-12">
+          <div class="lg:w-10/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mx-auto">
+            <div class="card !border-0 !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]">
+              <div class="card-body p-8 xl:p-10 !text-center">
+                <h3 class="xl:!text-[1.6rem] !font-DMSerif !mb-3">See retail POS &amp; GST billing in action</h3>
+                <p class="lead !mb-6 !text-[#60697b]">Cloud retail module for Indian stores — barcode billing, inventory, purchases, and compliance reports. Free 14-day trial.</p>
+                <a href="./contact.html" class="btn btn-lg btn-primary !text-white !bg-[#e61320] border-[#e61320] !rounded !mr-2">Book Free Demo</a>
+                <a href="#" class="btn btn-lg btn-outline-primary !rounded" data-trackpos-modal-open="#modal-module-signin">Start Free Trial</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class=" bg-[#21262c] opacity-100  !text-[#cacaca]">
+    <div class="container py-16 xl:!py-20 lg:!py-20 md:!py-20">
+      <div class="flex flex-wrap mx-[-15px] !mt-[-30px] xl:!mt-0 lg:!mt-0">
+        <div class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]">
+          <div class="widget !text-[#cacaca]">
+            <a href="./index.html" class="trackpos-footer-logo-link !mb-4 inline-block" aria-label="QubexTrack home"><img class="trackpos-logo-footer" src="./assets/img/qubextrack-logo-footer.png?v=20260822" alt="QubexTrack"></a>
+            <p class="!mb-4">© 2024-2026 QubexTrack. <br class="hidden xl:block lg:block !text-[#cacaca]">All rights reserved.</p>
+            <nav class="nav social social-white">
+              <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://x.com/qubextrack" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="uil uil-twitter before:content-['\ed59'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.facebook.com/qubextrack/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="uil uil-facebook-f before:content-['\eae2'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.linkedin.com/company/qubextrack/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="uil uil-linkedin before:content-['\ebd1'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.instagram.com/qubextrack/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="uil uil-instagram before:content-['\eb9c'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://www.youtube.com/@qubextrack" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="uil uil-youtube before:content-['\edb5'] !text-white text-[1rem]"></i></a>
+            </nav>
+            <!-- /.social -->
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]">
+          <div class="widget !text-[#cacaca]">
+            <h4 class="widget-title !text-white !mb-3">Get in Touch</h4>
+            <address class="trackpos-offices-footer xl:!pr-20 xxl:!pr-28 not-italic !leading-[inherit] block !mb-4">
+  <span class="block"><strong>Corporate Office:</strong><br>Doddathogur Road, Electronic City, Bengalure-560100</span>
+</address>
+            <a class="!text-[#cacaca] hover:!text-[#e61320]" href="mailto:support@qubextrack.com">support@qubextrack.com</a><br> +91-9348457123
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]">
+          <div class="widget !text-[#cacaca]">
+            <h4 class="widget-title !text-white !mb-3">Learn More</h4>
+            <ul class="pl-0 list-none   !mb-0">
+              <li><a class="!text-[#cacaca] hover:!text-[#e61320]" href="./about.html">About Us</a></li>
+              <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#e61320]" href="./about.html">Our Story</a></li>
+              <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#e61320]" href="./terms.html">Terms of Use</a></li>
+              <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#e61320]" href="./terms.html#data-security">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="md:w-full xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]">
+          <div class="widget !text-[#cacaca]">
+            <h4 class="widget-title !text-white !mb-3">Our Newsletter</h4>
+            <p class="!mb-5">Subscribe to our newsletter to get our news & deals delivered to you.</p>
+            <div class="newsletter-wrapper">
+              <!-- Begin Mailchimp Signup Form -->
+              <div id="mc_embed_signup2">
+                <form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate dark-fields" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll2">
+                    <div class="!text-left input-group form-floating !relative flex flex-wrap items-stretch w-full">
+                      <input type="email" value="" name="EMAIL" class="required email form-control block w-full text-[12px] font-medium !leading-[1.7] appearance-none bg-clip-padding shadow-[0_0_1.25rem_rgba(30,34,40,0.04)] px-4 py-[0.6rem] rounded-[0.4rem] motion-reduce:transition-none     focus:shadow-[0_0_1.25rem_rgba(30,34,40,0.04),unset] disabled:bg-[#aab0bc] disabled:opacity-100 file:!mt-[-0.6rem] file:mr-[-1rem] file:!mb-[-0.6rem] file:ml-[-1rem] file:!text-[#60697b] file:bg-[#fefefe] file:pointer-events-none file:transition-all file:duration-[0.2s] file:ease-in-out file:px-4 file:py-[0.6rem] file:rounded-none motion-reduce:file:transition-none placeholder:!text-[#959ca9] placeholder:opacity-100 border border-solid !border-[rgba(255,255,255,0.1)] !text-[#cacaca]   bg-[rgba(255,255,255,.03)] focus-visible:!border-[rgba(255,68,80,0.5)]  " placeholder="" id="mce-EMAIL2">
+                      <label class="!ml-[0.05rem] !text-[#959ca9] text-[.75rem] absolute z-[2] h-full overflow-hidden text-start text-ellipsis whitespace-nowrap pointer-events-none origin-[0_0] px-4 py-[0.6rem] left-0 top-0" for="mce-EMAIL2">Email Address</label>
+                      <input type="submit" value="Join" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-primary !text-white !bg-[#e61320] border-[#e61320] hover:text-white hover:bg-[#e61320] hover:!border-[#e61320]   active:text-white active:bg-[#e61320] active:border-[#e61320] disabled:text-white disabled:bg-[#e61320] disabled:border-[#e61320] !relative z-[2] focus:z-[5] hover:!transform-none hover:!translate-none border-0">
+                    </div>
+                    <div id="mce-responses2" class="clear">
+                      <div class="response" id="mce-error-response2" style="display:none"></div>
+                      <div class="response" id="mce-success-response2" style="display:none"></div>
+                    </div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ddc180777a163e0f9f66ee014_4b1bcfa0bc" tabindex="-1" value=""></div>
+                    <div class="clear"></div>
+                  </div>
+                </form>
+              </div>
+              <!--End mc_embed_signup-->
+            </div>
+            <!-- /.newsletter-wrapper -->
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+      </div>
+      <!--/.row -->
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- progress wrapper -->
+  <div class="progress-wrap fixed w-[2.3rem] h-[2.3rem] cursor-pointer block shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010] opacity-0 invisible translate-y-3 transition-all duration-[0.2s] ease-[linear,margin-right] delay-[0s] rounded-[100%] right-6 bottom-6 motion-reduce:transition-none after:absolute after:content-['\e951'] after:text-center after:leading-[2.3rem] after:text-[1.2rem] after:!text-[#e61320] after:h-[2.3rem] after:w-[2.3rem] after:cursor-pointer after:block after:z-[1] after:transition-all after:duration-[0.2s] after:ease-linear after:left-0 after:top-0 motion-reduce:after:transition-none after:font-Unicons">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path class="fill-none stroke-[#e61320] stroke-[4] box-border transition-all duration-[0.2s] ease-linear motion-reduce:transition-none" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+  
+  <a href="https://wa.me/919348457123" class="trackpos-float-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="uil uil-whatsapp before:content-['\ed9a']"></i></a>
+  <a href="tel:+919348457123" class="trackpos-float-call" aria-label="Call us"><i class="uil uil-phone before:content-['\ec51']"></i></a>
+  <script src="./assets/js/plugins.js"></script>
+  <script src="./assets/js/theme.js"></script>
+  <script src="./assets/js/trackpos-anchor.js"></script>
+  <script src="./assets/js/trackpos-hero-gallery.js"></script>
+  <script src="./assets/js/trackpos-modal.js"></script>
+  <script src="./assets/js/trackpos-signin.js"></script>
+</body>
+</html>

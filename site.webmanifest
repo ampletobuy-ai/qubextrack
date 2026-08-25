@@ -1,0 +1,18 @@
+{
+  "name": "QubexTrack",
+  "short_name": "QubexTrack",
+  "icons": [
+    {
+      "src": "/assets/img/favicon-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#e61320",
+  "background_color": "#ffffff"
+}
