@@ -1,0 +1,185 @@
+name: Deploy Production
+
+# Production marketing site → Bluehost VPS (qubextrack.com).
+# Manual only — run from the main branch after merging features.
+# (Actions → Deploy Production → Run workflow, ref: main).
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    name: check whether to deploy
+    runs-on: ubuntu-latest
+    outputs:
+      should_deploy: ${{ steps.check.outputs.should_deploy }}
+      deploy_sha: ${{ steps.check.outputs.deploy_sha }}
+    steps:
+      - name: Decide deploy
+        id: check
+        run: |
+          set -euo pipefail
+
+          if [ "${{ github.ref }}" != "refs/heads/main" ]; then
+            echo "should_deploy=false" >> "$GITHUB_OUTPUT"
+            echo "deploy_sha=" >> "$GITHUB_OUTPUT"
+            echo "Production deploy only allowed from main (got ${{ github.ref }})."
+            exit 0
+          fi
+
+          echo "should_deploy=true" >> "$GITHUB_OUTPUT"
+          echo "deploy_sha=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+          echo "Manual production deploy — sha=${{ github.sha }}"
+
+  deploy:
+    name: deploy
+    needs: gate
+    if: needs.gate.outputs.should_deploy == 'true'
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.gate.outputs.deploy_sha }}
+
+      - name: Validate deploy config
+        env:
+          HOST_SECRET: ${{ secrets.VPS_HOST }}
+          HOST_VAR: ${{ vars.VPS_HOST }}
+          USER_SECRET: ${{ secrets.VPS_USER }}
+          USER_VAR: ${{ vars.VPS_USER }}
+          SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          HOST="$(printf '%s' "${HOST_SECRET:-${HOST_VAR:-}}" | tr -d '\r' | xargs)"
+          if [ -z "$HOST" ]; then
+            echo "::error::VPS_HOST is empty on Environment 'production'."
+            echo "Set Environment secret/variable VPS_HOST to the VPS IPv4 (e.g. 129.121.125.118)."
+            exit 1
+          fi
+          if [ -z "${SSH_KEY:-}" ]; then
+            echo "::error::VPS_SSH_KEY is empty on Environment 'production'."
+            exit 1
+          fi
+          echo "Deploy config present (host + SSH key)."
+
+      - name: Resolve SSH host
+        id: ssh
+        env:
+          HOST_SECRET: ${{ secrets.VPS_HOST }}
+          HOST_VAR: ${{ vars.VPS_HOST }}
+          USER_SECRET: ${{ secrets.VPS_USER }}
+          USER_VAR: ${{ vars.VPS_USER }}
+          PATH_SECRET: ${{ secrets.DEPLOY_PATH }}
+          PATH_VAR: ${{ vars.DEPLOY_PATH }}
+        run: |
+          set -euo pipefail
+          HOST="$(printf '%s' "${HOST_SECRET:-${HOST_VAR:-}}" | tr -d '\r' | xargs)"
+          USER="$(printf '%s' "${USER_SECRET:-${USER_VAR:-}}" | tr -d '\r' | xargs)"
+          USER="${USER:-deploy}"
+          DEPLOY_PATH="$(printf '%s' "${PATH_SECRET:-${PATH_VAR:-}}" | tr -d '\r' | xargs)"
+          DEPLOY_PATH="${DEPLOY_PATH:-/opt/marketing-site/public}"
+
+          HOST="${HOST#ssh://}"
+          HOST="${HOST#https://}"
+          HOST="${HOST#http://}"
+          if [[ "$HOST" == *@* ]]; then
+            USER="${HOST%%@*}"
+            HOST="${HOST#*@}"
+          fi
+          HOST="${HOST%%/*}"
+          HOST="${HOST%%:*}"
+
+          if [[ ! "$HOST" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::warning::VPS_HOST is not an IPv4 address. Prefer the VPS IP (e.g. 129.121.125.118)."
+          else
+            echo "Using IPv4 host (ok)."
+          fi
+
+          echo "host=${HOST}" >> "$GITHUB_OUTPUT"
+          echo "user=${USER}" >> "$GITHUB_OUTPUT"
+          echo "deploy_path=${DEPLOY_PATH}" >> "$GITHUB_OUTPUT"
+          echo "Resolved SSH target: ${USER}@*** → ${DEPLOY_PATH}"
+
+      - name: Pack site files
+        run: |
+          set -euo pipefail
+          # Write archive outside the tree so tar does not see its own output.
+          tar -C "$GITHUB_WORKSPACE" -czf /tmp/qubextrack-site.tgz \
+            --exclude='./.git' \
+            --exclude='./.github' \
+            --exclude='./deploy' \
+            --exclude='./scripts' \
+            --exclude='./doc' \
+            --exclude='./_snippets' \
+            --exclude='./_*.py' \
+            --exclude='./*.md' \
+            --exclude='./.DS_Store' \
+            --exclude='./sandbox-*' \
+            .
+          cp -f /tmp/qubextrack-site.tgz "$GITHUB_WORKSPACE/qubextrack-site.tgz"
+          ls -lh qubextrack-site.tgz
+
+      - name: Upload archive
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ steps.ssh.outputs.host }}
+          username: ${{ steps.ssh.outputs.user }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22
+          source: qubextrack-site.tgz
+          target: /tmp/
+          overwrite: true
+
+      - name: Extract on VPS + healthcheck
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ steps.ssh.outputs.host }}
+          username: ${{ steps.ssh.outputs.user }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22
+          script_stop: true
+          script: |
+            set -euo pipefail
+            DEPLOY_PATH='${{ steps.ssh.outputs.deploy_path }}'
+            HEALTH_URL='${{ secrets.DEPLOY_HEALTHCHECK_URL }}'
+            if [ -z "${HEALTH_URL}" ]; then
+              HEALTH_URL='https://qubextrack.com/'
+            fi
+
+            mkdir -p "${DEPLOY_PATH}"
+            STAGE="$(mktemp -d /tmp/qubextrack-stage.XXXXXX)"
+            ARCHIVE=/tmp/qubextrack-site.tgz
+            if [ ! -f "$ARCHIVE" ]; then
+              ARCHIVE="$(find /tmp -name 'qubextrack-site.tgz' 2>/dev/null | head -n1 || true)"
+            fi
+            if [ -z "${ARCHIVE}" ] || [ ! -f "$ARCHIVE" ]; then
+              echo "::error::Upload missing: qubextrack-site.tgz not found under /tmp"
+              exit 1
+            fi
+            tar -xzf "$ARCHIVE" -C "${STAGE}"
+            # Portable sync (no rsync required on VPS).
+            find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
+              ! -name 'docker-compose.yml' \
+              ! -name 'nginx.conf' \
+              -exec rm -rf {} +
+            cp -a "${STAGE}/." "${DEPLOY_PATH}/"
+            rm -rf "${STAGE}" "$ARCHIVE"
+
+            if [ -x /opt/marketing-site/scripts/deploy.sh ]; then
+              /opt/marketing-site/scripts/deploy.sh
+            elif [ -f /opt/marketing-site/docker-compose.yml ]; then
+              cd /opt/marketing-site
+              docker compose up -d
+            fi
+
+            echo "Deployed to ${DEPLOY_PATH}"
+            if command -v curl >/dev/null 2>&1; then
+              curl -fsSI "${HEALTH_URL}" | head -n 5 || true
+            fi

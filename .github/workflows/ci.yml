@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches: [features]
+  pull_request:
+    branches: [features]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Light CI on normal pushes/PRs.
+      # Extra checks only for intentional markers: " - deploy", "[deploy]", or "#deploy".
+      - name: Choose check mode
+        id: mode
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          set -euo pipefail
+          MSG=""
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            MSG="${PR_TITLE:-}"
+          else
+            MSG="${COMMIT_MSG:-}"
+          fi
+
+          echo "Message checked for deploy marker (' - deploy' / [deploy] / #deploy):"
+          printf '%s\n' "$MSG" | head -n 5
+
+          if printf '%s' "$MSG" | grep -Eqi '([[:space:]]-[[:space:]]*deploy([[:space:][:punct:]]|$)|\[deploy\]|#deploy)'; then
+            echo "mode=full" >> "$GITHUB_OUTPUT"
+            echo "Running FULL checks (deploy marker found)."
+          else
+            echo "mode=light" >> "$GITHUB_OUTPUT"
+            echo "Running LIGHT checks."
+          fi
+
+      - name: Required site files
+        run: |
+          set -euo pipefail
+          for f in index.html about.html contact.html pricing.html terms.html \
+                   robots.txt sitemap.xml favicon.ico site.webmanifest assets; do
+            if [ ! -e "$f" ]; then
+              echo "::error::Missing required path: $f"
+              exit 1
+            fi
+            echo "ok: $f"
+          done
+
+      - name: HTML sanity (critical pages)
+        run: |
+          set -euo pipefail
+          for f in index.html about.html contact.html pricing.html; do
+            if ! grep -qi '<html' "$f"; then
+              echo "::error::$f does not look like HTML"
+              exit 1
+            fi
+            if ! grep -qi '</html>' "$f"; then
+              echo "::error::$f is missing closing </html>"
+              exit 1
+            fi
+            echo "ok html: $f"
+          done
+
+      - name: Full checks (deploy marker)
+        if: steps.mode.outputs.mode == 'full'
+        run: |
+          set -euo pipefail
+          echo "Scanning *.html for empty files..."
+          find . -maxdepth 1 -name '*.html' -type f | while read -r f; do
+            size="$(wc -c < "$f")"
+            if [ "$size" -lt 200 ]; then
+              echo "::error::$f is suspiciously small (${size} bytes)"
+              exit 1
+            fi
+            echo "ok size: $f (${size} bytes)"
+          done
+
+          if [ ! -d assets ]; then
+            echo "::error::assets/ directory missing"
+            exit 1
+          fi
+
+          echo "Full CI checks passed."
