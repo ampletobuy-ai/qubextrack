@@ -9,6 +9,10 @@ require __DIR__ . '/PHPMailer/src/SMTP.php';
 
 require __DIR__ . '/contact-load-config.php';
 
+// Keep AJAX JSON clean (PHP 8+ libraries may emit deprecations).
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+ini_set('display_errors', '0');
+
 $loaded = contactLoadConfig();
 $config = $loaded['config'];
 if ($loaded['status'] !== 'ok') {
@@ -29,7 +33,7 @@ $fields = [
     'message'    => 'Message',
 ];
 
-error_reporting(E_ALL & ~E_NOTICE);
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
 
 try {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

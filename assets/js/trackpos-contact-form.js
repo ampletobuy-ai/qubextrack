@@ -126,10 +126,30 @@
       },
     })
       .then(function (res) {
-        return res.json().catch(function () {
-          return res.text().then(function (text) {
-            return { type: res.ok ? "success" : "danger", message: text };
-          });
+        return res.text().then(function (text) {
+          var payload = null;
+          try {
+            payload = JSON.parse(text);
+          } catch (e) {
+            var start = text.indexOf("{");
+            var end = text.lastIndexOf("}");
+            if (start !== -1 && end > start) {
+              try {
+                payload = JSON.parse(text.slice(start, end + 1));
+              } catch (e2) {
+                payload = null;
+              }
+            }
+          }
+          if (payload && typeof payload === "object") {
+            return payload;
+          }
+          return {
+            type: res.ok ? "success" : "danger",
+            message:
+              (text && text.replace(/<[^>]+>/g, " ").trim()) ||
+              "Something went wrong. Please try again.",
+          };
         });
       })
       .then(function (payload) {
@@ -141,9 +161,13 @@
             loadedAtInput.value = String(Math.floor(Date.now() / 1000));
           }
           resetRecaptcha();
+        } else {
+          // Keep field values; drop Bootstrap "invalid" chrome after a server-side failure.
+          form.classList.remove("was-validated");
         }
       })
       .catch(function () {
+        form.classList.remove("was-validated");
         showAlert(
           "danger",
           "Network error. Please try again or email support@qubextrack.com."
