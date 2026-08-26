@@ -155,7 +155,14 @@ jobs:
               HEALTH_URL='https://qubextrack.com/'
             fi
 
-            mkdir -p "${DEPLOY_PATH}"
+            # aaPanel web roots (/www/wwwroot/...) are owned by www — use sudo when available.
+            if [[ "${DEPLOY_PATH}" == /www/wwwroot/* ]] && command -v sudo >/dev/null 2>&1; then
+              RUN=(sudo)
+            else
+              RUN=()
+            fi
+
+            "${RUN[@]}" mkdir -p "${DEPLOY_PATH}"
             STAGE="$(mktemp -d /tmp/qubextrack-stage.XXXXXX)"
             ARCHIVE=/tmp/qubextrack-site.tgz
             if [ ! -f "$ARCHIVE" ]; then
@@ -170,27 +177,29 @@ jobs:
             CONFIG_BACKUP=""
             if [ -f "${DEPLOY_PATH}/assets/php/contact.config.php" ]; then
               CONFIG_BACKUP="$(mktemp)"
-              cp "${DEPLOY_PATH}/assets/php/contact.config.php" "${CONFIG_BACKUP}"
+              "${RUN[@]}" cp "${DEPLOY_PATH}/assets/php/contact.config.php" "${CONFIG_BACKUP}"
+              "${RUN[@]}" chmod 644 "${CONFIG_BACKUP}" 2>/dev/null || true
             fi
             # Portable sync (no rsync required on VPS).
-            find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
+            "${RUN[@]}" find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
               ! -name 'docker-compose.yml' \
               ! -name 'nginx.conf' \
               ! -name '.user.ini' \
               ! -name '.htaccess' \
               -exec rm -rf {} +
-            cp -a "${STAGE}/." "${DEPLOY_PATH}/"
+            "${RUN[@]}" cp -a "${STAGE}/." "${DEPLOY_PATH}/"
             if [ -n "${CONFIG_BACKUP}" ] && [ -f "${CONFIG_BACKUP}" ]; then
-              mkdir -p "${DEPLOY_PATH}/assets/php"
-              cp "${CONFIG_BACKUP}" "${DEPLOY_PATH}/assets/php/contact.config.php"
+              "${RUN[@]}" mkdir -p "${DEPLOY_PATH}/assets/php"
+              "${RUN[@]}" cp "${CONFIG_BACKUP}" "${DEPLOY_PATH}/assets/php/contact.config.php"
               rm -f "${CONFIG_BACKUP}"
             fi
             rm -rf "${STAGE}" "$ARCHIVE"
 
-            mkdir -p "${DEPLOY_PATH}/assets/php/storage/rate-limit"
-            chmod 775 "${DEPLOY_PATH}/assets/php/storage/rate-limit" 2>/dev/null || chmod 755 "${DEPLOY_PATH}/assets/php/storage/rate-limit"
+            "${RUN[@]}" mkdir -p "${DEPLOY_PATH}/assets/php/storage/rate-limit"
+            "${RUN[@]}" chmod 775 "${DEPLOY_PATH}/assets/php/storage/rate-limit" 2>/dev/null \
+              || "${RUN[@]}" chmod 755 "${DEPLOY_PATH}/assets/php/storage/rate-limit"
             if id www >/dev/null 2>&1; then
-              chown -R www:www "${DEPLOY_PATH}/assets/php/storage" 2>/dev/null || true
+              "${RUN[@]}" chown -R www:www "${DEPLOY_PATH}" 2>/dev/null || true
             fi
 
             # Legacy Docker marketing site — only when deploying to that path.
