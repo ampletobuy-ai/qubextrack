@@ -158,7 +158,7 @@ jobs:
             fi
 
             # aaPanel web roots (/www/wwwroot/...) are owned by www — use sudo when available.
-            if [[ "${DEPLOY_PATH}" == /www/wwwroot/* ]] && command -v sudo >/dev/null 2>&1; then
+            if [[ "${DEPLOY_PATH}" == /www/wwwroot/* ]] && command -v sudo >/dev/null 2>&1 && sudo -n true 2>/dev/null; then
               RUN=(sudo)
             else
               RUN=()
@@ -175,17 +175,26 @@ jobs:
               exit 1
             fi
             tar -xzf "$ARCHIVE" -C "${STAGE}"
+
             # Preserve live contact.config.php (secrets stay on server).
             CONFIG_BACKUP=""
             if [ -f "${DEPLOY_PATH}/assets/php/contact.config.php" ]; then
               CONFIG_BACKUP="$(mktemp)"
               "${RUN[@]}" cp "${DEPLOY_PATH}/assets/php/contact.config.php" "${CONFIG_BACKUP}"
-              "${RUN[@]}" chmod 644 "${CONFIG_BACKUP}" 2>/dev/null || true
+              chmod 644 "${CONFIG_BACKUP}" 2>/dev/null || true
             fi
+
+            # PHP-FPM writes rate-limit files as uid 82 — reclaim ownership so wipe succeeds.
+            if command -v docker >/dev/null 2>&1; then
+              docker run --rm -v "${DEPLOY_PATH}:/t" alpine \
+                sh -c "chown -R $(id -u):$(id -g) /t" 2>/dev/null || true
+            fi
+
             # Portable sync (no rsync required on VPS).
             "${RUN[@]}" find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
               ! -name 'docker-compose.yml' \
               ! -name 'nginx.conf' \
+              ! -name 'Dockerfile.php' \
               ! -name '.user.ini' \
               ! -name '.htaccess' \
               -exec rm -rf {} +
@@ -199,18 +208,16 @@ jobs:
             rm -rf "${STAGE}" "$ARCHIVE"
 
             "${RUN[@]}" mkdir -p "${DEPLOY_PATH}/assets/php/storage/rate-limit"
-            "${RUN[@]}" chmod 775 "${DEPLOY_PATH}/assets/php/storage/rate-limit" 2>/dev/null \
-              || "${RUN[@]}" chmod 755 "${DEPLOY_PATH}/assets/php/storage/rate-limit"
             # PHP-FPM (www-data uid 82) must write rate-limit files.
             if command -v docker >/dev/null 2>&1; then
               docker run --rm -v "${DEPLOY_PATH}/assets/php/storage:/s" alpine \
                 sh -c 'chown -R 82:82 /s && chmod -R 775 /s' 2>/dev/null || true
-            fi
-            if id www >/dev/null 2>&1; then
-              "${RUN[@]}" chown -R www:www "${DEPLOY_PATH}/assets/php/storage" 2>/dev/null || true
+            else
+              "${RUN[@]}" chmod 775 "${DEPLOY_PATH}/assets/php/storage/rate-limit" 2>/dev/null || true
             fi
 
-            # Ensure marketing Docker stack (nginx + PHP-FPM) is running.
+            # Refresh compose/nginx/PHP image files when present in the archive parent layout.
+            # (CI tarball excludes ./deploy — keep stack files already on the VPS.)
             if [ -f /opt/marketing-site/docker-compose.yml ]; then
               cd /opt/marketing-site
               docker compose up -d --build
