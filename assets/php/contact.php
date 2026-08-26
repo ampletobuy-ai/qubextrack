@@ -60,9 +60,9 @@ try {
         throw new Exception('Too many submissions from your network. Please try again in an hour or call +91-9348457123.');
     }
 
-  // --- reCAPTCHA (when secret key is configured) ---
+  // --- reCAPTCHA (only when enabled and secret key is configured) ---
     $recaptchaSecret = trim((string) ($config['recaptchaSecret'] ?? ''));
-    if ($recaptchaSecret !== '') {
+    if (!empty($config['recaptchaUse']) && $recaptchaSecret !== '') {
         require __DIR__ . '/recaptcha/src/autoload.php';
         if (empty($_POST['g-recaptcha-response'])) {
             throw new Exception('Please complete the security check (reCAPTCHA).');

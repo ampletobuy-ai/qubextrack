@@ -394,20 +394,24 @@
 
   function readFormRecaptchaConfig() {
     var siteKey = (form.getAttribute("data-recaptcha-site-key") || "").trim();
-    var version = (form.getAttribute("data-recaptcha-version") || "v3").toLowerCase();
+    var version = (form.getAttribute("data-recaptcha-version") || "").toLowerCase();
+    var useAttr = form.getAttribute("data-recaptcha-use");
     return {
-      recaptchaUse: siteKey !== "",
+      recaptchaUse: useAttr === "false" ? false : siteKey !== "",
       recaptchaSiteKey: siteKey,
-      recaptchaVersion: version === "v2" || version === "v3" ? version : "v3",
+      recaptchaVersion: version === "v2" || version === "v3" ? version : "",
       recaptchaEnterprise: form.getAttribute("data-recaptcha-enterprise") === "true",
     };
   }
 
   function resolveSiteKey(cfg) {
-    if (cfg && cfg.recaptchaUse && cfg.recaptchaSiteKey) {
+    if (!cfg || cfg.recaptchaUse === false) {
+      return "";
+    }
+    if (cfg.recaptchaUse && cfg.recaptchaSiteKey) {
       return cfg.recaptchaSiteKey;
     }
-    return readFormRecaptchaConfig().recaptchaSiteKey;
+    return "";
   }
 
   function initFromConfig(cfg) {
@@ -415,11 +419,13 @@
     recaptchaRequired = !!(cfg && cfg.recaptchaUse && siteKey);
     if (!siteKey) {
       recaptchaRequired = false;
+      recaptchaV3 = false;
+      recaptchaEnterprise = false;
       var wrap = document.getElementById("trackpos-recaptcha-wrap");
       if (wrap) wrap.style.display = "none";
       return Promise.resolve();
     }
-    var version = (cfg && cfg.recaptchaVersion) || "v2";
+    var version = (cfg && cfg.recaptchaVersion) || "v3";
     if (cfg && cfg.recaptchaEnterprise) {
       version = "enterprise";
     }
@@ -432,40 +438,19 @@
     return initRecaptchaV2(siteKey);
   }
 
-  function bootstrapRecaptcha() {
-    var cfg = readFormRecaptchaConfig();
-    if (!cfg.recaptchaSiteKey) {
-      var wrap = document.getElementById("trackpos-recaptcha-wrap");
-      if (wrap) wrap.style.display = "none";
-      return Promise.resolve();
-    }
-    return initFromConfig(cfg).catch(function () {
-      showAlert(
-        "danger",
-        "Security check (reCAPTCHA) could not load. Check your internet connection and refresh the page."
-      );
-    });
-  }
-
-  bootstrapRecaptcha();
-
+  // Load reCAPTCHA only from server config (avoids invalid hardcoded keys / domain errors).
   fetch("./assets/php/contact-public.php", { credentials: "same-origin" })
     .then(function (r) {
       if (!r.ok) throw new Error("config unavailable");
       return r.json();
     })
     .then(function (serverCfg) {
-      var local = readFormRecaptchaConfig();
-      if (local.recaptchaVersion) {
-        serverCfg.recaptchaVersion = local.recaptchaVersion;
-      }
-      if (local.recaptchaSiteKey && !serverCfg.recaptchaSiteKey) {
-        serverCfg.recaptchaSiteKey = local.recaptchaSiteKey;
-      }
       return initFromConfig(serverCfg);
     })
     .catch(function () {
-      /* Form data-* attributes already initialized v3; do not fall back to v2 checkbox. */
+      var wrap = document.getElementById("trackpos-recaptcha-wrap");
+      if (wrap) wrap.style.display = "none";
+      recaptchaRequired = false;
     });
 
   form.addEventListener(
