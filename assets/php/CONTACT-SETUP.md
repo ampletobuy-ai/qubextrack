@@ -2,22 +2,18 @@
 
 The contact form on `contact.html` posts to `assets/php/contact.php` (requires **PHP** on your server, e.g. XAMPP, aaPanel/cPanel, or VPS).
 
-## Production (aaPanel)
+## Production (Traefik + Docker PHP)
+
+Public traffic for `qubextrack.com` goes through **Traefik → marketing-nginx**, with **PHP-FPM** in the same compose stack for `/assets/php/*.php`.
 
 | Item | Value |
 |------|--------|
-| Web root | `/www/wwwroot/qubextrack.com` |
-| PHP | 8.2 (aaPanel → Site → PHP version) |
-| Config file | `/www/wwwroot/qubextrack.com/assets/php/contact.config.php` |
-| Rate limit dir | `/www/wwwroot/qubextrack.com/assets/php/storage/rate-limit/` (writable by `www`) |
+| Deploy path | `/opt/marketing-site/public` |
+| Compose | `/opt/marketing-site/docker-compose.yml` (`marketing-nginx` + `marketing-php`) |
+| Config file | `/opt/marketing-site/public/assets/php/contact.config.php` (chmod `644`) |
+| Rate limit dir | `assets/php/storage/rate-limit/` (writable by PHP uid `82`) |
 
-GitHub Actions **Deploy Production** syncs the site into this folder. Upload `contact.config.php` once on the server (it is not overwritten on deploy).
-
-**Stop Docker from serving the domain** if you still run `/opt/marketing-site` — otherwise `qubextrack.com` may hit static nginx (no PHP) instead of aaPanel:
-
-```bash
-cd /opt/marketing-site && docker compose down
-```
+aaPanel at `/www/wwwroot/qubextrack.com` can hold a mirror, but **does not receive public HTTPS** while Traefik owns ports 80/443 for this host.
 
 Verify PHP works: open `https://qubextrack.com/assets/php/contact-public.php` — you should see JSON (`"configStatus":"ok"`), not PHP source code.
 

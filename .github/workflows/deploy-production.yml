@@ -85,7 +85,9 @@ jobs:
           USER="$(printf '%s' "${USER_SECRET:-${USER_VAR:-}}" | tr -d '\r' | xargs)"
           USER="${USER:-deploy}"
           DEPLOY_PATH="$(printf '%s' "${PATH_SECRET:-${PATH_VAR:-}}" | tr -d '\r' | xargs)"
-          DEPLOY_PATH="${DEPLOY_PATH:-/www/wwwroot/qubextrack.com}"
+          # Traefik serves /opt/marketing-site/public (PHP-FPM in Docker).
+          # aaPanel path /www/wwwroot/qubextrack.com is optional mirror only.
+          DEPLOY_PATH="${DEPLOY_PATH:-/opt/marketing-site/public}"
 
           HOST="${HOST#ssh://}"
           HOST="${HOST#https://}"
@@ -191,6 +193,7 @@ jobs:
             if [ -n "${CONFIG_BACKUP}" ] && [ -f "${CONFIG_BACKUP}" ]; then
               "${RUN[@]}" mkdir -p "${DEPLOY_PATH}/assets/php"
               "${RUN[@]}" cp "${CONFIG_BACKUP}" "${DEPLOY_PATH}/assets/php/contact.config.php"
+              "${RUN[@]}" chmod 644 "${DEPLOY_PATH}/assets/php/contact.config.php" 2>/dev/null || true
               rm -f "${CONFIG_BACKUP}"
             fi
             rm -rf "${STAGE}" "$ARCHIVE"
@@ -198,18 +201,21 @@ jobs:
             "${RUN[@]}" mkdir -p "${DEPLOY_PATH}/assets/php/storage/rate-limit"
             "${RUN[@]}" chmod 775 "${DEPLOY_PATH}/assets/php/storage/rate-limit" 2>/dev/null \
               || "${RUN[@]}" chmod 755 "${DEPLOY_PATH}/assets/php/storage/rate-limit"
+            # PHP-FPM (www-data uid 82) must write rate-limit files.
+            if command -v docker >/dev/null 2>&1; then
+              docker run --rm -v "${DEPLOY_PATH}/assets/php/storage:/s" alpine \
+                sh -c 'chown -R 82:82 /s && chmod -R 775 /s' 2>/dev/null || true
+            fi
             if id www >/dev/null 2>&1; then
-              "${RUN[@]}" chown -R www:www "${DEPLOY_PATH}" 2>/dev/null || true
+              "${RUN[@]}" chown -R www:www "${DEPLOY_PATH}/assets/php/storage" 2>/dev/null || true
             fi
 
-            # Legacy Docker marketing site — only when deploying to that path.
-            if [ "${DEPLOY_PATH}" = "/opt/marketing-site/public" ]; then
-              if [ -x /opt/marketing-site/scripts/deploy.sh ]; then
-                /opt/marketing-site/scripts/deploy.sh
-              elif [ -f /opt/marketing-site/docker-compose.yml ]; then
-                cd /opt/marketing-site
-                docker compose up -d
-              fi
+            # Ensure marketing Docker stack (nginx + PHP-FPM) is running.
+            if [ -f /opt/marketing-site/docker-compose.yml ]; then
+              cd /opt/marketing-site
+              docker compose up -d --build
+            elif [ -x /opt/marketing-site/scripts/deploy.sh ]; then
+              /opt/marketing-site/scripts/deploy.sh
             fi
 
             echo "Deployed to ${DEPLOY_PATH}"
