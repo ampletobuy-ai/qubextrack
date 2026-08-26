@@ -1,6 +1,25 @@
 # Contact form email setup
 
-The contact form on `contact.html` posts to `assets/php/contact.php` (requires **PHP** on your server, e.g. XAMPP, cPanel, or VPS).
+The contact form on `contact.html` posts to `assets/php/contact.php` (requires **PHP** on your server, e.g. XAMPP, aaPanel/cPanel, or VPS).
+
+## Production (aaPanel)
+
+| Item | Value |
+|------|--------|
+| Web root | `/www/wwwroot/qubextrack.com` |
+| PHP | 8.2 (aaPanel → Site → PHP version) |
+| Config file | `/www/wwwroot/qubextrack.com/assets/php/contact.config.php` |
+| Rate limit dir | `/www/wwwroot/qubextrack.com/assets/php/storage/rate-limit/` (writable by `www`) |
+
+GitHub Actions **Deploy Production** syncs the site into this folder. Upload `contact.config.php` once on the server (it is not overwritten on deploy).
+
+**Stop Docker from serving the domain** if you still run `/opt/marketing-site` — otherwise `qubextrack.com` may hit static nginx (no PHP) instead of aaPanel:
+
+```bash
+cd /opt/marketing-site && docker compose down
+```
+
+Verify PHP works: open `https://qubextrack.com/assets/php/contact-public.php` — you should see JSON (`"configStatus":"ok"`), not PHP source code.
 
 ## 1. Configure mail
 

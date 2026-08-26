@@ -1,6 +1,7 @@
 name: Deploy Production
 
-# Production marketing site → Bluehost VPS (qubextrack.com).
+# Production marketing site → aaPanel on VPS (qubextrack.com).
+# Web root: /www/wwwroot/qubextrack.com (PHP 8.2 via aaPanel).
 # Manual only — run from the main branch after merging features.
 # (Actions → Deploy Production → Run workflow, ref: main).
 
@@ -84,7 +85,7 @@ jobs:
           USER="$(printf '%s' "${USER_SECRET:-${USER_VAR:-}}" | tr -d '\r' | xargs)"
           USER="${USER:-deploy}"
           DEPLOY_PATH="$(printf '%s' "${PATH_SECRET:-${PATH_VAR:-}}" | tr -d '\r' | xargs)"
-          DEPLOY_PATH="${DEPLOY_PATH:-/opt/marketing-site/public}"
+          DEPLOY_PATH="${DEPLOY_PATH:-/www/wwwroot/qubextrack.com}"
 
           HOST="${HOST#ssh://}"
           HOST="${HOST#https://}"
@@ -112,6 +113,7 @@ jobs:
           set -euo pipefail
           # Write archive outside the tree so tar does not see its own output.
           tar -C "$GITHUB_WORKSPACE" -czf /tmp/qubextrack-site.tgz \
+            --exclude='./assets/php/contact.config.php' \
             --exclude='./.git' \
             --exclude='./.github' \
             --exclude='./deploy' \
@@ -164,22 +166,46 @@ jobs:
               exit 1
             fi
             tar -xzf "$ARCHIVE" -C "${STAGE}"
+            # Preserve live contact.config.php (secrets stay on server).
+            CONFIG_BACKUP=""
+            if [ -f "${DEPLOY_PATH}/assets/php/contact.config.php" ]; then
+              CONFIG_BACKUP="$(mktemp)"
+              cp "${DEPLOY_PATH}/assets/php/contact.config.php" "${CONFIG_BACKUP}"
+            fi
             # Portable sync (no rsync required on VPS).
             find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
               ! -name 'docker-compose.yml' \
               ! -name 'nginx.conf' \
+              ! -name '.user.ini' \
+              ! -name '.htaccess' \
               -exec rm -rf {} +
             cp -a "${STAGE}/." "${DEPLOY_PATH}/"
+            if [ -n "${CONFIG_BACKUP}" ] && [ -f "${CONFIG_BACKUP}" ]; then
+              mkdir -p "${DEPLOY_PATH}/assets/php"
+              cp "${CONFIG_BACKUP}" "${DEPLOY_PATH}/assets/php/contact.config.php"
+              rm -f "${CONFIG_BACKUP}"
+            fi
             rm -rf "${STAGE}" "$ARCHIVE"
 
-            if [ -x /opt/marketing-site/scripts/deploy.sh ]; then
-              /opt/marketing-site/scripts/deploy.sh
-            elif [ -f /opt/marketing-site/docker-compose.yml ]; then
-              cd /opt/marketing-site
-              docker compose up -d
+            mkdir -p "${DEPLOY_PATH}/assets/php/storage/rate-limit"
+            chmod 775 "${DEPLOY_PATH}/assets/php/storage/rate-limit" 2>/dev/null || chmod 755 "${DEPLOY_PATH}/assets/php/storage/rate-limit"
+            if id www >/dev/null 2>&1; then
+              chown -R www:www "${DEPLOY_PATH}/assets/php/storage" 2>/dev/null || true
+            fi
+
+            # Legacy Docker marketing site — only when deploying to that path.
+            if [ "${DEPLOY_PATH}" = "/opt/marketing-site/public" ]; then
+              if [ -x /opt/marketing-site/scripts/deploy.sh ]; then
+                /opt/marketing-site/scripts/deploy.sh
+              elif [ -f /opt/marketing-site/docker-compose.yml ]; then
+                cd /opt/marketing-site
+                docker compose up -d
+              fi
             fi
 
             echo "Deployed to ${DEPLOY_PATH}"
             if command -v curl >/dev/null 2>&1; then
               curl -fsSI "${HEALTH_URL}" | head -n 5 || true
+              curl -fsS "${HEALTH_URL%/}/assets/php/contact-public.php" | head -c 200 || true
+              echo ""
             fi
