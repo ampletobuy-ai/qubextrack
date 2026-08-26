@@ -157,17 +157,7 @@ jobs:
               HEALTH_URL='https://qubextrack.com/'
             fi
 
-            # Prefer plain commands (drone-ssh may use /bin/sh without bash arrays).
-            SUDO=""
-            case "${DEPLOY_PATH}" in
-              /www/wwwroot/*)
-                if command -v sudo >/dev/null 2>&1 && sudo -n true 2>/dev/null; then
-                  SUDO="sudo"
-                fi
-                ;;
-            esac
-
-            $SUDO mkdir -p "${DEPLOY_PATH}"
+            mkdir -p "${DEPLOY_PATH}"
             STAGE="$(mktemp -d /tmp/qubextrack-stage.XXXXXX)"
             ARCHIVE=/tmp/qubextrack-site.tgz
             if [ ! -f "$ARCHIVE" ]; then
@@ -179,53 +169,43 @@ jobs:
             fi
             tar -xzf "$ARCHIVE" -C "${STAGE}"
 
-            # Preserve live contact.config.php (secrets stay on server).
             CONFIG_BACKUP=""
             if [ -f "${DEPLOY_PATH}/assets/php/contact.config.php" ]; then
               CONFIG_BACKUP="$(mktemp)"
-              $SUDO cp "${DEPLOY_PATH}/assets/php/contact.config.php" "${CONFIG_BACKUP}"
+              cp "${DEPLOY_PATH}/assets/php/contact.config.php" "${CONFIG_BACKUP}"
               chmod 644 "${CONFIG_BACKUP}" 2>/dev/null || true
             fi
 
-            # PHP-FPM writes rate-limit files as uid 82 — reclaim ownership so wipe succeeds.
             DEPLOY_UID="$(id -u)"
             DEPLOY_GID="$(id -g)"
             if command -v docker >/dev/null 2>&1; then
-              docker run --rm -v "${DEPLOY_PATH}:/t" alpine \
-                sh -c "chown -R ${DEPLOY_UID}:${DEPLOY_GID} /t" 2>/dev/null || true
+              docker run --rm -v "${DEPLOY_PATH}:/t" alpine sh -c "chown -R ${DEPLOY_UID}:${DEPLOY_GID} /t" 2>/dev/null || true
             fi
 
-            # Portable sync (no rsync required on VPS).
-            $SUDO find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
+            find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
               ! -name 'docker-compose.yml' \
               ! -name 'nginx.conf' \
               ! -name 'Dockerfile.php' \
               ! -name '.user.ini' \
               ! -name '.htaccess' \
               -exec rm -rf {} +
-            $SUDO cp -a "${STAGE}/." "${DEPLOY_PATH}/"
+            cp -a "${STAGE}/." "${DEPLOY_PATH}/"
             if [ -n "${CONFIG_BACKUP}" ] && [ -f "${CONFIG_BACKUP}" ]; then
-              $SUDO mkdir -p "${DEPLOY_PATH}/assets/php"
-              $SUDO cp "${CONFIG_BACKUP}" "${DEPLOY_PATH}/assets/php/contact.config.php"
-              $SUDO chmod 644 "${DEPLOY_PATH}/assets/php/contact.config.php" 2>/dev/null || true
+              mkdir -p "${DEPLOY_PATH}/assets/php"
+              cp "${CONFIG_BACKUP}" "${DEPLOY_PATH}/assets/php/contact.config.php"
+              chmod 644 "${DEPLOY_PATH}/assets/php/contact.config.php" 2>/dev/null || true
               rm -f "${CONFIG_BACKUP}"
             fi
             rm -rf "${STAGE}" "$ARCHIVE"
 
-            $SUDO mkdir -p "${DEPLOY_PATH}/assets/php/storage/rate-limit"
-            # PHP-FPM (www-data uid 82) must write rate-limit files.
+            mkdir -p "${DEPLOY_PATH}/assets/php/storage/rate-limit"
             if command -v docker >/dev/null 2>&1; then
-              docker run --rm -v "${DEPLOY_PATH}/assets/php/storage:/s" alpine \
-                sh -c 'chown -R 82:82 /s && chmod -R 775 /s' 2>/dev/null || true
-            else
-              $SUDO chmod 775 "${DEPLOY_PATH}/assets/php/storage/rate-limit" 2>/dev/null || true
+              docker run --rm -v "${DEPLOY_PATH}/assets/php/storage:/s" alpine sh -c 'chown -R 82:82 /s && chmod -R 775 /s' 2>/dev/null || true
             fi
 
             if [ -f /opt/marketing-site/docker-compose.yml ]; then
               cd /opt/marketing-site
               docker compose up -d --build
-            elif [ -x /opt/marketing-site/scripts/deploy.sh ]; then
-              /opt/marketing-site/scripts/deploy.sh
             fi
 
             echo "Deployed to ${DEPLOY_PATH}"
