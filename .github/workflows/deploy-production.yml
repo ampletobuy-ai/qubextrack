@@ -157,14 +157,17 @@ jobs:
               HEALTH_URL='https://qubextrack.com/'
             fi
 
-            # aaPanel web roots (/www/wwwroot/...) are owned by www — use sudo when available.
-            if [[ "${DEPLOY_PATH}" == /www/wwwroot/* ]] && command -v sudo >/dev/null 2>&1 && sudo -n true 2>/dev/null; then
-              RUN=(sudo)
-            else
-              RUN=()
-            fi
+            # Prefer plain commands (drone-ssh may use /bin/sh without bash arrays).
+            SUDO=""
+            case "${DEPLOY_PATH}" in
+              /www/wwwroot/*)
+                if command -v sudo >/dev/null 2>&1 && sudo -n true 2>/dev/null; then
+                  SUDO="sudo"
+                fi
+                ;;
+            esac
 
-            "${RUN[@]}" mkdir -p "${DEPLOY_PATH}"
+            $SUDO mkdir -p "${DEPLOY_PATH}"
             STAGE="$(mktemp -d /tmp/qubextrack-stage.XXXXXX)"
             ARCHIVE=/tmp/qubextrack-site.tgz
             if [ ! -f "$ARCHIVE" ]; then
@@ -180,44 +183,44 @@ jobs:
             CONFIG_BACKUP=""
             if [ -f "${DEPLOY_PATH}/assets/php/contact.config.php" ]; then
               CONFIG_BACKUP="$(mktemp)"
-              "${RUN[@]}" cp "${DEPLOY_PATH}/assets/php/contact.config.php" "${CONFIG_BACKUP}"
+              $SUDO cp "${DEPLOY_PATH}/assets/php/contact.config.php" "${CONFIG_BACKUP}"
               chmod 644 "${CONFIG_BACKUP}" 2>/dev/null || true
             fi
 
             # PHP-FPM writes rate-limit files as uid 82 — reclaim ownership so wipe succeeds.
+            DEPLOY_UID="$(id -u)"
+            DEPLOY_GID="$(id -g)"
             if command -v docker >/dev/null 2>&1; then
               docker run --rm -v "${DEPLOY_PATH}:/t" alpine \
-                sh -c "chown -R $(id -u):$(id -g) /t" 2>/dev/null || true
+                sh -c "chown -R ${DEPLOY_UID}:${DEPLOY_GID} /t" 2>/dev/null || true
             fi
 
             # Portable sync (no rsync required on VPS).
-            "${RUN[@]}" find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
+            $SUDO find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
               ! -name 'docker-compose.yml' \
               ! -name 'nginx.conf' \
               ! -name 'Dockerfile.php' \
               ! -name '.user.ini' \
               ! -name '.htaccess' \
               -exec rm -rf {} +
-            "${RUN[@]}" cp -a "${STAGE}/." "${DEPLOY_PATH}/"
+            $SUDO cp -a "${STAGE}/." "${DEPLOY_PATH}/"
             if [ -n "${CONFIG_BACKUP}" ] && [ -f "${CONFIG_BACKUP}" ]; then
-              "${RUN[@]}" mkdir -p "${DEPLOY_PATH}/assets/php"
-              "${RUN[@]}" cp "${CONFIG_BACKUP}" "${DEPLOY_PATH}/assets/php/contact.config.php"
-              "${RUN[@]}" chmod 644 "${DEPLOY_PATH}/assets/php/contact.config.php" 2>/dev/null || true
+              $SUDO mkdir -p "${DEPLOY_PATH}/assets/php"
+              $SUDO cp "${CONFIG_BACKUP}" "${DEPLOY_PATH}/assets/php/contact.config.php"
+              $SUDO chmod 644 "${DEPLOY_PATH}/assets/php/contact.config.php" 2>/dev/null || true
               rm -f "${CONFIG_BACKUP}"
             fi
             rm -rf "${STAGE}" "$ARCHIVE"
 
-            "${RUN[@]}" mkdir -p "${DEPLOY_PATH}/assets/php/storage/rate-limit"
+            $SUDO mkdir -p "${DEPLOY_PATH}/assets/php/storage/rate-limit"
             # PHP-FPM (www-data uid 82) must write rate-limit files.
             if command -v docker >/dev/null 2>&1; then
               docker run --rm -v "${DEPLOY_PATH}/assets/php/storage:/s" alpine \
                 sh -c 'chown -R 82:82 /s && chmod -R 775 /s' 2>/dev/null || true
             else
-              "${RUN[@]}" chmod 775 "${DEPLOY_PATH}/assets/php/storage/rate-limit" 2>/dev/null || true
+              $SUDO chmod 775 "${DEPLOY_PATH}/assets/php/storage/rate-limit" 2>/dev/null || true
             fi
 
-            # Refresh compose/nginx/PHP image files when present in the archive parent layout.
-            # (CI tarball excludes ./deploy — keep stack files already on the VPS.)
             if [ -f /opt/marketing-site/docker-compose.yml ]; then
               cd /opt/marketing-site
               docker compose up -d --build
