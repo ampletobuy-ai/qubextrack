@@ -216,13 +216,38 @@ jobs:
               exit 1
             fi
             tar -xzf "$ARCHIVE" -C "${STAGE}"
+            # Preserve live contact.config.php (secrets stay on server).
+            CONFIG_BACKUP=""
+            if [ -f "${DEPLOY_PATH}/assets/php/contact.config.php" ]; then
+              CONFIG_BACKUP="$(mktemp)"
+              cp "${DEPLOY_PATH}/assets/php/contact.config.php" "${CONFIG_BACKUP}"
+              chmod 644 "${CONFIG_BACKUP}" 2>/dev/null || true
+            fi
+            # PHP-FPM may own storage as uid 82 — reclaim before wipe.
+            if command -v docker >/dev/null 2>&1; then
+              docker run --rm -v "${DEPLOY_PATH}:/t" alpine \
+                sh -c "chown -R $(id -u):$(id -g) /t" 2>/dev/null || true
+            fi
             # Portable sync (no rsync required on VPS).
             find "${DEPLOY_PATH}" -mindepth 1 -maxdepth 1 \
               ! -name 'docker-compose.yml' \
               ! -name 'nginx.conf' \
+              ! -name 'Dockerfile.php' \
               -exec rm -rf {} +
             cp -a "${STAGE}/." "${DEPLOY_PATH}/"
+            if [ -n "${CONFIG_BACKUP}" ] && [ -f "${CONFIG_BACKUP}" ]; then
+              mkdir -p "${DEPLOY_PATH}/assets/php"
+              cp "${CONFIG_BACKUP}" "${DEPLOY_PATH}/assets/php/contact.config.php"
+              chmod 644 "${DEPLOY_PATH}/assets/php/contact.config.php" 2>/dev/null || true
+              rm -f "${CONFIG_BACKUP}"
+            fi
             rm -rf "${STAGE}" "$ARCHIVE"
+
+            mkdir -p "${DEPLOY_PATH}/assets/php/storage/rate-limit"
+            if command -v docker >/dev/null 2>&1; then
+              docker run --rm -v "${DEPLOY_PATH}/assets/php/storage:/s" alpine \
+                sh -c 'chown -R 82:82 /s && chmod -R 775 /s' 2>/dev/null || true
+            fi
 
             if [ -x /opt/marketing-site/scripts/deploy.sh ]; then
               /opt/marketing-site/scripts/deploy.sh
@@ -234,4 +259,6 @@ jobs:
             echo "Deployed to ${DEPLOY_PATH}"
             if command -v curl >/dev/null 2>&1; then
               curl -fsSI "${HEALTH_URL}" | head -n 5 || true
+              curl -fsS "${HEALTH_URL%/}/assets/php/contact-public.php" | head -c 200 || true
+              echo ""
             fi
