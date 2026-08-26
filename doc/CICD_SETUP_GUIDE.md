@@ -24,7 +24,7 @@ Push to features
 Merge to main → Actions → Deploy Production (manual)
               ▼
 ┌─────────────────────────────┐
-│  Deploy Production          │  SSH → production VPS → /opt/marketing-site/public
+│  Deploy Production          │  SSH → production VPS → /www/wwwroot/qubextrack.com
 └─────────────────────────────┘
 ```
 
@@ -53,9 +53,9 @@ Without a marker, CI still runs; deploy is skipped.
 
 - [ ] Repo: `ampletobuy-ai/qubextrack`
 - [ ] Branches: `features`, `main`
-- [ ] VPS has Docker + Traefik `edge` network (same stack as retail-pos)
-- [ ] `/opt/marketing-site` with `docker-compose.yml`, `nginx.conf`, `public/`
-- [ ] SSH access as `deploy` (or your deploy user)
+- [ ] Production: aaPanel site at `/www/wwwroot/qubextrack.com` with PHP 8.2
+- [ ] Staging (optional): Docker `/opt/marketing-site` with `docker-compose.yml`, `nginx.conf`, `public/`
+- [ ] SSH access as `root` or `deploy` (must be able to write the web root)
 
 ---
 
@@ -85,7 +85,7 @@ For each environment, set:
 | `VPS_HOST` | secret or var | VPS IPv4 |
 | `VPS_USER` | secret or var | `deploy` |
 | `VPS_SSH_KEY` | secret | private key for GitHub Actions |
-| `DEPLOY_PATH` | optional | default `/opt/marketing-site/public` |
+| `DEPLOY_PATH` | optional | staging `/opt/marketing-site/public` · prod `/www/wwwroot/qubextrack.com` (aaPanel) |
 | `DEPLOY_HEALTHCHECK_URL` | optional | staging `https://ampletobuy.com/` · prod `https://qubextrack.com/` |
 
 You can reuse the same SSH key pattern as retail-pos (`github-actions-…-deploy`), or a dedicated key limited to `/opt/marketing-site`.

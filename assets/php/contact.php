@@ -115,7 +115,17 @@ try {
         throw new Exception('Your message contains too many links.');
     }
 
-    $allowedDepartments = ['Free Trial', 'Demo', 'Book Demo', 'Sales Enquiry', 'Support'];
+    $allowedDepartments = [
+        'Free Trial',
+        'Demo',
+        'Book Demo',
+        'Accounting Demo',
+        'CRM Demo',
+        'Customer Service Demo',
+        'Garage / Workshop Demo',
+        'Sales Enquiry',
+        'Support',
+    ];
     if (!in_array($department, $allowedDepartments, true)) {
         throw new Exception('Please select how we can help.');
     }
