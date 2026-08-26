@@ -26,8 +26,9 @@ return [
     // Alternate: port 587 with 'tls' and smtpAutoTLS => true
 
     // reCAPTCHA — https://www.google.com/recaptcha/admin
-    // recaptchaVersion: v2 (checkbox) | v3 (invisible score) | enterprise (set recaptchaEnterprise true)
-    'recaptchaUse'            => true,
+    // Domains must include: qubextrack.com, www.qubextrack.com, ampletobuy.com, www.ampletobuy.com
+    // Set recaptchaUse => false to disable until keys/domains are valid.
+    'recaptchaUse'            => false,
     'recaptchaVersion'        => 'v3',
     'recaptchaSiteKey'        => 'YOUR_RECAPTCHA_SITE_KEY',
     'recaptchaSecret'         => 'YOUR_RECAPTCHA_SECRET_KEY',

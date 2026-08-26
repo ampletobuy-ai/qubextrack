@@ -1,16 +1,31 @@
-# Marketing site — static HTML for qubextrack.com / www.qubextrack.com
-# Install: copy this folder to /opt/marketing-site on the VPS
-# Sync site files into ./public (CI/CD does this via Deploy workflows)
-# Requires: docker network create edge; Traefik running on edge
+# Marketing site for qubextrack.com / www.qubextrack.com
+# Static HTML via nginx + PHP-FPM for assets/php/contact.php
+# Sync site files into ./public (CI/CD Deploy workflows)
+# Requires: docker network create edge; Traefik on edge
 #
 # Usage:
-#   docker compose up -d
+#   docker compose up -d --build
 
 services:
+  marketing-php:
+    build:
+      context: .
+      dockerfile: Dockerfile.php
+    image: qubextrack-marketing-php:8.2
+    container_name: marketing-php
+    restart: always
+    volumes:
+      - ./public:/usr/share/nginx/html:ro
+      - ./public/assets/php/storage:/usr/share/nginx/html/assets/php/storage
+    networks:
+      - marketing_internal
+
   marketing-nginx:
     image: nginx:1.25-alpine
     container_name: marketing-nginx
     restart: always
+    depends_on:
+      - marketing-php
     volumes:
       - ./public:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
@@ -23,7 +38,10 @@ services:
       - "traefik.http.services.marketing.loadbalancer.server.port=80"
     networks:
       - edge
+      - marketing_internal
 
 networks:
   edge:
     external: true
+  marketing_internal:
+    driver: bridge

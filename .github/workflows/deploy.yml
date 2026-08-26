@@ -228,7 +228,7 @@ jobs:
               /opt/marketing-site/scripts/deploy.sh
             elif [ -f /opt/marketing-site/docker-compose.yml ]; then
               cd /opt/marketing-site
-              docker compose up -d
+              docker compose up -d --build
             fi
 
             echo "Deployed to ${DEPLOY_PATH}"
