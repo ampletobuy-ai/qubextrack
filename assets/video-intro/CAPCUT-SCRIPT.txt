@@ -1,0 +1,58 @@
+QubexTrack intro — CapCut assembly guide
+Brand: navy #022957 · red #e61320 · site qubextrack.com
+
+========================================
+A) YOUTUBE INTRO (16:9) ~28 seconds
+========================================
+Import these in order (each ~6–7s, Ken Burns zoom 105%→100%):
+  1. qubextrack-intro-01-hero.png
+  2. qubextrack-intro-02-industries.png
+  3. qubextrack-intro-03-modules.png
+  4. qubextrack-intro-04-cta.png
+
+Transitions: Fade 0.3s between slides
+Music: upbeat corporate, -18 dB under VO
+Captions: Auto captions ON (white text, red highlight)
+
+VOICEOVER:
+Running a jewellery store, restaurant, hotel, or retail shop?
+Meet QubexTrack — smart POS and business management for Indian SMEs.
+One cloud platform: billing, GST, accounting, CRM, and more.
+Book a free demo at qubextrack.com.
+
+ON-SCREEN TEXT (optional overlays):
+  Slide 1: (already on image)
+  Slide 2: Jewellery · Restaurant · Hotel · Retail
+  Slide 3: GST Compliant · Cloud Sync
+  Slide 4: Book Free Demo
+
+========================================
+B) YOUTUBE SHORTS (9:16) ~20 seconds
+========================================
+  1. qubextrack-shorts-01-hook.png   (0–7s)
+  2. qubextrack-intro-02-industries.png  crop/fit to 9:16  (7–12s)
+  3. qubextrack-intro-03-modules.png     crop/fit to 9:16  (12–16s)
+  4. qubextrack-shorts-02-cta.png    (16–20s)
+
+VOICEOVER (faster, punchy):
+Running a shop in India?
+Meet QubexTrack — cloud POS for jewellery, restaurant, hotel, and retail.
+GST billing, accounting, CRM — one platform.
+Book a free demo. qubextrack.com
+
+========================================
+C) LONG INTRO (16:9) ~60 seconds
+========================================
+Reuse cards 01–04, hold each longer (~10–12s) and add screen recordings of your product UI between slides 2 and 3 if you have them.
+
+VOICEOVER:
+If you run a jewellery showroom, restaurant, hotel, or retail store in India,
+you need more than a basic billing machine.
+QubexTrack is a cloud POS and business platform built for Indian SMEs.
+Industry workflows for jewellery, food service, hospitality, and retail.
+GST-ready invoices and GSTR reports.
+Plus accounting, CRM, customer service, and garage — on the same system.
+Trusted by businesses across India. Start with a free demo.
+Visit qubextrack.com today.
+
+Export: 1080p, H.264, 30fps
