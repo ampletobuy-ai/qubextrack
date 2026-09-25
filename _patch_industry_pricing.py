@@ -14,22 +14,24 @@ ADDONS = """
                     <thead>
                       <tr>
                         <th scope="col">Add-on</th>
-                        <th scope="col">Suggested price</th>
+                        <th scope="col">Monthly (ex GST)</th>
+                        <th scope="col">Annual (ex GST)</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr><td>Extra Branch</td><td>₹999/month</td></tr>
-                      <tr><td>Extra User</td><td>₹199/month</td></tr>
-                      <tr><td>WhatsApp Automation</td><td>Usage-based</td></tr>
-                      <tr><td>SMS Integration</td><td>Usage-based</td></tr>
-                      <tr><td>Custom Reports</td><td>₹5,000+</td></tr>
-                      <tr><td>Data Migration</td><td>₹3,000–₹20,000</td></tr>
-                      <tr><td>Onsite Training</td><td>₹5,000/day</td></tr>
+                      <tr><td>Extra User</td><td>₹199 / month</td><td>₹1,999 / year</td></tr>
+                      <tr><td>Extra Branch</td><td>₹999 / month</td><td>₹9,999 / year</td></tr>
+                      <tr><td>Extra Mobile Device</td><td>₹49 / month</td><td>₹499 / year</td></tr>
+                      <tr><td>Invoice Overage Pack (1,000 invoices)</td><td>₹99 / month</td><td>₹999 / year</td></tr>
+                      <tr><td>WhatsApp Automation</td><td colspan="2">Usage-based</td></tr>
+                      <tr><td>SMS Integration</td><td colspan="2">Usage-based</td></tr>
+                      <tr><td>Custom Reports</td><td colspan="2">₹5,000+</td></tr>
+                      <tr><td>Data Migration</td><td colspan="2">₹3,000–₹20,000</td></tr>
+                      <tr><td>Onsite Training</td><td colspan="2">₹5,000/day</td></tr>
                     </tbody>
                   </table>
                 </div>
-                <p class="!text-center !text-[0.8rem] !text-[#aab0bc] !mt-4 !mb-0">Add-ons depend on your setup and integration requirements.</p>
-                <p class="!text-center !text-[0.85rem] !text-[#60697b] !mt-4 !mb-0">All plan prices exclude GST. Cloud sync &amp; mobile app access included.</p>
+                <p class="!text-center !text-[0.8rem] !text-[#aab0bc] !mt-4 !mb-0">Capacity add-ons (users, branches, devices, invoice packs) can be purchased in-app. Mid-cycle purchases are prorated to the remaining billing period. Other add-ons depend on your setup.</p>
                 <p class="trackpos-pricing-disclaimer !text-center !text-[0.8rem] !text-[#aab0bc] !mt-2 !mb-0">Listed plan prices may be revised year on year when required, with prior notice to existing customers before any change takes effect.</p>
               </div>
             </div>
