@@ -236,6 +236,53 @@
         '<strong>8 users</strong> &amp; priority email + onboarding',
       ],
     },
+    hospital: {
+      label: 'Hospital & Clinic',
+      yearlyHint: '(annual plans)',
+      plans: {
+        starter: {
+          badge: 'Starter',
+          title: 'Starter Plan',
+          subtitle: 'Best for clinics and nursing homes — OPD, appointments & billing.',
+          monthly: 2083,
+          yearly: 25000,
+          savePct: 0,
+          cta: 'Start Free Trial',
+          href: 'https://hospital.qubextrack.com/register?plan=hospital_starter',
+        },
+        pro: {
+          badge: 'Business',
+          title: 'Business Plan',
+          subtitle: 'Best for 20–100 bed hospitals — IPD, pharmacy & laboratory.',
+          monthly: 6250,
+          yearly: 75000,
+          savePct: 0,
+          cta: 'Start Business Trial',
+          href: 'https://hospital.qubextrack.com/register?plan=hospital_business',
+        },
+      },
+      regular: [
+        '<strong>5 staff seats</strong> · <strong>500 patients</strong> / year',
+        'OPD, appointments &amp; patient registration',
+        'Hospital billing &amp; GST-ready invoices',
+        'Basic inventory &amp; reports',
+        'Cloud workspace — no card for 14-day trial',
+      ],
+      regularExcluded: [
+        'IPD, bed &amp; ward',
+        'Pharmacy + laboratory',
+        'TPA / insurance &amp; multi-branch',
+      ],
+      diamond: [
+        'Everything in <strong>Starter</strong> for hospital',
+        '<strong>15 staff seats</strong> · <strong>5,000 patients</strong> / year',
+        'IPD + bed &amp; ward management',
+        'Pharmacy + laboratory',
+        'TPA / insurance &amp; doctor commission',
+        'Advanced reports &amp; WhatsApp/SMS',
+        'Enterprise (₹1,50,000/yr) adds multi-branch &amp; API',
+      ],
+    },
   };
 
   function featureItem(html, included) {
@@ -267,6 +314,22 @@
     if (monthlyEl) monthlyEl.textContent = formatPrice(plan.monthly);
     if (yearlyEl) yearlyEl.textContent = formatPrice(plan.yearly);
     if (ctaEl) {
+      if (plan.href) {
+        ctaEl.setAttribute('href', plan.href);
+        ctaEl.removeAttribute('data-trackpos-modal-open');
+        ctaEl.setAttribute('target', '_blank');
+        ctaEl.setAttribute('rel', 'noopener');
+      } else if (planKey === 'starter') {
+        ctaEl.setAttribute('href', '#');
+        ctaEl.setAttribute('data-trackpos-modal-open', '#modal-module-signin');
+        ctaEl.removeAttribute('target');
+        ctaEl.removeAttribute('rel');
+      } else if (planKey === 'pro') {
+        ctaEl.setAttribute('href', './contact.html');
+        ctaEl.removeAttribute('data-trackpos-modal-open');
+        ctaEl.removeAttribute('target');
+        ctaEl.removeAttribute('rel');
+      }
       if (planKey === 'pro') {
         ctaEl.innerHTML = `<span>${plan.cta}</span>`;
       } else {
@@ -316,6 +379,16 @@
 
     const pricingRoot = document.querySelector('.trackpos-pricing');
     if (pricingRoot) pricingRoot.dataset.industry = key;
+
+    const isHospital = key === 'hospital';
+    document.querySelectorAll('.trackpos-hospital-pricing').forEach((el) => {
+      if (isHospital) el.removeAttribute('hidden');
+      else el.setAttribute('hidden', '');
+    });
+    document.querySelectorAll('.trackpos-pricing-footnote--hospital').forEach((el) => {
+      if (isHospital) el.removeAttribute('hidden');
+      else el.setAttribute('hidden', '');
+    });
   }
 
   function initIndustryButtons() {
