@@ -1,0 +1,465 @@
+/**
+ * QubexTrack marketing → hospital.qubextrack.com portal visual system.
+ * Loaded after trackpos.css. Remaps brand colors, type, CTAs, cards, nav.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+
+:root {
+  --portal-font: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --portal-green: #04966a;
+  --portal-green-dark: #037a58;
+  --portal-green-soft: #ecfdf5;
+  --portal-green-ring: rgba(4, 150, 106, 0.2);
+  --portal-terracotta: #d49176;
+  --portal-terracotta-deep: #b86f58;
+  --portal-gradient-start: #2b7568;
+  --portal-gradient-mid: #6a8f84;
+  --portal-gradient-end: #d49176;
+  --portal-ink: #111827;
+  --portal-muted: #6b7280;
+  --portal-border: #e8eaed;
+  --portal-radius: 14px;
+  --portal-radius-lg: 18px;
+  --portal-bg: #f7faf9;
+  /* Override Sandbox DM Serif token so headlines inherit portal type */
+  --font-DMSerif: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* ── Base type & page atmosphere ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+body.font-Manrope,
+body.portal-font,
+.font-Manrope,
+.portal-font {
+  font-family: var(--portal-font) !important;
+  color: var(--portal-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 120% 80% at 10% -10%, rgba(43, 117, 104, 0.12), transparent 55%),
+    radial-gradient(ellipse 90% 70% at 100% 0%, rgba(212, 145, 118, 0.18), transparent 50%),
+    linear-gradient(180deg, #f7faf9 0%, #fff 42%, #fff 100%) !important;
+  background-attachment: fixed;
+}
+
+/* DM Serif headlines → portal display weight */
+.\!font-DMSerif,
+.font-DMSerif,
+[class*="font-DMSerif"] {
+  font-family: var(--portal-font) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  font-style: normal !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  color: var(--portal-ink);
+}
+
+/* ── Remap hardcoded brand utilities (HTML keeps old hex classes) ── */
+.\!bg-\[\#e61320\],
+.bg-\[\#e61320\],
+.btn.\!bg-\[\#e61320\],
+.btn-primary.\!bg-\[\#e61320\] {
+  background-color: var(--portal-green) !important;
+}
+
+.\!border-\[\#e61320\],
+.border-\[\#e61320\],
+.btn.\!border-\[\#e61320\],
+.btn-primary.\!border-\[\#e61320\] {
+  border-color: var(--portal-green) !important;
+}
+
+.\!text-\[\#e61320\],
+.text-\[\#e61320\] {
+  color: var(--portal-green) !important;
+}
+
+.hover\:\!text-\[\#e61320\]:hover,
+a.hover\:\!text-\[\#e61320\]:hover,
+.hover\:text-\[\#e61320\]:hover {
+  color: var(--portal-green-dark) !important;
+}
+
+.hover\:\!bg-\[\#e61320\]:hover,
+.hover\:bg-\[\#e61320\]:hover,
+.btn.hover\:\!bg-\[\#e61320\]:hover {
+  background-color: var(--portal-green-dark) !important;
+}
+
+.hover\:\!border-\[\#e61320\]:hover,
+.btn.hover\:\!border-\[\#e61320\]:hover {
+  border-color: var(--portal-green-dark) !important;
+}
+
+.active\:\!bg-\[\#e61320\]:active,
+.active\:bg-\[\#e61320\]:active {
+  background-color: var(--portal-green-dark) !important;
+}
+
+.active\:\!border-\[\#e61320\]:active {
+  border-color: var(--portal-green-dark) !important;
+}
+
+.\!bg-\[\#022957\],
+.bg-\[\#022957\],
+.btn.\!bg-\[\#022957\],
+.btn-green.\!bg-\[\#022957\] {
+  background-color: var(--portal-gradient-start) !important;
+}
+
+.\!border-\[\#022957\],
+.border-\[\#022957\],
+.btn.\!border-\[\#022957\] {
+  border-color: var(--portal-gradient-start) !important;
+}
+
+.\!text-\[\#022957\],
+.text-\[\#022957\] {
+  color: var(--portal-gradient-start) !important;
+}
+
+.hover\:\!bg-\[\#022957\]:hover,
+.btn.hover\:\!bg-\[\#022957\]:hover {
+  background-color: #1f5a50 !important;
+}
+
+.hover\:\!border-\[\#022957\]:hover {
+  border-color: #1f5a50 !important;
+}
+
+.wrapper.\!bg-\[\#f5f5ff\],
+.bg-soft-primary.\!bg-\[\#f5f5ff\],
+.\!bg-\[\#f5f5ff\],
+.bg-\[\#f5f5ff\] {
+  background-color: transparent !important;
+}
+
+.\!bg-\[\#ffe5e7\],
+.bg-\[\#ffe5e7\] {
+  background-color: var(--portal-green-soft) !important;
+}
+
+.\!border-\[\#ffe5e7\],
+.border-\[\#ffe5e7\] {
+  border-color: var(--portal-green-soft) !important;
+}
+
+.\!text-\[\#ffe5e7\] {
+  color: var(--portal-green-soft) !important;
+}
+
+/* Amber / yellow CTAs → terracotta portal accent */
+.\!bg-\[\#fab758\],
+.bg-\[\#fab758\] {
+  background-color: var(--portal-terracotta) !important;
+}
+
+.\!border-\[\#fab758\],
+.border-\[\#fab758\] {
+  border-color: var(--portal-terracotta) !important;
+}
+
+.\!text-\[\#fab758\],
+.text-\[\#fab758\] {
+  color: var(--portal-terracotta-deep) !important;
+}
+
+.\!bg-\[\#fef4e2\],
+.bg-\[\#fef4e2\] {
+  background-color: #f8ebe4 !important;
+}
+
+.hover\:\!bg-\[\#e5a84f\]:hover,
+.hover\:bg-\[\#e5a84f\]:hover {
+  background-color: var(--portal-terracotta-deep) !important;
+}
+
+.hover\:\!border-\[\#e5a84f\]:hover,
+.hover\:border-\[\#e5a84f\]:hover {
+  border-color: var(--portal-terracotta-deep) !important;
+}
+
+.active\:\!bg-\[\#fab758\]:active,
+.active\:bg-\[\#fab758\]:active {
+  background-color: var(--portal-terracotta) !important;
+}
+
+.active\:\!border-\[\#fab758\]:active {
+  border-color: var(--portal-terracotta) !important;
+}
+
+/* Soft primary / purple-tint leftovers */
+.bg-soft-primary,
+.\!bg-soft-primary {
+  background-color: rgba(236, 253, 245, 0.65) !important;
+}
+
+.text-soft-primary,
+.\!text-soft-primary {
+  color: var(--portal-green) !important;
+}
+
+/* ── Buttons → portal pills ── */
+.btn {
+  border-radius: 999px !important;
+  font-family: var(--portal-font) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease !important;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary,
+.btn.btn-primary {
+  background-color: var(--portal-green) !important;
+  border-color: var(--portal-green) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(4, 150, 106, 0.25);
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover {
+  background-color: var(--portal-green-dark) !important;
+  border-color: var(--portal-green-dark) !important;
+  color: #fff !important;
+}
+
+.btn-green,
+.btn.btn-green {
+  background-color: var(--portal-gradient-start) !important;
+  border-color: var(--portal-gradient-start) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(43, 117, 104, 0.22);
+}
+
+.btn-outline-primary,
+.btn.btn-outline-primary {
+  background: #fff !important;
+  color: var(--portal-ink) !important;
+  border: 1.5px solid var(--portal-border) !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+.btn-outline-primary:hover,
+.btn.btn-outline-primary:hover {
+  color: var(--portal-green-dark) !important;
+  border-color: var(--portal-green) !important;
+  background: var(--portal-green-soft) !important;
+}
+
+.btn-soft-primary {
+  background-color: var(--portal-green-soft) !important;
+  color: var(--portal-green-dark) !important;
+  border-color: transparent !important;
+}
+
+.btn-soft-primary:hover {
+  background-color: #d1fae5 !important;
+  color: var(--portal-green-dark) !important;
+}
+
+/* ── Nav ── */
+.navbar.classic,
+header.wrapper {
+  background: transparent !important;
+}
+
+.navbar .nav-link {
+  font-weight: 600 !important;
+  color: var(--portal-ink) !important;
+  font-size: 0.9375rem !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-item.show > .nav-link {
+  color: var(--portal-green-dark) !important;
+}
+
+.navbar .dropdown-menu {
+  border-radius: var(--portal-radius) !important;
+  border: 1px solid var(--portal-border) !important;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08) !important;
+  font-family: var(--portal-font);
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background: var(--portal-green-soft) !important;
+  color: var(--portal-green-dark) !important;
+}
+
+/* Nav CTA pills already use .btn — reinforce Free Trial as green */
+.navbar .btn-sm {
+  min-height: 2.35rem;
+  padding: 0.45rem 1rem !important;
+}
+
+/* ── Cards (top-level only — do NOT match pricing-card__* children) ── */
+.card,
+.industry-card,
+.trackpos-module-card {
+  border-radius: var(--portal-radius-lg) !important;
+  border: 1px solid var(--portal-border) !important;
+  background: #fff !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.card:hover,
+.industry-card:hover,
+.trackpos-module-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Soften jewellery/industry pricing shells without flattening nested text */
+.trackpos-jewellery-pricing-card {
+  border-radius: var(--portal-radius-lg) !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.trackpos-jewellery-pricing-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1) !important;
+}
+
+.trackpos-jewellery-pricing-card--starter {
+  background: linear-gradient(165deg, #eef8f4 0%, #f7faf9 45%, #ffffff 100%) !important;
+  border: 1px solid rgba(4, 150, 106, 0.15) !important;
+}
+
+.trackpos-jewellery-pricing-card--pro {
+  /* Keep dark pro card so light feature text stays readable */
+  background: linear-gradient(165deg, #1a2d4a 0%, #0f2340 55%, #0a1a33 100%) !important;
+  border: 1px solid rgba(212, 145, 118, 0.28) !important;
+}
+
+/* Undo accidental white boxes if any older cached rule targeted children */
+.trackpos-jewellery-pricing-card [class*="pricing-card__"] {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  transform: none !important;
+}
+
+/* ── Accents / icons that used primary red soft fills ── */
+.bg-dot.primary,
+.shape.bg-dot.primary {
+  opacity: 0.35;
+}
+
+.icon.btn-soft-primary,
+.btn-circle.btn-soft-primary {
+  background-color: var(--portal-green-soft) !important;
+  color: var(--portal-green) !important;
+}
+
+.bullet-soft-primary li::before,
+.bullet-bg.bullet-soft-primary li::before {
+  background-color: var(--portal-green-soft) !important;
+  color: var(--portal-green) !important;
+}
+
+/* Progress / counters */
+.counter,
+.counter-lg {
+  color: var(--portal-green) !important;
+}
+
+.\!text-\[\#e61320\].counter,
+.counter.\!text-\[\#e61320\] {
+  color: var(--portal-green) !important;
+}
+
+/* Form focus rings */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--portal-green) !important;
+  box-shadow: 0 0 0 0.2rem var(--portal-green-ring) !important;
+}
+
+/* Links */
+a.link-primary,
+.text-primary {
+  color: var(--portal-green) !important;
+}
+
+a:hover.link-primary {
+  color: var(--portal-green-dark) !important;
+}
+
+/* Footer stays dark but softens green accents */
+footer a:hover {
+  color: #1fcfb8 !important;
+}
+
+/* Pricing industry tabs / trackpos widgets inherit vars from trackpos.css */
+
+/* Subtle section separators */
+.wrapper.bg-light,
+.wrapper.\!bg-\[\#ffffff\],
+.wrapper.bg-\[\#ffffff\] {
+  background-color: transparent !important;
+}
+
+/* Offcanvas mobile nav */
+.offcanvas-nav {
+  font-family: var(--portal-font);
+}
+
+/* Hero lead muted */
+.lead {
+  color: var(--portal-muted);
+}
+
+/* Uppercase section labels */
+.uppercase.\!text-\[\#aab0bc\],
+.\!text-\[\#aab0bc\] {
+  color: #8a9a95 !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* ── Inner page heroes (Contact, About, etc.) — portal sage/terracotta ── */
+.trackpos-page-hero {
+  background:
+    radial-gradient(ellipse 90% 80% at 15% 20%, rgba(31, 207, 184, 0.35), transparent 55%),
+    radial-gradient(ellipse 80% 70% at 90% 10%, rgba(212, 145, 118, 0.32), transparent 50%),
+    linear-gradient(145deg, #2b7568 0%, #1f5a50 42%, #3d6b62 72%, #b86f58 100%) !important;
+  color: #fff;
+}
+
+.trackpos-page-hero .lead {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.trackpos-contact-card {
+  border-radius: var(--portal-radius-lg) !important;
+  border: 1px solid var(--portal-border) !important;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08) !important;
+}
+
+.trackpos-contact-page .icon.\!text-\[\#e61320\],
+.trackpos-contact-page .icon.\!text-\[\#022957\] {
+  color: var(--portal-green) !important;
+}
+
+.trackpos-float-call {
+  box-shadow: 0 0.25rem 1rem rgba(4, 150, 106, 0.3) !important;
+}

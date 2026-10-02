@@ -30,6 +30,13 @@
       blurb: 'Bookings, folio & property',
       icon: 'uil-bed',
     },
+    {
+      key: 'hospital',
+      label: 'Hospital & Clinic',
+      blurb: 'OPD, IPD, pharmacy & billing',
+      icon: 'uil-hospital',
+      path: '/site/login',
+    },
   ];
 
   /** Apex host for subdomain apps (strip www.). */
@@ -41,18 +48,22 @@
     return host;
   }
 
-  function moduleUrl(subdomain) {
+  function moduleUrl(subdomain, path) {
     var protocol = window.location.protocol === 'http:' ? 'http:' : 'https:';
     // Local file:// or odd protocols → https
     if (protocol !== 'http:' && protocol !== 'https:') {
       protocol = 'https:';
     }
-    return protocol + '//' + subdomain + '.' + apexDomain() + '/';
+    var suffix = path || '/';
+    if (suffix.charAt(0) !== '/') {
+      suffix = '/' + suffix;
+    }
+    return protocol + '//' + subdomain + '.' + apexDomain() + suffix;
   }
 
   function buildModalHtml() {
     const options = MODULES.map(function (m) {
-      var url = moduleUrl(m.key);
+      var url = moduleUrl(m.key, m.path);
       return (
         '<a class="trackpos-signin-option" href="' +
         url +
@@ -86,7 +97,7 @@
       '<button type="button" class="trackpos-modal__close" data-trackpos-modal-close aria-label="Close">&times;</button>' +
       '</div>' +
       '<div class="trackpos-modal__body">' +
-      '<p class="trackpos-signin-lead">Select Retail, Jewellery, Restaurant or Hotel to continue.</p>' +
+      '<p class="trackpos-signin-lead">Select Retail, Jewellery, Restaurant, Hotel or Hospital to continue.</p>' +
       '<div class="trackpos-signin-options">' +
       options +
       '</div>' +
