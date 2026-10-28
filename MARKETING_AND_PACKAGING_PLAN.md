@@ -83,7 +83,7 @@ Source of truth for limits and included modules: `config/plans.php`.
 | Mobile app access | **Included** | **Included** | Same as Business |
 | Suggested mobile device seats | 2 | 10 | Same as Business |
 | Included modules | None | appointments, commission, combopack, carrier | Same as Business |
-| Soft invoice cap | ~2,500 / year | None | Same as Business |
+| Soft invoice cap | ~1,500 / year | ~2,500 / year | Same as Business |
 | Duration | — | — | 14 days (`base_plan` = business) |
 
 ### Core always-on (both plans)
@@ -216,7 +216,7 @@ Company flags are synced from subscription entitlements via `TenantProvisioningR
 | Code | Name | Type | Annual (ex GST) | Monthly | Module key |
 |------|------|------|----------------:|--------:|------------|
 | `extra_user` | Extra User | quantity | ₹999 | ₹99 | — |
-| `extra_warehouse` | Extra Warehouse | quantity | ₹1,499 | ₹149 | — |
+| `extra_warehouse` | Extra Warehouse | quantity | ₹2,499 | ₹249 | — |
 | `crm` | CRM | module | ₹2,999 | ₹299 | `crm` |
 | `appointments` | Appointments | module | ₹1,999 | ₹199 | `appointments` |
 
