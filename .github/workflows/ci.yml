@@ -80,6 +80,11 @@ jobs:
           set -euo pipefail
           echo "Scanning *.html for empty files..."
           find . -maxdepth 1 -name '*.html' -type f | while read -r f; do
+            # Skip domain verification / ACME-style token files (plain text, not pages).
+            if ! grep -qi '<html' "$f"; then
+              echo "skip size (verification/token file): $f"
+              continue
+            fi
             size="$(wc -c < "$f")"
             if [ "$size" -lt 200 ]; then
               echo "::error::$f is suspiciously small (${size} bytes)"

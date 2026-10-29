@@ -216,6 +216,7 @@
         'GSTR-1 &amp; GSTR-2; print / PDF &amp; barcode labels',
         'Roles &amp; permissions; import items &amp; contacts',
         '<strong>2 users</strong>, 1 store &amp; <strong>1 warehouse</strong>',
+        '<strong>1 mobile device</strong> seat',
         '~2,500 invoices / year (fair use)',
         'Email support (standard SLA)',
       ],
@@ -231,9 +232,11 @@
         'P&amp;L, cash flow &amp; bank statement reports',
         'Multi-warehouse &amp; stock transfer (up to <strong>3</strong>)',
         'Batch &amp; serial / IMEI tracking',
-        'Appointments, commission, ComboPack &amp; carrier modules',
+        'Appointments, commission, ComboPack, carrier &amp; service contracts',
         'SMS / email templates &amp; <strong>API tokens</strong>',
-        '<strong>8 users</strong> &amp; priority email + onboarding',
+        '<strong>8 users</strong> · <strong>2 mobile devices</strong>',
+        '~2,500 invoices / year (fair use)',
+        'Priority email + onboarding',
       ],
     },
     hospital: {
@@ -265,6 +268,7 @@
         '<strong>5 staff seats</strong> · <strong>500 patients</strong> / year',
         'OPD, appointments &amp; patient registration',
         'Hospital billing &amp; GST-ready invoices',
+        'Doctor commission &amp; WhatsApp/SMS',
         'Basic inventory &amp; reports',
         'Cloud workspace — no card for 14-day trial',
       ],
@@ -278,8 +282,8 @@
         '<strong>15 staff seats</strong> · <strong>5,000 patients</strong> / year',
         'IPD + bed &amp; ward management',
         'Pharmacy + laboratory',
-        'TPA / insurance &amp; doctor commission',
-        'Advanced reports &amp; WhatsApp/SMS',
+        'TPA / insurance',
+        'Advanced reports &amp; duty roster',
         'Enterprise (₹1,50,000/yr) adds multi-branch &amp; API',
       ],
     },
@@ -313,6 +317,19 @@
     if (subtitleEl) subtitleEl.textContent = plan.subtitle || '';
     if (monthlyEl) monthlyEl.textContent = formatPrice(plan.monthly);
     if (yearlyEl) yearlyEl.textContent = formatPrice(plan.yearly);
+
+    // pricing.html cards use .price-value without data-* attrs (starter = first card, pro = second).
+    const cardIndex = planKey === 'pro' ? 1 : 0;
+    const card = document.querySelectorAll('.pricing-wrapper .pricing.card')[cardIndex];
+    if (card) {
+      const values = card.querySelectorAll('.price-value');
+      if (values[0]) values[0].textContent = String(plan.monthly);
+      if (values[1]) values[1].textContent = String(plan.yearly);
+      const planTitle = card.querySelector('.card-title');
+      if (planTitle) planTitle.textContent = plan.title;
+      const planBadge = card.querySelector('.trackpos-pricing-plan-badge');
+      if (planBadge) planBadge.textContent = plan.badge;
+    }
     if (ctaEl) {
       if (plan.href) {
         ctaEl.setAttribute('href', plan.href);
