@@ -217,7 +217,7 @@
         'Roles &amp; permissions; import items &amp; contacts',
         '<strong>2 users</strong>, 1 store &amp; <strong>1 warehouse</strong>',
         '<strong>1 mobile device</strong> seat',
-        '~1,500 invoices / year (fair use)',
+        '~2,500 invoices / year (fair use)',
         'Email support (standard SLA)',
       ],
       regularExcluded: [

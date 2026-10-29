@@ -81,9 +81,9 @@ Source of truth for limits and included modules: `config/plans.php`.
 | Warehouses | 1 | 3 | Same as Business |
 | Desktop (web) access | **Included** | **Included** | Same as Business |
 | Mobile app access | **Included** | **Included** | Same as Business |
-| Suggested mobile device seats | 2 | 10 | Same as Business |
-| Included modules | None | appointments, commission, combopack, carrier | Same as Business |
-| Soft invoice cap | ~1,500 / year | ~2,500 / year | Same as Business |
+| Suggested mobile device seats | 1 | 2 | Same as Business |
+| Included modules | None | appointments, commission, combopack, carrier, service_subscriptions | Same as Business |
+| Soft invoice cap | ~2,500 / year | ~2,500 / year | Same as Business |
 | Duration | — | — | 14 days (`base_plan` = business) |
 
 ### Core always-on (both plans)
@@ -163,8 +163,8 @@ QubexTrack is sold as **one subscription, two surfaces** — not separate deskto
 
 | Plan | Max users | Suggested max mobile devices |
 |------|-----------|------------------------------|
-| Starter | 2 | 2 |
-| Business | 8 | 10 |
+| Starter | 2 | 1 |
+| Business | 8 | 2 |
 | Add-on | `extra_user` (+1 user) | `extra_device` (+1 phone) |
 
 ### What to emphasize in demos
@@ -217,23 +217,24 @@ Company flags are synced from subscription entitlements via `TenantProvisioningR
 |------|------|------|----------------:|--------:|------------|
 | `extra_user` | Extra User | quantity | ₹999 | ₹99 | — |
 | `extra_warehouse` | Extra Warehouse | quantity | ₹2,499 | ₹249 | — |
+| `extra_device` | Extra Mobile Device | quantity | ₹499 | ₹49 | — |
 | `crm` | CRM | module | ₹2,999 | ₹299 | `crm` |
 | `appointments` | Appointments | module | ₹1,999 | ₹199 | `appointments` |
+| `coupons` | Discount Coupons | module | ₹999 | ₹99 | `coupons` |
+| `service_subscriptions` | Service Contracts | module | ₹3,000 | ₹300 | `service_subscriptions` |
+| `whatsapp_message_pack` | WhatsApp Message Pack | quantity | ₹1.20 / msg | ₹1.20 / msg | — |
 
 ### Documented / recommended (not all in portal catalog yet)
 
 | Add-on | Annual (ex GST) | Notes |
 |--------|----------------:|--------|
-| Extra mobile device | TBD (suggest ₹499–999) | `extra_device` — phone seat beyond plan allowance |
 | Sales commission | ₹1,999 | Included on Business; sell to Starter |
-| Garage | TBD (suggest ₹2,999) | Vertical pack for workshops |
-| Coupons | TBD (suggest ₹999–1,499) | Promo engine |
+| Garage | ₹2,999 | Vertical pack for workshops |
 | Membership | TBD | Wellness vertical; see `MEMBERSHIP_PROGRAM.md` |
 | Invoice overage pack | ₹999 | +1,000 invoices (Starter soft cap) |
-| Second store (separate company) | ₹3,999 | Separate tenant / database |
-| Setup & data migration | ₹5,000–12,000 | One-time |
-| On-site training | ₹3,999 / visit | One-time |
-| Priority phone support | ₹2,499 / year | Business customers |
+| Setup & data migration | ₹5,000–12,000 | Offline / Sales (one-time; not portal-billed) |
+| On-site training | ₹3,999 / visit | Offline / Sales (one-time; not portal-billed) |
+| Priority phone support | ₹2,499 / year | Offline / Sales (Business customers) |
 
 ### Packaging rules for selling
 
