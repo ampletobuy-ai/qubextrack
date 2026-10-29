@@ -1,0 +1,47 @@
+{
+  "ok": true,
+  "industry": "hotel",
+  "count": 8,
+  "images": [
+    {
+      "file": "hotel-pos-screenshot.png",
+      "url": "./assets/img/photos/hotel/hotel-pos-screenshot.png",
+      "mtime": 1779730298
+    },
+    {
+      "file": "hotel-post-payment-screenshot.png",
+      "url": "./assets/img/photos/hotel/hotel-post-payment-screenshot.png",
+      "mtime": 1779784902
+    },
+    {
+      "file": "hotel-availability-calendar-screenshot.png",
+      "url": "./assets/img/photos/hotel/hotel-availability-calendar-screenshot.png",
+      "mtime": 1779784902
+    },
+    {
+      "file": "hotel-housekeeping-dashboard-screenshot.png",
+      "url": "./assets/img/photos/hotel/hotel-housekeeping-dashboard-screenshot.png",
+      "mtime": 1779783384
+    },
+    {
+      "file": "hotel-folio-details-screenshot.png",
+      "url": "./assets/img/photos/hotel/hotel-folio-details-screenshot.png",
+      "mtime": 1779784902
+    },
+    {
+      "file": "hotel-folio-statement-screenshot.png",
+      "url": "./assets/img/photos/hotel/hotel-folio-statement-screenshot.png",
+      "mtime": 1779784902
+    },
+    {
+      "file": "hotel-gstr1-report-screenshot.png",
+      "url": "./assets/img/photos/hotel/hotel-gstr1-report-screenshot.png",
+      "mtime": 1779784996
+    },
+    {
+      "file": "hotel-profit-loss-screenshot.png",
+      "url": "./assets/img/photos/hotel/hotel-profit-loss-screenshot.png",
+      "mtime": 1779784902
+    }
+  ]
+}

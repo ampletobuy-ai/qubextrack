@@ -36,7 +36,7 @@
 
   const INDUSTRIES = {
     jewellery: {
-      label: 'Jewellery POS',
+      label: 'Jewellery',
       yearlyHint: '(Save up to 10%)',
       plans: {
         starter: {
@@ -87,57 +87,8 @@
         'WhatsApp invoice sharing, accounting export &amp; priority support',
       ],
     },
-    restaurant: {
-      label: 'Restaurant POS',
-      yearlyHint: '(Save up to 17%)',
-      plans: {
-        starter: {
-          badge: 'Starter',
-          title: 'Starter Plan',
-          subtitle: 'Best for single-outlet restaurants, cafés, and cloud kitchens.',
-          monthly: 600,
-          yearly: 6000,
-          savePct: 17,
-          cta: 'Request Free Trial',
-        },
-        pro: {
-          badge: 'Professional',
-          title: 'Professional Plan',
-          subtitle: 'Best for multi-outlet restaurants, chains, and aggregator-led kitchens.',
-          monthly: 1000,
-          yearly: 10000,
-          savePct: 17,
-          cta: 'Choose Professional',
-        },
-      },
-      regular: [
-        'Restaurant <strong>dashboard</strong> (sales, tables, kitchen queue)',
-        'Menus, items, <strong>variants &amp; add-ons</strong>',
-        'Dine-in &amp; takeaway POS · <strong>KOT print</strong>',
-        'Orders, payment, checkout &amp; close',
-        'Up to <strong>3,000 orders</strong> / year · <strong>250 menu items</strong>',
-        '2 users · single outlet',
-        'WhatsApp support + basic onboarding',
-      ],
-      regularExcluded: [
-        'Room service &amp; hotel folio posting',
-        'Order grouping &amp; delta KOT workflow',
-      ],
-      diamond: [
-        'Everything in <strong>Starter</strong> for restaurant',
-        '<strong>Room service</strong> &amp; checked-in room billing',
-        'Multi-table save &amp; <strong>order grouping</strong>',
-        'Delta KOT &amp; KOT status manage · group receipt',
-        'Void with audit · granular POS / orders / KOT permissions',
-        'Multi-branch (up to 3) · <strong>8 users</strong>',
-        'Hotel guest <strong>folio posting</strong> (with Hotel module)',
-        'Unlimited orders &amp; menu items',
-        'Swiggy / Zomato sync <strong>(add-on)</strong>',
-        'Priority support &amp; onboarding session',
-      ],
-    },
     hotel: {
-      label: 'Hotel Software',
+      label: 'Hotel & Restaurant',
       yearlyHint: '(Save up to 17%)',
       plans: {
         starter: {
@@ -161,6 +112,7 @@
       },
       regular: [
         'GST billing · room booking, check-in &amp; check-out',
+        'Restaurant POS, KOT &amp; table / room-service billing',
         'Housekeeping status board · guest <strong>folio</strong> billing',
         'Invoice print · <strong>rate plans</strong> &amp; seasonal pricing',
         'Occupancy &amp; revenue summary · daily sales &amp; ledger',
@@ -185,7 +137,7 @@
       ],
     },
     retail: {
-      label: 'Retail Billing',
+      label: 'Retail',
       yearlyHint: '(Save up to 17%)',
       plans: {
         starter: {

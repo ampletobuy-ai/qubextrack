@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/fonts/unicons/unicons.css">
   <link rel="stylesheet" href="./assets/css/plugins.css">
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./assets/css/trackpos.css">
+  <link rel="stylesheet" href="./assets/css/trackpos.css?v=20261029h">
   <link rel="stylesheet" href="./assets/css/qubex-portal-theme.css">
   <link rel="stylesheet" href="./assets/css/fonts/dm.css">
 </head>
@@ -40,10 +40,9 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Industries</a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="./jewellery-pos-software.html">Jewellery POS</a></li>
-                    <li><a class="dropdown-item" href="./restaurant-pos-software.html">Restaurant POS</a></li>
-                    <li><a class="dropdown-item" href="./hotel-management-software.html">Hotel Software</a></li>
-                    <li><a class="dropdown-item" href="./retail-billing-software.html">Retail Billing</a></li>
+                                        <li><a class="dropdown-item" href="./jewellery-pos-software.html">Jewellery</a></li>
+                    <li><a class="dropdown-item" href="./hotel-management-software.html">Hotel &amp; Restaurant</a></li>
+                    <li><a class="dropdown-item" href="./retail-billing-software.html">Retail</a></li>
                     <li><a class="dropdown-item" href="./hospital-management-software.html">Hospital &amp; Clinic</a></li>
 </ul>
                 </li>
@@ -61,9 +60,7 @@
                 <li class="nav-item"><a class="nav-link" href="./index.html#integrations">Integrations</a></li>
                 <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-trackpos-modal-open="#modal-module-signin">Login</a></li>
-
-              </ul>
+</ul>
               <!-- /.navbar-nav -->
               <div class="offcanvas-footer xl:!hidden lg:!hidden">
                 <div>
@@ -86,8 +83,11 @@
           <!-- /.navbar-collapse -->
           <div class="navbar-other lg:!ml-4 xl:!ml-4">
             <ul class="navbar-nav !flex-row !items-center !ml-auto">
+              <li class="nav-item !flex-shrink-0">
+                <a class="nav-link !whitespace-nowrap !px-2" href="#" data-trackpos-modal-open="#modal-module-signin">Login</a>
+              </li>
               <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle before:content-['\eb99'] !text-[1.1rem]"></i></a></li>
-              <li class="nav-item hidden xl:flex lg:flex md:flex !flex-row !items-center !gap-2 !flex-nowrap">
+              <li class="nav-item hidden xl:flex lg:flex !flex-row !items-center !gap-2 !flex-nowrap">
                                 <a href="#" class="btn btn-sm btn-green !text-white !bg-[#022957] border-[#022957] hover:text-white hover:bg-[#022957] hover:!border-[#022957] active:text-white active:bg-[#022957] active:border-[#022957] disabled:text-white disabled:bg-[#022957] disabled:border-[#022957] !rounded-[50rem] !whitespace-nowrap" data-trackpos-modal-open="#modal-module-signin">Free Trial</a>
                 <a href="tel:+919348457123" class="btn btn-sm btn-primary !text-white !bg-[#e61320] border-[#e61320] hover:text-white hover:bg-[#e61320] hover:!border-[#e61320] active:text-white active:bg-[#e61320] active:border-[#e61320] disabled:text-white disabled:bg-[#e61320] disabled:border-[#e61320] !rounded-[50rem] !whitespace-nowrap">Call Us</a>
               </li>
@@ -156,89 +156,72 @@
             <a href="https://wa.me/919348457123" target="_blank" rel="noopener" class="btn btn-lg btn-outline-primary !rounded">WhatsApp</a>
           </div>
           <div class="lg:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-8 lg:!mt-0">
-            <figure class="trackpos-hero-gallery !mb-0">
-              <a href="./assets/img/photos/jewellery-pos-screenshot.png" class="trackpos-hero-lightbox" data-glightbox="gallery: jewellery-product; title: Finance &amp; analytics; description: Revenue insights, profit tracking and cash flow across branches" aria-label="View product screenshots — finance dashboard (1 of 9)">
-                <img class="trackpos-hero-screenshot rounded-[.4rem] !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] w-full" src="./assets/img/photos/jewellery-pos-screenshot.png" width="1024" height="494" alt="QubexTrack multi-store jewellery POS — finance analytics dashboard">
+            <figure class="trackpos-hero-gallery !mb-0" data-trackpos-gallery-industry="jewellery" data-trackpos-gallery-id="jewellery-product">
+              <a href="./assets/img/photos/jewellery/jewellery-pos-screenshot.png" class="trackpos-hero-lightbox" data-glightbox="gallery: jewellery-product; title: Finance &amp; analytics; description: Revenue insights, profit tracking and cash flow across branches" aria-label="View product screenshots — finance dashboard (1 of 9)">
+                <img class="trackpos-hero-screenshot rounded-[.4rem] !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] w-full" src="./assets/img/photos/jewellery/jewellery-pos-screenshot.png" width="1024" height="494" alt="QubexTrack multi-store jewellery POS — finance analytics dashboard">
                 <span class="trackpos-hero-lightbox__hint" aria-hidden="true"><i class="uil uil-expand-arrows-alt before:content-['\eb9f']"></i> Click to enlarge</span>
               </a>
-              <a href="./assets/img/photos/jewellery-purchase-bill-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: jewellery-product; title: Purchase bill management; description: Create, review, and settle supplier GRNs with payable visibility" tabindex="-1" aria-hidden="true">Purchase bill screenshot</a>
-              <a href="./assets/img/photos/jewellery-add-stock-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: jewellery-product; title: Add stock; description: Jewellery product basics with fine products, metal type, purity, and weight + quantity tracking" tabindex="-1" aria-hidden="true">Add stock screenshot</a>
-              <a href="./assets/img/photos/jewellery-product-management-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: jewellery-product; title: Product management; description: Catalog, SKU, stock levels, pricing and performance analytics for jewellery items" tabindex="-1" aria-hidden="true">Product management screenshot</a>
-              <a href="./assets/img/photos/jewellery-tax-reports-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: jewellery-product; title: Tax reports; description: GST summaries, outward and inward supply reports, and filing preparation" tabindex="-1" aria-hidden="true">Tax reports screenshot</a>
-              <a href="./assets/img/photos/jewellery-trial-balance-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: jewellery-product; title: Trial balance; description: Account-wise money out and money in totals with net balance for the selected period" tabindex="-1" aria-hidden="true">Trial balance screenshot</a>
-              <a href="./assets/img/photos/jewellery-profit-loss-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: jewellery-product; title: Profit and loss; description: Operating income, expenses, and net profit/loss with cash or accrual basis" tabindex="-1" aria-hidden="true">Profit and loss screenshot</a>
-              <a href="./assets/img/photos/jewellery-cash-flow-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: jewellery-product; title: Cash flow; description: Cash in, cash out, net movement, journal ledger and 12-month cash flow forecast" tabindex="-1" aria-hidden="true">Cash flow screenshot</a>
-              <a href="./assets/img/photos/jewellery-metal-exchange-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: jewellery-product; title: Metal exchange; description: Old gold intake with purity, weight, rate per gram, buyback and invoice adjustment" tabindex="-1" aria-hidden="true">Metal exchange screenshot</a>
-              <figcaption class="trackpos-hero-gallery__caption">Product screenshots — click the image or a thumbnail; use the arrow buttons to see all 9 screens</figcaption>
-              <div class="trackpos-hero-thumbs-wrap">
-              <div class="trackpos-hero-thumbs-rail">
-                <button type="button" class="trackpos-hero-thumbs__nav trackpos-hero-thumbs__nav--prev" aria-label="Scroll thumbnails left" disabled>
-                  <i class="uil uil-angle-left-b" aria-hidden="true"></i>
-                </button>
-                <div class="trackpos-hero-thumbs__viewport">
-              <ul class="trackpos-hero-thumbs" aria-label="Screenshot thumbnails">
+                            <div class="trackpos-hero-thumbs-wrap">
+                <div class="trackpos-hero-thumbs-rail">
+                  <button type="button" class="trackpos-hero-thumbs__nav trackpos-hero-thumbs__nav--prev" aria-label="Scroll thumbnails left" disabled>
+                    <i class="uil uil-angle-left-b" aria-hidden="true"></i>
+                  </button>
+                  <div class="trackpos-hero-thumbs__viewport">
+                    <ul class="trackpos-hero-thumbs" aria-label="Screenshot thumbnails">
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link is-active" data-trackpos-gallery-index="0" aria-label="View finance dashboard screenshot">
-                    <img src="./assets/img/photos/jewellery-pos-screenshot.png" width="160" height="77" alt="" loading="lazy">
-                    <span>Finance</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only is-active" data-trackpos-gallery-index="0" aria-label="View jewellery-pos-screenshot screenshot">
+                    <img src="./assets/img/photos/jewellery/jewellery-pos-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="1" aria-label="View purchase bill management screenshot">
-                    <img src="./assets/img/photos/jewellery-purchase-bill-screenshot.png" width="160" height="77" alt="" loading="lazy">
-                    <span>Purchase bills</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="1" aria-label="View jewellery-add-stock-screenshot screenshot">
+                    <img src="./assets/img/photos/jewellery/jewellery-add-stock-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="2" aria-label="View add stock screenshot">
-                    <img src="./assets/img/photos/jewellery-add-stock-screenshot.png" width="160" height="77" alt="" loading="lazy">
-                    <span>Add stock</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="2" aria-label="View jewellery-cash-flow-screenshot screenshot">
+                    <img src="./assets/img/photos/jewellery/jewellery-cash-flow-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="3" aria-label="View product management screenshot">
-                    <img src="./assets/img/photos/jewellery-product-management-screenshot.png" width="160" height="77" alt="" loading="lazy">
-                    <span>Products</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="3" aria-label="View jewellery-metal-exchange-screenshot screenshot">
+                    <img src="./assets/img/photos/jewellery/jewellery-metal-exchange-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="4" aria-label="View tax reports screenshot">
-                    <img src="./assets/img/photos/jewellery-tax-reports-screenshot.png" width="160" height="77" alt="" loading="lazy">
-                    <span>Tax reports</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="4" aria-label="View jewellery-product-management-screenshot screenshot">
+                    <img src="./assets/img/photos/jewellery/jewellery-product-management-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="5" aria-label="View trial balance screenshot">
-                    <img src="./assets/img/photos/jewellery-trial-balance-screenshot.png" width="160" height="77" alt="" loading="lazy">
-                    <span>Trial balance</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="5" aria-label="View jewellery-profit-loss-screenshot screenshot">
+                    <img src="./assets/img/photos/jewellery/jewellery-profit-loss-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="6" aria-label="View profit and loss screenshot">
-                    <img src="./assets/img/photos/jewellery-profit-loss-screenshot.png" width="160" height="77" alt="" loading="lazy">
-                    <span>P&amp;L</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="6" aria-label="View jewellery-purchase-bill-screenshot screenshot">
+                    <img src="./assets/img/photos/jewellery/jewellery-purchase-bill-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="7" aria-label="View cash flow screenshot">
-                    <img src="./assets/img/photos/jewellery-cash-flow-screenshot.png" width="160" height="77" alt="" loading="lazy">
-                    <span>Cash flow</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="7" aria-label="View jewellery-tax-reports-screenshot screenshot">
+                    <img src="./assets/img/photos/jewellery/jewellery-tax-reports-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="8" aria-label="View metal exchange screenshot">
-                    <img src="./assets/img/photos/jewellery-metal-exchange-screenshot.png" width="160" height="77" alt="" loading="lazy">
-                    <span>Metal exchange</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="8" aria-label="View jewellery-trial-balance-screenshot screenshot">
+                    <img src="./assets/img/photos/jewellery/jewellery-trial-balance-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
-              </ul>
+                    </ul>
+                  </div>
+                  <button type="button" class="trackpos-hero-thumbs__nav trackpos-hero-thumbs__nav--next" aria-label="Scroll thumbnails right">
+                    <i class="uil uil-angle-right-b" aria-hidden="true"></i>
+                  </button>
                 </div>
-                <button type="button" class="trackpos-hero-thumbs__nav trackpos-hero-thumbs__nav--next" aria-label="Scroll thumbnails right">
-                  <i class="uil uil-angle-right-b" aria-hidden="true"></i>
-                </button>
               </div>
-              </div>
-            </figure>
+              <figcaption class="trackpos-hero-gallery__caption">Product screenshots (9) — click a thumbnail or the image to view full size.</figcaption>
+</figure>
           </div>
         </div>
       </div>
@@ -771,7 +754,7 @@
   <script src="./assets/js/plugins.js"></script>
   <script src="./assets/js/theme.js"></script>
   <script src="./assets/js/trackpos-anchor.js"></script>
-  <script src="./assets/js/trackpos-hero-gallery.js"></script>
+  <script src="./assets/js/trackpos-hero-gallery.js?v=20261029g"></script>
   <script src="./assets/js/trackpos-modal.js"></script>
   <script src="./assets/js/trackpos-signin.js"></script>
 </body>

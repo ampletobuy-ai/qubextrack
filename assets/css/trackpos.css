@@ -20,13 +20,15 @@
   color: var(--trackpos-primary);
 }
 
-/* Logo sizing — wider QubexTrack wordmark */
+/* Logo sizing — compact enough that desktop nav does not overlap */
 .navbar .navbar-brand.w-full {
   width: auto !important;
   flex: 0 0 auto;
-  max-width: min(70vw, 380px);
-  margin-right: 1rem;
-  padding-block: 0.55rem !important;
+  max-width: min(48vw, 220px);
+  margin-right: 0.75rem;
+  padding-block: 0.35rem !important;
+  position: relative;
+  z-index: 2;
 }
 
 .navbar-brand a {
@@ -36,7 +38,7 @@
 }
 
 .navbar-brand .trackpos-logo-img {
-  height: clamp(3.25rem, 8vw, 4.5rem);
+  height: clamp(2.6rem, 5.5vw, 3.35rem);
   width: auto;
   max-width: 100%;
   display: block;
@@ -44,7 +46,7 @@
 }
 
 .trackpos-logo-img {
-  height: clamp(3.25rem, 8vw, 4.5rem);
+  height: clamp(2.6rem, 5.5vw, 3.35rem);
   width: auto;
   max-width: 100%;
   display: block;
@@ -69,6 +71,65 @@ footer .trackpos-logo-footer {
   height: 3.4rem;
   width: auto;
   max-width: 280px;
+}
+
+/* Keep Login / CTAs visible; avoid clipped nav on small laptops */
+.navbar > .container {
+  gap: 0.35rem;
+}
+
+.navbar .navbar-collapse.offcanvas-nav {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.navbar .navbar-other {
+  flex: 0 0 auto;
+  margin-left: auto;
+  position: relative;
+  z-index: 3;
+}
+
+.navbar .navbar-other .nav-link {
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+  .navbar.navbar-expand-lg .navbar-collapse .navbar-nav > .nav-item > .nav-link {
+    padding-left: 0.55rem !important;
+    padding-right: 0.55rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar .navbar-brand.w-full {
+    max-width: 170px;
+    margin-right: 0.35rem;
+  }
+
+  .navbar-brand .trackpos-logo-img {
+    height: 2.55rem;
+  }
+
+  .navbar.navbar-expand-lg .navbar-collapse .navbar-nav > .nav-item > .nav-link {
+    padding-left: 0.4rem !important;
+    padding-right: 0.4rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Drop lower-priority links so Login never gets clipped */
+  .navbar.navbar-expand-lg .navbar-collapse .navbar-nav > .nav-item > a[href*="#integrations"],
+  .navbar.navbar-expand-lg .navbar-collapse .navbar-nav > .nav-item > a[href$="about.html"] {
+    display: none !important;
+  }
+
+  .navbar .navbar-other .btn-sm {
+    padding-left: 0.65rem !important;
+    padding-right: 0.65rem !important;
+    min-height: 2.05rem;
+    font-size: 0.78rem;
+  }
 }
 
 /* How It Works — infographic (homepage) */
@@ -358,11 +419,197 @@ body:has(section.trackpos-industry-hero) .navbar-brand .trackpos-logo-img {
   border-radius: 0.4rem;
 }
 
+.trackpos-hero-gallery {
+  width: 100%;
+}
+
+.trackpos-hero-lightbox {
+  display: block;
+  width: 100%;
+}
+
 .trackpos-hero-screenshot {
   display: block;
   width: 100%;
   height: auto;
   transition: transform 0.2s ease;
+}
+
+/* Single-image product screenshot viewer (prev / next) */
+.trackpos-shot-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 3.5rem;
+}
+
+.trackpos-shot-viewer[hidden] {
+  display: none !important;
+}
+
+.trackpos-shot-viewer__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.trackpos-shot-viewer__stage {
+  position: relative;
+  z-index: 1;
+  width: min(1600px, 96vw);
+  max-height: 96vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.trackpos-shot-viewer__img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 96vh;
+  object-fit: contain;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.4);
+  background: #0f172a;
+}
+
+.trackpos-shot-viewer__counter {
+  position: absolute;
+  left: 50%;
+  bottom: 0.65rem;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.02em;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.trackpos-shot-viewer__close,
+.trackpos-shot-viewer__nav {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.trackpos-shot-viewer__close:hover,
+.trackpos-shot-viewer__nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.trackpos-shot-viewer__close {
+  top: 1rem;
+  right: 1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+}
+
+.trackpos-shot-viewer__close i,
+.trackpos-shot-viewer__nav i {
+  font-size: 1.45rem;
+  line-height: 1;
+  font-style: normal;
+}
+
+.trackpos-shot-viewer__close i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+  content: "\ed3b";
+}
+
+.trackpos-shot-viewer__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+}
+
+.trackpos-shot-viewer__nav--prev {
+  left: 0.85rem;
+}
+
+.trackpos-shot-viewer__nav--next {
+  right: 0.85rem;
+}
+
+.trackpos-shot-viewer__nav--prev i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+  content: "\e92e";
+}
+
+.trackpos-shot-viewer__nav--next i::before {
+  font-family: "Unicons", var(--font-Unicons) !important;
+  content: "\e930";
+}
+
+html.trackpos-shot-viewer-open,
+html.trackpos-shot-viewer-open body {
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .trackpos-shot-viewer {
+    padding: 0.35rem 2.6rem;
+  }
+
+  .trackpos-shot-viewer__stage {
+    width: 100%;
+    max-height: 94vh;
+  }
+
+  .trackpos-shot-viewer__img {
+    max-height: 94vh;
+  }
+
+  .trackpos-shot-viewer__nav--prev {
+    left: 0.25rem;
+  }
+
+  .trackpos-shot-viewer__nav--next {
+    right: 0.25rem;
+  }
+
+  .trackpos-shot-viewer__nav {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+}
+
+.trackpos-hero-thumbs__link--image-only {
+  gap: 0;
+  padding: 0.3rem;
+  width: 7rem;
+  min-height: 4.25rem;
+}
+
+.trackpos-hero-thumbs__link--image-only span {
+  display: none !important;
+}
+
+.trackpos-hero-thumbs__link--image-only img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  min-height: 3.5rem;
+  background: #eef1f6;
 }
 
 .trackpos-hero-lightbox:hover .trackpos-hero-screenshot {

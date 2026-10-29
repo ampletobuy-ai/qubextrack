@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "industry": "hospital",
+  "count": 1,
+  "images": [
+    {
+      "file": "dashboard.png",
+      "url": "./assets/img/photos/hospital/dashboard.png",
+      "mtime": 1793245350
+    }
+  ]
+}

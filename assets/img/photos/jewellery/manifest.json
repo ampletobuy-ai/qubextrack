@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "industry": "jewellery",
+  "count": 9,
+  "images": [
+    {
+      "file": "jewellery-pos-screenshot.png",
+      "url": "./assets/img/photos/jewellery/jewellery-pos-screenshot.png",
+      "mtime": 1779726988
+    },
+    {
+      "file": "jewellery-add-stock-screenshot.png",
+      "url": "./assets/img/photos/jewellery/jewellery-add-stock-screenshot.png",
+      "mtime": 1779779323
+    },
+    {
+      "file": "jewellery-cash-flow-screenshot.png",
+      "url": "./assets/img/photos/jewellery/jewellery-cash-flow-screenshot.png",
+      "mtime": 1779780001
+    },
+    {
+      "file": "jewellery-metal-exchange-screenshot.png",
+      "url": "./assets/img/photos/jewellery/jewellery-metal-exchange-screenshot.png",
+      "mtime": 1779780001
+    },
+    {
+      "file": "jewellery-product-management-screenshot.png",
+      "url": "./assets/img/photos/jewellery/jewellery-product-management-screenshot.png",
+      "mtime": 1779779323
+    },
+    {
+      "file": "jewellery-profit-loss-screenshot.png",
+      "url": "./assets/img/photos/jewellery/jewellery-profit-loss-screenshot.png",
+      "mtime": 1779779740
+    },
+    {
+      "file": "jewellery-purchase-bill-screenshot.png",
+      "url": "./assets/img/photos/jewellery/jewellery-purchase-bill-screenshot.png",
+      "mtime": 1779778929
+    },
+    {
+      "file": "jewellery-tax-reports-screenshot.png",
+      "url": "./assets/img/photos/jewellery/jewellery-tax-reports-screenshot.png",
+      "mtime": 1779779323
+    },
+    {
+      "file": "jewellery-trial-balance-screenshot.png",
+      "url": "./assets/img/photos/jewellery/jewellery-trial-balance-screenshot.png",
+      "mtime": 1779779740
+    }
+  ]
+}
