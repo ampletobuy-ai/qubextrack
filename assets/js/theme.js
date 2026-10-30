@@ -477,7 +477,8 @@ var theme = {
    */
   lightbox: () => {
     const lightbox = GLightbox({
-      selector: '*[data-glightbox]',
+      // Hero product galleries are owned by trackpos-hero-gallery.js
+      selector: '*[data-glightbox]:not(.trackpos-hero-lightbox):not(.trackpos-hero-gallery__extra)',
       touchNavigation: true,
       loop: false,
       zoomable: false,

@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/fonts/unicons/unicons.css">
   <link rel="stylesheet" href="./assets/css/plugins.css">
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./assets/css/trackpos.css">
+  <link rel="stylesheet" href="./assets/css/trackpos.css?v=20261029h">
   <link rel="stylesheet" href="./assets/css/qubex-portal-theme.css">
   <link rel="stylesheet" href="./assets/css/fonts/dm.css">
 </head>
@@ -40,10 +40,9 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Industries</a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="./jewellery-pos-software.html">Jewellery POS</a></li>
-                    <li><a class="dropdown-item" href="./restaurant-pos-software.html">Restaurant POS</a></li>
-                    <li><a class="dropdown-item" href="./hotel-management-software.html">Hotel Software</a></li>
-                    <li><a class="dropdown-item" href="./retail-billing-software.html">Retail Billing</a></li>
+                                        <li><a class="dropdown-item" href="./jewellery-pos-software.html">Jewellery</a></li>
+                    <li><a class="dropdown-item" href="./hotel-management-software.html">Hotel &amp; Restaurant</a></li>
+                    <li><a class="dropdown-item" href="./retail-billing-software.html">Retail</a></li>
                     <li><a class="dropdown-item" href="./hospital-management-software.html">Hospital &amp; Clinic</a></li>
 </ul>
                 </li>
@@ -61,9 +60,7 @@
                 <li class="nav-item"><a class="nav-link" href="./index.html#integrations">Integrations</a></li>
                 <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" data-trackpos-modal-open="#modal-module-signin">Login</a></li>
-
-              </ul>
+</ul>
               <!-- /.navbar-nav -->
               <div class="offcanvas-footer xl:!hidden lg:!hidden">
                 <div>
@@ -86,8 +83,11 @@
           <!-- /.navbar-collapse -->
           <div class="navbar-other lg:!ml-4 xl:!ml-4">
             <ul class="navbar-nav !flex-row !items-center !ml-auto">
+              <li class="nav-item !flex-shrink-0">
+                <a class="nav-link !whitespace-nowrap !px-2" href="#" data-trackpos-modal-open="#modal-module-signin">Login</a>
+              </li>
               <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle before:content-['\eb99'] !text-[1.1rem]"></i></a></li>
-              <li class="nav-item hidden xl:flex lg:flex md:flex !flex-row !items-center !gap-2 !flex-nowrap">
+              <li class="nav-item hidden xl:flex lg:flex !flex-row !items-center !gap-2 !flex-nowrap">
                                 <a href="#" class="btn btn-sm btn-green !text-white !bg-[#022957] border-[#022957] hover:text-white hover:bg-[#022957] hover:!border-[#022957] active:text-white active:bg-[#022957] active:border-[#022957] disabled:text-white disabled:bg-[#022957] disabled:border-[#022957] !rounded-[50rem] !whitespace-nowrap" data-trackpos-modal-open="#modal-module-signin">Free Trial</a>
                 <a href="tel:+919348457123" class="btn btn-sm btn-primary !text-white !bg-[#e61320] border-[#e61320] hover:text-white hover:bg-[#e61320] hover:!border-[#e61320] active:text-white active:bg-[#e61320] active:border-[#e61320] disabled:text-white disabled:bg-[#e61320] disabled:border-[#e61320] !rounded-[50rem] !whitespace-nowrap">Call Us</a>
               </li>
@@ -156,82 +156,67 @@
             <a href="https://wa.me/919348457123" target="_blank" rel="noopener" class="btn btn-lg btn-outline-primary !rounded">WhatsApp</a>
           </div>
           <div class="lg:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-8 lg:!mt-0">
-            <figure class="trackpos-hero-gallery !mb-0">
-              <a href="./assets/img/photos/hotel-availability-calendar-screenshot.png" class="trackpos-hero-lightbox" data-glightbox="gallery: hotel-product; title: Hotel dashboard; description: Check-ins, occupancy, revenue summary, and room availability calendar by date" aria-label="View product screenshots — hotel dashboard (1 of 8)">
-                <img class="trackpos-hero-screenshot rounded-[.4rem] !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] w-full" src="./assets/img/photos/hotel-availability-calendar-screenshot.png" width="1024" height="486" alt="QubexTrack hotel dashboard — room availability calendar, occupancy and revenue">
+            <figure class="trackpos-hero-gallery !mb-0" data-trackpos-gallery-industry="hotel" data-trackpos-gallery-id="hotel-product">
+              <a href="./assets/img/photos/hotel/hotel-availability-calendar-screenshot.png" class="trackpos-hero-lightbox" data-glightbox="gallery: hotel-product; title: Hotel dashboard; description: Check-ins, occupancy, revenue summary, and room availability calendar by date" aria-label="View product screenshots — hotel dashboard (1 of 8)">
+                <img class="trackpos-hero-screenshot rounded-[.4rem] !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] w-full" src="./assets/img/photos/hotel/hotel-availability-calendar-screenshot.png" width="1024" height="486" alt="QubexTrack hotel dashboard — room availability calendar, occupancy and revenue">
                 <span class="trackpos-hero-lightbox__hint" aria-hidden="true"><i class="uil uil-expand-arrows-alt before:content-['\eb9f']"></i> Click to enlarge</span>
               </a>
-              <a href="./assets/img/photos/hotel-folio-details-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: hotel-product; title: Folio details; description: Guest and booking info, post charge, payment, check-in, and transaction ledger" tabindex="-1" aria-hidden="true">Folio details screenshot</a>
-              <a href="./assets/img/photos/hotel-post-payment-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: hotel-product; title: Online payment; description: Post payment with Razorpay — UPI, cards, netbanking, and wallets" tabindex="-1" aria-hidden="true">Post payment screenshot</a>
-              <a href="./assets/img/photos/hotel-folio-statement-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: hotel-product; title: Folio statement; description: Printable folio with room charges, taxes, payment status, and terms" tabindex="-1" aria-hidden="true">Folio statement screenshot</a>
-              <a href="./assets/img/photos/hotel-housekeeping-dashboard-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: hotel-product; title: Housekeeping dashboard; description: Room status KPIs, alert watchlist, overdue tasks, and supervisor exceptions" tabindex="-1" aria-hidden="true">Housekeeping dashboard screenshot</a>
-              <a href="./assets/img/photos/hotel-profit-loss-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: hotel-product; title: Profit &amp; loss; description: Revenue, COGS, operating expenses, gross and net profit with margin charts" tabindex="-1" aria-hidden="true">Profit and loss screenshot</a>
-              <a href="./assets/img/photos/hotel-gstr1-report-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: hotel-product; title: Bill wise GSTR-1; description: GST report with taxable base, IGST, CGST, SGST breakup across booking and restaurant invoices" tabindex="-1" aria-hidden="true">GSTR-1 report screenshot</a>
-              <a href="./assets/img/photos/hotel-pos-screenshot.png" class="trackpos-hero-gallery__extra" data-glightbox="gallery: hotel-product; title: Bookings &amp; revenue; description: Reservations, revenue analytics, occupancy and property reports" tabindex="-1" aria-hidden="true">Bookings revenue screenshot</a>
-              <figcaption class="trackpos-hero-gallery__caption">Product screenshots — click the image or a thumbnail; use the arrow buttons to see all 8 screens</figcaption>
-              <div class="trackpos-hero-thumbs-wrap">
-              <div class="trackpos-hero-thumbs-rail">
-                <button type="button" class="trackpos-hero-thumbs__nav trackpos-hero-thumbs__nav--prev" aria-label="Scroll thumbnails left" disabled>
-                  <i class="uil uil-angle-left-b" aria-hidden="true"></i>
-                </button>
-                <div class="trackpos-hero-thumbs__viewport">
-              <ul class="trackpos-hero-thumbs" aria-label="Screenshot thumbnails">
+                            <div class="trackpos-hero-thumbs-wrap">
+                <div class="trackpos-hero-thumbs-rail">
+                  <button type="button" class="trackpos-hero-thumbs__nav trackpos-hero-thumbs__nav--prev" aria-label="Scroll thumbnails left" disabled>
+                    <i class="uil uil-angle-left-b" aria-hidden="true"></i>
+                  </button>
+                  <div class="trackpos-hero-thumbs__viewport">
+                    <ul class="trackpos-hero-thumbs" aria-label="Screenshot thumbnails">
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link is-active" data-trackpos-gallery-index="0" aria-label="View hotel dashboard and availability calendar screenshot">
-                    <img src="./assets/img/photos/hotel-availability-calendar-screenshot.png" width="160" height="76" alt="" loading="lazy">
-                    <span>Dashboard</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only is-active" data-trackpos-gallery-index="0" aria-label="View hotel-pos-screenshot screenshot">
+                    <img src="./assets/img/photos/hotel/hotel-pos-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="1" aria-label="View folio details screenshot">
-                    <img src="./assets/img/photos/hotel-folio-details-screenshot.png" width="160" height="76" alt="" loading="lazy">
-                    <span>Folio</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="1" aria-label="View hotel-post-payment-screenshot screenshot">
+                    <img src="./assets/img/photos/hotel/hotel-post-payment-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="2" aria-label="View online payment screenshot">
-                    <img src="./assets/img/photos/hotel-post-payment-screenshot.png" width="160" height="76" alt="" loading="lazy">
-                    <span>Payment</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="2" aria-label="View hotel-availability-calendar-screenshot screenshot">
+                    <img src="./assets/img/photos/hotel/hotel-availability-calendar-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="3" aria-label="View folio statement screenshot">
-                    <img src="./assets/img/photos/hotel-folio-statement-screenshot.png" width="160" height="76" alt="" loading="lazy">
-                    <span>Statement</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="3" aria-label="View hotel-housekeeping-dashboard-screenshot screenshot">
+                    <img src="./assets/img/photos/hotel/hotel-housekeeping-dashboard-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="4" aria-label="View housekeeping dashboard screenshot">
-                    <img src="./assets/img/photos/hotel-housekeeping-dashboard-screenshot.png" width="160" height="76" alt="" loading="lazy">
-                    <span>Housekeeping</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="4" aria-label="View hotel-folio-details-screenshot screenshot">
+                    <img src="./assets/img/photos/hotel/hotel-folio-details-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="5" aria-label="View profit and loss screenshot">
-                    <img src="./assets/img/photos/hotel-profit-loss-screenshot.png" width="160" height="76" alt="" loading="lazy">
-                    <span>P&amp;L</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="5" aria-label="View hotel-folio-statement-screenshot screenshot">
+                    <img src="./assets/img/photos/hotel/hotel-folio-statement-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="6" aria-label="View GSTR-1 report screenshot">
-                    <img src="./assets/img/photos/hotel-gstr1-report-screenshot.png" width="160" height="76" alt="" loading="lazy">
-                    <span>GSTR-1</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="6" aria-label="View hotel-gstr1-report-screenshot screenshot">
+                    <img src="./assets/img/photos/hotel/hotel-gstr1-report-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="trackpos-hero-thumbs__link" data-trackpos-gallery-index="7" aria-label="View bookings and revenue screenshot">
-                    <img src="./assets/img/photos/hotel-pos-screenshot.png" width="160" height="76" alt="" loading="lazy">
-                    <span>Revenue</span>
+                  <button type="button" class="trackpos-hero-thumbs__link trackpos-hero-thumbs__link--image-only" data-trackpos-gallery-index="7" aria-label="View hotel-profit-loss-screenshot screenshot">
+                    <img src="./assets/img/photos/hotel/hotel-profit-loss-screenshot.png" width="160" height="90" alt="" loading="lazy">
                   </button>
                 </li>
-              </ul>
+                    </ul>
+                  </div>
+                  <button type="button" class="trackpos-hero-thumbs__nav trackpos-hero-thumbs__nav--next" aria-label="Scroll thumbnails right">
+                    <i class="uil uil-angle-right-b" aria-hidden="true"></i>
+                  </button>
                 </div>
-                <button type="button" class="trackpos-hero-thumbs__nav trackpos-hero-thumbs__nav--next" aria-label="Scroll thumbnails right">
-                  <i class="uil uil-angle-right-b" aria-hidden="true"></i>
-                </button>
               </div>
-              </div>
-            </figure>
+              <figcaption class="trackpos-hero-gallery__caption">Product screenshots (8) — click a thumbnail or the image to view full size.</figcaption>
+</figure>
           </div>
         </div>
       </div>
@@ -882,7 +867,7 @@
   <script src="./assets/js/plugins.js"></script>
   <script src="./assets/js/theme.js"></script>
   <script src="./assets/js/trackpos-anchor.js"></script>
-  <script src="./assets/js/trackpos-hero-gallery.js"></script>
+  <script src="./assets/js/trackpos-hero-gallery.js?v=20261029g"></script>
   <script src="./assets/js/trackpos-modal.js"></script>
   <script src="./assets/js/trackpos-signin.js"></script>
 </body>

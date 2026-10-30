@@ -19,15 +19,9 @@
       icon: 'uil-diamond',
     },
     {
-      key: 'restaurant',
-      label: 'Restaurant',
-      blurb: 'Dine-in, takeaway & kitchen',
-      icon: 'uil-restaurant',
-    },
-    {
       key: 'hotel',
-      label: 'Hotel',
-      blurb: 'Bookings, folio & property',
+      label: 'Hotel & Restaurant',
+      blurb: 'Rooms, folio, POS & kitchen',
       icon: 'uil-bed',
     },
     {
@@ -97,7 +91,7 @@
       '<button type="button" class="trackpos-modal__close" data-trackpos-modal-close aria-label="Close">&times;</button>' +
       '</div>' +
       '<div class="trackpos-modal__body">' +
-      '<p class="trackpos-signin-lead">Select Retail, Jewellery, Restaurant, Hotel or Hospital to continue.</p>' +
+      '<p class="trackpos-signin-lead">Select Retail, Jewellery, Hotel & Restaurant or Hospital to continue.</p>' +
       '<div class="trackpos-signin-options">' +
       options +
       '</div>' +
