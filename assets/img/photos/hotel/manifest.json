@@ -4,44 +4,44 @@
   "count": 8,
   "images": [
     {
-      "file": "hotel-pos-screenshot.png",
-      "url": "./assets/img/photos/hotel/hotel-pos-screenshot.png",
-      "mtime": 1779730298
+      "file": "hotel-pos-screenshot.webp",
+      "url": "./assets/img/photos/hotel/hotel-pos-screenshot.webp",
+      "mtime": 1793403287
     },
     {
-      "file": "hotel-post-payment-screenshot.png",
-      "url": "./assets/img/photos/hotel/hotel-post-payment-screenshot.png",
-      "mtime": 1779784902
+      "file": "hotel-post-payment-screenshot.webp",
+      "url": "./assets/img/photos/hotel/hotel-post-payment-screenshot.webp",
+      "mtime": 1793403287
     },
     {
-      "file": "hotel-availability-calendar-screenshot.png",
-      "url": "./assets/img/photos/hotel/hotel-availability-calendar-screenshot.png",
-      "mtime": 1779784902
+      "file": "hotel-availability-calendar-screenshot.webp",
+      "url": "./assets/img/photos/hotel/hotel-availability-calendar-screenshot.webp",
+      "mtime": 1793403288
     },
     {
-      "file": "hotel-housekeeping-dashboard-screenshot.png",
-      "url": "./assets/img/photos/hotel/hotel-housekeeping-dashboard-screenshot.png",
-      "mtime": 1779783384
+      "file": "hotel-housekeeping-dashboard-screenshot.webp",
+      "url": "./assets/img/photos/hotel/hotel-housekeeping-dashboard-screenshot.webp",
+      "mtime": 1793403288
     },
     {
-      "file": "hotel-folio-details-screenshot.png",
-      "url": "./assets/img/photos/hotel/hotel-folio-details-screenshot.png",
-      "mtime": 1779784902
+      "file": "hotel-folio-details-screenshot.webp",
+      "url": "./assets/img/photos/hotel/hotel-folio-details-screenshot.webp",
+      "mtime": 1793403288
     },
     {
-      "file": "hotel-folio-statement-screenshot.png",
-      "url": "./assets/img/photos/hotel/hotel-folio-statement-screenshot.png",
-      "mtime": 1779784902
+      "file": "hotel-folio-statement-screenshot.webp",
+      "url": "./assets/img/photos/hotel/hotel-folio-statement-screenshot.webp",
+      "mtime": 1793403288
     },
     {
-      "file": "hotel-gstr1-report-screenshot.png",
-      "url": "./assets/img/photos/hotel/hotel-gstr1-report-screenshot.png",
-      "mtime": 1779784996
+      "file": "hotel-gstr1-report-screenshot.webp",
+      "url": "./assets/img/photos/hotel/hotel-gstr1-report-screenshot.webp",
+      "mtime": 1793403288
     },
     {
-      "file": "hotel-profit-loss-screenshot.png",
-      "url": "./assets/img/photos/hotel/hotel-profit-loss-screenshot.png",
-      "mtime": 1779784902
+      "file": "hotel-profit-loss-screenshot.webp",
+      "url": "./assets/img/photos/hotel/hotel-profit-loss-screenshot.webp",
+      "mtime": 1793403288
     }
   ]
 }
