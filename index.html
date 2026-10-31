@@ -21,14 +21,18 @@
   <link rel="icon" type="image/png" sizes="48x48" href="./assets/img/favicon-48.png">
   <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
   <link rel="manifest" href="./site.webmanifest">
-	<link rel="stylesheet" type="text/css" href="./assets/fonts/unicons/unicons.css">
+	  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+  <link rel="stylesheet" type="text/css" href="./assets/fonts/unicons/unicons.css">
   <link rel="stylesheet" href="./assets/css/plugins.css">
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./assets/css/trackpos.css">
-  <link rel="stylesheet" href="./assets/css/qubex-portal-theme.css">
-  <link rel="stylesheet" href="./assets/css/fonts/dm.css">
-  <link rel="preload" href="./assets/css/fonts/dm.css" as="style" onload="this.rel='stylesheet'">
-  <style>
+  <link rel="stylesheet" href="./assets/css/trackpos.css?v=20261031a">
+  <link rel="preload" as="image" type="image/webp" href="./assets/img/photos/hero-trackpos.webp?v=20261031a" fetchpriority="high">
+  <link rel="stylesheet" href="./assets/css/qubex-portal-theme.css?v=20261031b">
+<link rel="preload" href="./assets/css/fonts/dm.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="./assets/css/fonts/dm.css"></noscript>
+<style>
    .nav-tabs.nav-tabs-bg .nav-link.active, .nav-tabs.nav-tabs-bg .nav-link:hover {
     box-shadow: 0 0.25rem 1.75rem rgba(30,34,40,.07) !important;
   }
@@ -42,12 +46,12 @@
         <div class="container xl:!flex-row lg:!flex-row !flex-nowrap items-center">
           <div class="navbar-brand w-full">
             <a href="./index.html" aria-label="QubexTrack home">
-              <img class="trackpos-logo-img" src="./assets/img/qubextrack-logo.png?v=20260822" alt="QubexTrack">
+              <img class="trackpos-logo-img" src="./assets/img/qubextrack-logo.png?v=20260822" alt="QubexTrack" width="1000" height="388" decoding="async">
             </a>
           </div>
           <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between flex-row p-6">
-              <a href="./index.html"><img class="trackpos-logo-offcanvas" src="./assets/img/qubextrack-logo-footer.png?v=20260822" alt="QubexTrack"></a>
+              <a href="./index.html"><img class="trackpos-logo-offcanvas" src="./assets/img/qubextrack-logo-footer.png?v=20260822" alt="QubexTrack" width="880" height="342" decoding="async" loading="lazy"></a>
               <button type="button" class="btn-close btn-close-white !mr-[-0.75rem] m-0 p-0 leading-none !text-[#343f52] transition-all duration-[0.2s] ease-in-out border-0 motion-reduce:transition-none before:text-[1.05rem] before:text-white before:content-['\ed3b'] before:w-[1.8rem] before:h-[1.8rem] before:leading-[1.8rem] before:shadow-none before:transition-[background] before:duration-[0.2s] before:ease-in-out before:!flex before:justify-center before:items-center before:m-0 before:p-0 before:rounded-[100%] hover:no-underline bg-inherit before:bg-[rgba(255,255,255,.08)] before:font-Unicons hover:before:bg-[rgba(0,0,0,.11)]  " data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body xl:!ml-auto lg:!ml-auto flex  flex-col !h-full">
@@ -120,7 +124,7 @@
       <!-- /.navbar -->
       <div class="offcanvas offcanvas-end text-inverse !text-[#cacaca] opacity-100" id="offcanvas-info" data-bs-scroll="true">
         <div class="offcanvas-header flex flex-row items-center justify-between p-[1.5rem]">
-          <a href="./index.html"><img class="trackpos-logo-offcanvas" src="./assets/img/qubextrack-logo-footer.png?v=20260822" alt="QubexTrack"></a>
+          <a href="./index.html"><img class="trackpos-logo-offcanvas" src="./assets/img/qubextrack-logo-footer.png?v=20260822" alt="QubexTrack" width="880" height="342" decoding="async" loading="lazy"></a>
           <button type="button" class="btn-close btn-close-white !mr-[-0.5rem] m-0 p-0" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body !pb-[1.5rem]">
@@ -184,7 +188,10 @@
           <!-- /column -->
           <div class="xl:w-7/12 lg:w-7/12 w-full flex-[0_0_auto] !px-[15px] xl:!px-[35px] lg:!px-[20px] !mt-[50px] max-w-full" data-cue="zoomIn">
             <figure class="hero-trackpos-figure !mb-0">
-              <img class="hero-trackpos-img w-full h-auto" src="./assets/img/photos/hero-trackpos.png?v=20260825f" srcset="./assets/img/photos/hero-trackpos.png?v=20260825f 1676w" sizes="(min-width: 992px) min(58vw, 680px), 92vw" width="1676" height="938" alt="QubexTrack — desktop, mobile and tablet dashboards for billing, inventory and analytics">
+              <picture>
+                <source type="image/webp" srcset="./assets/img/photos/hero-trackpos.webp?v=20261031a 1676w" sizes="(min-width: 992px) min(58vw, 680px), 92vw">
+                <img class="hero-trackpos-img w-full h-auto" src="./assets/img/photos/hero-trackpos.png?v=20260825f" srcset="./assets/img/photos/hero-trackpos.png?v=20260825f 1676w" sizes="(min-width: 992px) min(58vw, 680px), 92vw" width="1676" height="938" alt="QubexTrack — desktop, mobile and tablet dashboards for billing, inventory and analytics" fetchpriority="high" decoding="async">
+              </picture>
             </figure>
           </div>
           <!-- /column -->
@@ -260,8 +267,8 @@
             <div class="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px] items-center">
               <div class="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] max-w-full !mt-[50px]">
                 <figure class="!mb-0">
-                  <a href="./assets/img/photos/jewellery/jewellery-pos-screenshot.png" class="industry-tab-lightbox" data-glightbox="title: Jewellery; description: Finance analytics, revenue insights and business reports" aria-label="View jewellery POS screenshot full size">
-                    <img class="industry-tab-screenshot w-full h-auto rounded !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]" src="./assets/img/photos/jewellery/jewellery-pos-screenshot.png" width="1024" height="494" alt="QubexTrack jewellery POS — finance analytics dashboard with revenue, profit and cash flow">
+                  <a href="./assets/img/photos/jewellery/jewellery-pos-screenshot.webp" class="industry-tab-lightbox" data-glightbox="title: Jewellery; description: Finance analytics, revenue insights and business reports" aria-label="View jewellery POS screenshot full size">
+                    <picture><source type="image/webp" srcset="./assets/img/photos/jewellery/jewellery-pos-screenshot.webp"><img class="industry-tab-screenshot w-full h-auto rounded !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]" src="./assets/img/photos/jewellery/jewellery-pos-screenshot.png" width="1024" height="494" alt="QubexTrack jewellery POS — finance analytics dashboard with revenue, profit and cash flow" decoding="async" loading="lazy"></picture>
                   </a>
                 </figure>
               </div>
@@ -285,8 +292,8 @@
             <div class="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px] items-center">
               <div class="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] max-w-full !mt-[50px]">
                 <figure class="!mb-0">
-                  <a href="./assets/img/photos/retail/retail-pos-screenshot.png" class="industry-tab-lightbox" data-glightbox="title: Retail; description: Customer profile, sales history and GST reports" aria-label="View retail POS screenshot full size">
-                    <img class="industry-tab-screenshot w-full h-auto rounded !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]" src="./assets/img/photos/retail/retail-pos-screenshot.png" width="1024" height="496" alt="QubexTrack retail POS — customer profile, sales history and GST billing">
+                  <a href="./assets/img/photos/retail/retail-pos-screenshot.webp" class="industry-tab-lightbox" data-glightbox="title: Retail; description: Customer profile, sales history and GST reports" aria-label="View retail POS screenshot full size">
+                    <picture><source type="image/webp" srcset="./assets/img/photos/retail/retail-pos-screenshot.webp"><img class="industry-tab-screenshot w-full h-auto rounded !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]" src="./assets/img/photos/retail/retail-pos-screenshot.png" width="1024" height="496" alt="QubexTrack retail POS — customer profile, sales history and GST billing" decoding="async" loading="lazy"></picture>
                   </a>
                 </figure>
               </div>
@@ -313,8 +320,8 @@
             <div class="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px] items-center">
               <div class="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] max-w-full !mt-[50px] xl:!order-2 lg:!order-2">
                 <figure class="!mb-0">
-                  <a href="./assets/img/photos/hotel/hotel-pos-screenshot.png" class="industry-tab-lightbox" data-glightbox="title: Hotel &amp; Restaurant; description: Bookings, revenue analytics, occupancy and property reports" aria-label="View hotel software screenshot full size">
-                    <img class="industry-tab-screenshot w-full h-auto rounded !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]" src="./assets/img/photos/hotel/hotel-pos-screenshot.png" width="1024" height="486" alt="QubexTrack hotel management — bookings, revenue dashboard and occupancy reports">
+                  <a href="./assets/img/photos/hotel/hotel-pos-screenshot.webp" class="industry-tab-lightbox" data-glightbox="title: Hotel &amp; Restaurant; description: Bookings, revenue analytics, occupancy and property reports" aria-label="View hotel software screenshot full size">
+                    <picture><source type="image/webp" srcset="./assets/img/photos/hotel/hotel-pos-screenshot.webp"><img class="industry-tab-screenshot w-full h-auto rounded !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]" src="./assets/img/photos/hotel/hotel-pos-screenshot.png" width="1024" height="486" alt="QubexTrack hotel management — bookings, revenue dashboard and occupancy reports" decoding="async" loading="lazy"></picture>
                   </a>
                 </figure>
               </div>
@@ -339,7 +346,7 @@
               <div class="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] max-w-full !mt-[50px]">
                 <figure class="!mb-0">
                   <a href="./hospital-management-software.html" class="industry-tab-lightbox" aria-label="Hospital and clinic management">
-                    <img class="industry-tab-screenshot w-full h-auto rounded !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]" src="./assets/img/photos/hospital/hospital-hms-dashboard.jpg" width="1024" height="980" alt="QubexTrack hospital and clinic management — OPD, IPD and billing dashboard">
+                    <picture><source type="image/webp" srcset="./assets/img/photos/hospital/dashboard.webp"><img class="industry-tab-screenshot w-full h-auto rounded !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]" src="./assets/img/photos/hospital/dashboard.png" width="1024" height="980" alt="QubexTrack hospital and clinic management — OPD, IPD and billing dashboard" decoding="async" loading="lazy"></picture>
                   </a>
                 </figure>
               </div>
@@ -677,7 +684,7 @@
                   <blockquote class="!text-[0.85rem] !leading-[1.7] font-medium !pl-4 icon !mb-0 relative p-0 border-0 before:content-['d'] before:absolute before:top-[-1.5rem] before:left-[-0.9rem] before:text-[rgba(52,63,82,0.05)] before:text-[10rem] before:leading-none before:z-[1]">
                     <p>“QubexTrack makes gold and silver billing effortless — making charges, wastage, and stone details are captured accurately at the counter. Barcode tagging, daily stock reconciliation, and GST invoices save us hours every day in our showroom.”</p>
                     <div class="flex items-center text-left">
-                      <img class="trackpos-review-logo" src="./assets/img/customers/aurajewellery.png" alt="Aura Jewellery">
+                      <picture><source type="image/webp" srcset="./assets/img/customers/aurajewellery.webp"><img class="trackpos-review-logo" src="./assets/img/customers/aurajewellery.png" alt="Aura Jewellery" width="299" height="299" loading="lazy" decoding="async"></picture>
                       <div class="info !pl-4">
                         <h5 class="!mb-1 text-[.95rem] !leading-[1.5]">Proprietor</h5>
                         <p class="!mb-0 !text-[.8rem]">Aura Jewellery</p>
@@ -697,7 +704,7 @@
                   <blockquote class="!text-[0.85rem] !leading-[1.7] font-medium !pl-4 icon !mb-0 relative p-0 border-0 before:content-['d'] before:absolute before:top-[-1.5rem] before:left-[-0.9rem] before:text-[rgba(52,63,82,0.05)] before:text-[10rem] before:leading-none before:z-[1]">
                     <p>“From room check-in and billing to restaurant table orders and KOT printing, QubexTrack keeps our hotel and restaurant running smoothly on one platform. Day-end reports for rooms and dining are accurate, and our staff picked it up quickly.”</p>
                     <div class="flex items-center text-left">
-                      <img class="trackpos-review-logo" src="./assets/img/customers/mahaprasadam.png" alt="Mahaprasadam Bhakta Nivas">
+                      <picture><source type="image/webp" srcset="./assets/img/customers/mahaprasadam.webp"><img class="trackpos-review-logo" src="./assets/img/customers/mahaprasadam.png" alt="Mahaprasadam Bhakta Nivas" width="1016" height="1016" loading="lazy" decoding="async"></picture>
                       <div class="info !pl-4">
                         <h5 class="!mb-1 text-[.95rem] !leading-[1.5]">Management Team</h5>
                         <p class="!mb-0 !text-[.8rem]">Mahaprasadam Bhakta Nivas · Hotel & Restaurant</p>
@@ -717,7 +724,7 @@
                   <blockquote class="!text-[0.85rem] !leading-[1.7] font-medium !pl-4 icon !mb-0 relative p-0 border-0 before:content-['d'] before:absolute before:top-[-1.5rem] before:left-[-0.9rem] before:text-[rgba(52,63,82,0.05)] before:text-[10rem] before:leading-none before:z-[1]">
                     <p>“I love the inventory tracking and sales reporting features—they've made managing my store much easier.”</p>
                     <div class="flex items-center text-left">
-                      <img class="trackpos-review-logo" src="./assets/img/customers/itconcept.png" alt="IT Concept">
+                      <picture><source type="image/webp" srcset="./assets/img/customers/itconcept.webp"><img class="trackpos-review-logo" src="./assets/img/customers/itconcept.png" alt="IT Concept" width="169" height="82" loading="lazy" decoding="async"></picture>
                       <div class="info !pl-4">
                         <h5 class="!mb-1 text-[.95rem] !leading-[1.5]">Chandrasekhar Samal</h5>
                         <p class="!mb-0 !text-[.8rem]">Proprietor</p>
@@ -737,7 +744,7 @@
                   <blockquote class="!text-[0.85rem] !leading-[1.7] font-medium !pl-4 icon !mb-0 relative p-0 border-0 before:content-['d'] before:absolute before:top-[-1.5rem] before:left-[-0.9rem] before:text-[rgba(52,63,82,0.05)] before:text-[10rem] before:leading-none before:z-[1]">
                     <p>“Managing rooms, rates, and availability used to be a headache — but this new tracking system software makes it effortless. The mobile responsiveness is fantastic, and the speed is impressive.”</p>
                     <div class="flex items-center text-left">
-                      <img class="trackpos-review-logo" src="./assets/img/customers/niladricomplex.png" alt="Niladri Complex">
+                      <picture><source type="image/webp" srcset="./assets/img/customers/niladricomplex.webp"><img class="trackpos-review-logo" src="./assets/img/customers/niladricomplex.png" alt="Niladri Complex" width="199" height="131" loading="lazy" decoding="async"></picture>
                       <div class="info !pl-4">
                         <h5 class="!mb-1 text-[.95rem] !leading-[1.5]">Laxmikanta Pratihari</h5>
                         <p class="!mb-0 !text-[.8rem]">Proprietor</p>
@@ -757,7 +764,7 @@
                   <blockquote class="!text-[0.85rem] !leading-[1.7] font-medium !pl-4 icon !mb-0 relative p-0 border-0 before:content-['d'] before:absolute before:top-[-1.5rem] before:left-[-0.9rem] before:text-[rgba(52,63,82,0.05)] before:text-[10rem] before:leading-none before:z-[1]">
                     <p>“The new hotel website built by your team has completely transformed how we present ourselves online. The booking process is now seamless, and guests constantly compliment how easy it is to navigate. We saw a noticeable increase in direct bookings within the first month!”</p>
                     <div class="flex items-center text-left">
-                      <img class="trackpos-review-logo" src="./assets/img/customers/sairajinn.png" alt="Sairaj Inn">
+                      <picture><source type="image/webp" srcset="./assets/img/customers/sairajinn.webp"><img class="trackpos-review-logo" src="./assets/img/customers/sairajinn.png" alt="Sairaj Inn" width="372" height="199" loading="lazy" decoding="async"></picture>
                       <div class="info !pl-4">
                         <h5 class="!mb-1 text-[.95rem] !leading-[1.5]">Rajesh Malick</h5>
                         <p class="!mb-0 !text-[.8rem]">Proprietor</p>
@@ -777,7 +784,7 @@
                   <blockquote class="!text-[0.85rem] !leading-[1.7] font-medium !pl-4 icon !mb-0 relative p-0 border-0 before:content-['d'] before:absolute before:top-[-1.5rem] before:left-[-0.9rem] before:text-[rgba(52,63,82,0.05)] before:text-[10rem] before:leading-none before:z-[1]">
                     <p>“Customer support was quick to resolve my issues. Excellent service! Great value for the price. Highly recommended for small to medium businesses!”</p>
                     <div class="flex items-center text-left">
-                      <img class="trackpos-review-logo" src="./assets/img/customers/prabhas.png" alt="Prabhas Foundations">
+                      <picture><source type="image/webp" srcset="./assets/img/customers/prabhas.webp"><img class="trackpos-review-logo" src="./assets/img/customers/prabhas.png" alt="Prabhas Foundations" width="250" height="250" loading="lazy" decoding="async"></picture>
                       <div class="info !pl-4">
                         <h5 class="!mb-1 text-[.95rem] !leading-[1.5]">Sanatana Jena</h5>
                         <p class="!mb-0 !text-[.8rem]">Founder of Prabhas Foundations</p>
@@ -807,7 +814,7 @@
             <h3 class="visually-hidden">Get started with QubexTrack in three simple steps.</h3>
             <div class="trackpos-how-it-works-wrap">
               <figure class="trackpos-how-it-works !mb-0">
-                <img class="trackpos-how-it-works__img w-full h-auto" src="./assets/img/photos/how-it-works.png?v=20260805" width="1024" height="555" alt="How it works: 1 — Book a free demo; 2 — Sign up for free; 3 — Subscribe and grow with Qubex Track.">
+                <picture><source type="image/webp" srcset="./assets/img/photos/how-it-works.webp"><img class="trackpos-how-it-works__img w-full h-auto" src="./assets/img/photos/how-it-works.png?v=20260805" width="1024" height="555" alt="How it works: 1 — Book a free demo; 2 — Sign up for free; 3 — Subscribe and grow with Qubex Track." loading="lazy" decoding="async"></picture>
               </figure>
             </div>
           </div>
@@ -1182,7 +1189,7 @@
       <div class="flex flex-wrap mx-[-15px] !mt-[-30px] xl:!mt-0 lg:!mt-0">
         <div class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]">
           <div class="widget !text-[#cacaca]">
-            <a href="./index.html" class="trackpos-footer-logo-link !mb-4 inline-block" aria-label="QubexTrack home"><img class="trackpos-logo-footer" src="./assets/img/qubextrack-logo-footer.png?v=20260822" alt="QubexTrack"></a>
+            <a href="./index.html" class="trackpos-footer-logo-link !mb-4 inline-block" aria-label="QubexTrack home"><img class="trackpos-logo-footer" src="./assets/img/qubextrack-logo-footer.png?v=20260822" alt="QubexTrack" width="880" height="342" decoding="async" loading="lazy"></a>
             <p class="!mb-4">© 2024-2026 QUBEXTRACK (OPC) PRIVATE LIMITED.<br><span class="!text-[0.8rem] !text-[#aab0bc]">CIN: U62011OD2026OPC055141</span><br class="hidden xl:block lg:block !text-[#cacaca]">All rights reserved.</p>
             <nav class="nav social social-white">
               <a class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="https://x.com/qubextrack" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="uil uil-twitter before:content-['\ed59'] !text-white text-[1rem]"></i></a>
@@ -1269,12 +1276,12 @@
   
   <a href="https://wa.me/919348457123" class="trackpos-float-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="uil uil-whatsapp before:content-['\ed9a']"></i></a>
   <a href="tel:+919348457123" class="trackpos-float-call" aria-label="Call us"><i class="uil uil-phone before:content-['\ec51']"></i></a>
-  <script src="./assets/js/plugins.js"></script>
-  <script src="./assets/js/theme.js"></script>
-  <script src="./assets/js/trackpos-anchor.js"></script>
-  <script src="./assets/js/trackpos-pricing.js"></script>
-  <script src="./assets/js/trackpos-modal.js"></script>
-  <script src="./assets/js/trackpos-signin.js"></script>
+  <script src="./assets/js/plugins.js" defer></script>
+  <script src="./assets/js/theme.js" defer></script>
+  <script src="./assets/js/trackpos-anchor.js" defer></script>
+  <script src="./assets/js/trackpos-pricing.js" defer></script>
+  <script src="./assets/js/trackpos-modal.js" defer></script>
+  <script src="./assets/js/trackpos-signin.js" defer></script>
 </body>
 
 </html>

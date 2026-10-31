@@ -406,7 +406,7 @@
           ' screenshot">' +
           '<img src="' +
           escapeHtml(img.url) +
-          '" width="160" height="90" alt="" loading="lazy">' +
+          '" width="160" height="90" alt="" loading="lazy" decoding="async">' +
           '</button>' +
           '</li>'
         );

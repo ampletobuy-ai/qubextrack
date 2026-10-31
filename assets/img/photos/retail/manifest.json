@@ -4,69 +4,69 @@
   "count": 13,
   "images": [
     {
-      "file": "retail-pos-screenshot.png",
-      "url": "./assets/img/photos/retail/retail-pos-screenshot.png",
-      "mtime": 1793241561
+      "file": "retail-pos-screenshot.webp",
+      "url": "./assets/img/photos/retail/retail-pos-screenshot.webp",
+      "mtime": 1793403286
     },
     {
-      "file": "balance-sheet.png",
-      "url": "./assets/img/photos/retail/balance-sheet.png",
-      "mtime": 1793243975
+      "file": "balance-sheet.webp",
+      "url": "./assets/img/photos/retail/balance-sheet.webp",
+      "mtime": 1793403287
     },
     {
-      "file": "bank-reconcile.png",
-      "url": "./assets/img/photos/retail/bank-reconcile.png",
-      "mtime": 1793244098
+      "file": "bank-reconcile.webp",
+      "url": "./assets/img/photos/retail/bank-reconcile.webp",
+      "mtime": 1793403285
     },
     {
-      "file": "create-item.png",
-      "url": "./assets/img/photos/retail/create-item.png",
-      "mtime": 1793243441
+      "file": "create-item.webp",
+      "url": "./assets/img/photos/retail/create-item.webp",
+      "mtime": 1793403286
     },
     {
-      "file": "customer-statement.png",
-      "url": "./assets/img/photos/retail/customer-statement.png",
-      "mtime": 1793243246
+      "file": "customer-statement.webp",
+      "url": "./assets/img/photos/retail/customer-statement.webp",
+      "mtime": 1793403285
     },
     {
-      "file": "customer.png",
-      "url": "./assets/img/photos/retail/customer.png",
-      "mtime": 1793243139
+      "file": "customer.webp",
+      "url": "./assets/img/photos/retail/customer.webp",
+      "mtime": 1793403286
     },
     {
-      "file": "item-list.png",
-      "url": "./assets/img/photos/retail/item-list.png",
-      "mtime": 1793243395
+      "file": "item-list.webp",
+      "url": "./assets/img/photos/retail/item-list.webp",
+      "mtime": 1793403286
     },
     {
-      "file": "item-list2.png",
-      "url": "./assets/img/photos/retail/item-list2.png",
-      "mtime": 1793243684
+      "file": "item-list2.webp",
+      "url": "./assets/img/photos/retail/item-list2.webp",
+      "mtime": 1793403286
     },
     {
-      "file": "pl.png",
-      "url": "./assets/img/photos/retail/pl.png",
-      "mtime": 1793244274
+      "file": "pl.webp",
+      "url": "./assets/img/photos/retail/pl.webp",
+      "mtime": 1793403286
     },
     {
-      "file": "report.png",
-      "url": "./assets/img/photos/retail/report.png",
-      "mtime": 1793242562
+      "file": "report.webp",
+      "url": "./assets/img/photos/retail/report.webp",
+      "mtime": 1793403287
     },
     {
-      "file": "sale-list.png",
-      "url": "./assets/img/photos/retail/sale-list.png",
-      "mtime": 1793243337
+      "file": "sale-list.webp",
+      "url": "./assets/img/photos/retail/sale-list.webp",
+      "mtime": 1793403286
     },
     {
-      "file": "sales-report.png",
-      "url": "./assets/img/photos/retail/sales-report.png",
-      "mtime": 1793243839
+      "file": "sales-report.webp",
+      "url": "./assets/img/photos/retail/sales-report.webp",
+      "mtime": 1793403287
     },
     {
-      "file": "stock-aging.png",
-      "url": "./assets/img/photos/retail/stock-aging.png",
-      "mtime": 1793244189
+      "file": "stock-aging.webp",
+      "url": "./assets/img/photos/retail/stock-aging.webp",
+      "mtime": 1793403287
     }
   ]
 }

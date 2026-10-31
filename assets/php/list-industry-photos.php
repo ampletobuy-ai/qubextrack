@@ -1,6 +1,7 @@
 <?php
 /**
  * List product screenshots for an industry folder.
+ * Prefers WebP when a same-basename .webp exists alongside png/jpg.
  * GET ?industry=retail|jewellery|hotel|restaurant|hospital
  */
 header('Content-Type: application/json; charset=utf-8');
@@ -26,7 +27,7 @@ if ($dir === false || $photosRoot === false || strpos($dir, $photosRoot) !== 0 |
 }
 
 $exclude = '/(necklace|rings|atmosphere|hero|blurry|manifest)/i';
-$images = [];
+$byStem = [];
 
 foreach (scandir($dir) ?: [] as $file) {
     if ($file === '.' || $file === '..') {
@@ -42,15 +43,46 @@ foreach (scandir($dir) ?: [] as $file) {
     if (preg_match($exclude, $file)) {
         continue;
     }
-    $images[] = [
+    $stem = strtolower(pathinfo($file, PATHINFO_FILENAME));
+    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+    if (!isset($byStem[$stem])) {
+        $byStem[$stem] = [];
+    }
+    $byStem[$stem][] = [
         'file' => $file,
+        'ext' => $ext,
         'url' => './assets/img/photos/' . $industry . '/' . rawurlencode($file),
         'mtime' => filemtime($path) ?: 0,
     ];
 }
 
+$images = [];
+foreach ($byStem as $group) {
+    $webp = null;
+    foreach ($group as $item) {
+        if ($item['ext'] === 'webp') {
+            $webp = $item;
+            break;
+        }
+    }
+    if ($webp) {
+        $images[] = [
+            'file' => $webp['file'],
+            'url' => $webp['url'],
+            'mtime' => $webp['mtime'],
+        ];
+        continue;
+    }
+    foreach ($group as $item) {
+        $images[] = [
+            'file' => $item['file'],
+            'url' => $item['url'],
+            'mtime' => $item['mtime'],
+        ];
+    }
+}
+
 usort($images, static function ($a, $b) {
-    // Prefer POS / dashboard first, then alphabetical.
     $score = static function ($name) {
         $n = strtolower($name);
         if (strpos($n, 'pos') !== false) {

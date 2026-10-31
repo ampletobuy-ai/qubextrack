@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Regenerate assets/img/photos/{industry}/manifest.json from folder contents."""
+"""Regenerate assets/img/photos/{industry}/manifest.json from folder contents.
+
+Prefers WebP when a same-basename .webp exists alongside png/jpg.
+"""
 from pathlib import Path
 import json
 import re
@@ -20,16 +23,35 @@ def score(name: str) -> int:
     return 2
 
 
+def prefer_webp(files: list[Path]) -> list[Path]:
+    """If foo.webp exists, drop foo.png / foo.jpg with the same stem."""
+    by_stem: dict[str, list[Path]] = {}
+    for f in files:
+        by_stem.setdefault(f.stem.lower(), []).append(f)
+
+    chosen: list[Path] = []
+    for group in by_stem.values():
+        webps = [f for f in group if f.suffix.lower() == '.webp']
+        if webps:
+            chosen.append(webps[0])
+        else:
+            chosen.extend(group)
+    return chosen
+
+
 def main() -> int:
     for industry in INDUSTRIES:
         d = ROOT / industry
         if not d.is_dir():
             print(f'skip missing {industry}')
             continue
+        candidates = [
+            f
+            for f in d.iterdir()
+            if f.is_file() and EXT.search(f.name) and not EXCLUDE.search(f.name)
+        ]
         images = []
-        for f in d.iterdir():
-            if not f.is_file() or not EXT.search(f.name) or EXCLUDE.search(f.name):
-                continue
+        for f in prefer_webp(candidates):
             images.append(
                 {
                     'file': f.name,
